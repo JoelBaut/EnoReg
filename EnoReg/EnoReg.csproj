@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Filtros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Filtros.Designer.cs">
+      <DependentUpon>Filtros.cs</DependentUpon>
+    </Compile>
     <Compile Include="VentanaPrinipal.cs">
       <SubType>Form</SubType>
     </Compile>
