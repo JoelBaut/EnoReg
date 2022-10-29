@@ -107,6 +107,7 @@
             this.btnMostrarTodo.TabIndex = 1;
             this.btnMostrarTodo.Text = "Mostrar todo";
             this.btnMostrarTodo.UseVisualStyleBackColor = true;
+            this.btnMostrarTodo.Click += new System.EventHandler(this.btnMostrarTodo_Click);
             // 
             // tableLayoutPanel1
             // 

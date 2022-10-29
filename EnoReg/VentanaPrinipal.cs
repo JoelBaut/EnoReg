@@ -23,5 +23,10 @@ namespace EnoReg
             this.BackColor = Properties.Settings.Default.ColorFondo;
             this.ForeColor = Properties.Settings.Default.ColorLetra;
         }
+
+        private void btnMostrarTodo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
