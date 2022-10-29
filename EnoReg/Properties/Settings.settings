@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="EnoReg.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ConexionDB" Type="System.String" Scope="User">
+      <Value Profile="(Default)">SERVER=localhost;DATABASE=bodega;UID=root;PASSWORD=;</Value>
+    </Setting>
+    <Setting Name="Font" Type="System.Drawing.Font" Scope="User">
+      <Value Profile="(Default)">Bahnschrift, 12pt</Value>
+    </Setting>
+    <Setting Name="ColorLetra" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">WindowFrame</Value>
+    </Setting>
+    <Setting Name="ColorFondo" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">HighlightText</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
