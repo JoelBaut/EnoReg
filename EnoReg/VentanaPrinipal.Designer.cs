@@ -76,6 +76,7 @@
             this.btnAñadirSalida.TabIndex = 4;
             this.btnAñadirSalida.Text = "Añadir Salida";
             this.btnAñadirSalida.UseVisualStyleBackColor = true;
+            this.btnAñadirSalida.Click += new System.EventHandler(this.btnAñadirSalida_Click);
             // 
             // btnAñadirEntrada
             // 
@@ -87,6 +88,7 @@
             this.btnAñadirEntrada.TabIndex = 3;
             this.btnAñadirEntrada.Text = "Añadir Entrada";
             this.btnAñadirEntrada.UseVisualStyleBackColor = true;
+            this.btnAñadirEntrada.Click += new System.EventHandler(this.btnAñadirEntrada_Click);
             // 
             // btnFiltros
             // 
