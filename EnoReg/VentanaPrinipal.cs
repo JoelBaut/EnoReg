@@ -23,5 +23,17 @@ namespace EnoReg
             this.BackColor = Properties.Settings.Default.ColorFondo;
             this.ForeColor = Properties.Settings.Default.ColorLetra;
         }
+
+        private void btnAñadirEntrada_Click(object sender, EventArgs e)
+        {
+            AñadirEntrada en = new AñadirEntrada();
+            en.ShowDialog();
+        }
+
+        private void btnAñadirSalida_Click(object sender, EventArgs e)
+        {
+            AñadirSalida sa = new AñadirSalida();
+            sa.ShowDialog();
+        }
     }
 }
