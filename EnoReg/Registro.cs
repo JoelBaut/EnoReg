@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -10,11 +10,13 @@ namespace EnoReg
     internal class Registro
     {
         private DateTime fecha;
-        private String lote;
+        private string lote;
         private double cantidad;
-        private String observaciones;
+        private string observaciones;
 
-        public Registro(DateTime fecha, String lote, double cantidad, String observaciones)
+
+        public Registro(DateTime fecha, string lote, double cantidad, string observaciones)
+
         {
             this.fecha = fecha;
             this.lote = lote;
