@@ -8,12 +8,12 @@ namespace EnoReg
 {
     internal class Entrada : Registro
     {
-        private String proveedor;
+        private string proveedor;
         private DateTime caducidad;
-        private String albaran;
+        private string albaran;
 
 
-        public Entrada(string proveedor, DateTime caducidad, string albaran, DateTime fecha, String lote, double cantidad, String observaciones) : base(fecha, lote, cantidad, observaciones)
+        public Entrada(string proveedor, DateTime caducidad, string albaran, DateTime fecha, string lote, double cantidad, string observaciones) : base(fecha, lote, cantidad, observaciones)
         {
             this.proveedor = proveedor;
             this.caducidad = caducidad;
