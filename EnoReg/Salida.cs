@@ -8,9 +8,9 @@ namespace EnoReg
 {
     internal class Salida : Registro
     {
-        private String destino;
+        private string destino;
 
-        public Salida(string destino, DateTime fecha, String lote, double cantidad, String observaciones):base(fecha, lote, cantidad, observaciones)    
+        public Salida(string destino, DateTime fecha, string lote, double cantidad, string observaciones):base(fecha, lote, cantidad, observaciones)    
         {
             this.destino = destino;
         }
