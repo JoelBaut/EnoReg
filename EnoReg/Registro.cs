@@ -13,5 +13,18 @@ namespace EnoReg
         private String lote;
         private double cantidad;
         private String observaciones;
+
+        public Registro(DateTime fecha, String lote, double cantidad, String observaciones)
+        {
+            this.fecha = fecha;
+            this.lote = lote;
+            this.cantidad = cantidad;
+            this.observaciones = observaciones;
+        }
+
+        public DateTime Fecha { get => fecha; set => fecha = value; }
+        public string Lote { get => lote; set => lote = value; }
+        public double Cantidad { get => cantidad; set => cantidad = value; }
+        public string Observaciones { get => observaciones; set => observaciones = value; }
     }
 }
