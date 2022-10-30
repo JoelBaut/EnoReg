@@ -15,8 +15,8 @@ namespace EnoReg
         private double stock;
         private string unidad;
         private Bitmap image;
-        private ArrayList Entradas = new ArrayList();
-        private ArrayList Salidas = new ArrayList();
+        private ArrayList entradas = new ArrayList();
+        private ArrayList salidas = new ArrayList();
 
         public Producto()
         {
@@ -36,19 +36,19 @@ namespace EnoReg
         public double Stock { get => stock; set => stock = value; }
         public string Unidad { get => unidad; set => unidad = value; }
         public Bitmap Image { get => image; set => image = value; }
-        public ArrayList Entradas1 { get => Entradas; set => Entradas = value; }
-        public ArrayList Salidas1 { get => Salidas; set => Salidas = value; }
+        public ArrayList Entradas { get => entradas; set => entradas = value; }
+        public ArrayList Salidas { get => salidas; set => salidas = value; }
 
         public void modificarStock(double cantidad) { 
             this.stock += cantidad;
         }
-        /*public void añadiirEnetrada(Entrada e) {
+        public void añadiirEnetrada(Entrada e) {
             Entradas.Add(e);
         }
-        public void añadiirSalidas(Salidas s)
+        public void añadiirSalidas(Salida s)
         {
             Salidas.Add(s);
-        }*/
+        }
 
     }
 }
