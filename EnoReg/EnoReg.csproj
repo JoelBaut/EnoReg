@@ -65,8 +65,17 @@
     <Compile Include="Filtros.Designer.cs">
       <DependentUpon>Filtros.cs</DependentUpon>
     </Compile>
+    <Compile Include="NuevoProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NuevoProductos.Designer.cs">
+      <DependentUpon>NuevoProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Producto.cs" />
+
     <Compile Include="Registro.cs" />
     <Compile Include="Salida.cs" />
+
     <Compile Include="VentanaPrinipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +89,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AñadirSalidas.resx">
       <DependentUpon>AñadirSalidas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Filtros.resx">
+      <DependentUpon>Filtros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NuevoProductos.resx">
+      <DependentUpon>NuevoProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

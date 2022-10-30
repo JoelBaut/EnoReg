@@ -72,16 +72,17 @@
             // 
             this.btn_aceptar.Location = new System.Drawing.Point(54, 339);
             this.btn_aceptar.Name = "btn_aceptar";
-            this.btn_aceptar.Size = new System.Drawing.Size(75, 23);
+            this.btn_aceptar.Size = new System.Drawing.Size(75, 35);
             this.btn_aceptar.TabIndex = 40;
             this.btn_aceptar.Text = "Aceptar";
             this.btn_aceptar.UseVisualStyleBackColor = true;
             // 
             // btn_cancelar
             // 
+            this.btn_cancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btn_cancelar.Location = new System.Drawing.Point(147, 339);
             this.btn_cancelar.Name = "btn_cancelar";
-            this.btn_cancelar.Size = new System.Drawing.Size(75, 23);
+            this.btn_cancelar.Size = new System.Drawing.Size(75, 35);
             this.btn_cancelar.TabIndex = 50;
             this.btn_cancelar.Text = "Cancelar";
             this.btn_cancelar.UseVisualStyleBackColor = true;
@@ -122,8 +123,10 @@
             // 
             // NuevoProductos
             // 
+            this.AcceptButton = this.btn_aceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btn_cancelar;
             this.ClientSize = new System.Drawing.Size(299, 398);
             this.Controls.Add(this.btn_imagen);
             this.Controls.Add(this.txb_unidad);

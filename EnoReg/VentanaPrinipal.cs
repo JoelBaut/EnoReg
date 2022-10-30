@@ -24,6 +24,9 @@ namespace EnoReg
             this.ForeColor = Properties.Settings.Default.ColorLetra;
         }
 
+        private void btnMostrarTodo_Click(object sender, EventArgs e)
+        {
+        }
         private void btnAñadirEntrada_Click(object sender, EventArgs e)
         {
             AñadirEntrada en = new AñadirEntrada();
@@ -34,6 +37,18 @@ namespace EnoReg
         {
             AñadirSalida sa = new AñadirSalida();
             sa.ShowDialog();
+        }
+
+        private void btnFiltros_Click(object sender, EventArgs e)
+        {
+            Filtros filtros = new Filtros();
+            filtros.ShowDialog();
+        }
+
+        private void btnNuevoProducto_Click(object sender, EventArgs e)
+        {
+            NuevoProductos nuevoProductos = new NuevoProductos();
+            nuevoProductos.ShowDialog();
         }
     }
 }
