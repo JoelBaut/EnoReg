@@ -81,6 +81,9 @@
     <EmbeddedResource Include="AñadirEntrada.resx">
       <DependentUpon>AñadirEntrada.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AñadirSalidas.resx">
+      <DependentUpon>AñadirSalidas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

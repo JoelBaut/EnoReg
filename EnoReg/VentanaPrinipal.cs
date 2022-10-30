@@ -24,9 +24,16 @@ namespace EnoReg
             this.ForeColor = Properties.Settings.Default.ColorLetra;
         }
 
-        private void btnMostrarTodo_Click(object sender, EventArgs e)
+        private void btnAñadirEntrada_Click(object sender, EventArgs e)
         {
+            AñadirEntrada en = new AñadirEntrada();
+            en.ShowDialog();
+        }
 
+        private void btnAñadirSalida_Click(object sender, EventArgs e)
+        {
+            AñadirSalida sa = new AñadirSalida();
+            sa.ShowDialog();
         }
     }
 }
