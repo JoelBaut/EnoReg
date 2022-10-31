@@ -49,6 +49,7 @@ namespace EnoReg
         {
             NuevoProductos nuevoProductos = new NuevoProductos();
             nuevoProductos.ShowDialog();
+            ProductoDAO productoDAO = new ProductoDAO();
         }
     }
 }
