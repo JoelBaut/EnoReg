@@ -14,7 +14,7 @@ namespace EnoReg
         public ProductoDAO()
         {
             conexionDB = new ConexionDB();
-            conexionDB.Insertar("INSERT INTO `producto`(`nombre`, `unidad`) VALUES ('Mosto','L');");
+            //conexionDB.Insertar("INSERT INTO `producto`(`nombre`, `unidad`) VALUES ('Mosto','L');");
         }
     }
 }
