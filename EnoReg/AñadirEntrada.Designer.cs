@@ -122,49 +122,49 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(121, 87);
+            this.textBox2.Location = new System.Drawing.Point(121, 80);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(200, 20);
             this.textBox2.TabIndex = 20;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(121, 132);
+            this.textBox3.Location = new System.Drawing.Point(121, 125);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(200, 20);
             this.textBox3.TabIndex = 30;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(121, 177);
+            this.textBox4.Location = new System.Drawing.Point(121, 170);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(200, 20);
             this.textBox4.TabIndex = 40;
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(121, 222);
+            this.textBox5.Location = new System.Drawing.Point(121, 215);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(200, 20);
             this.textBox5.TabIndex = 50;
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(121, 267);
+            this.textBox6.Location = new System.Drawing.Point(121, 260);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(200, 20);
             this.textBox6.TabIndex = 60;
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(121, 312);
+            this.textBox7.Location = new System.Drawing.Point(121, 305);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(200, 20);
             this.textBox7.TabIndex = 70;
             // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(121, 357);
+            this.textBox8.Location = new System.Drawing.Point(121, 350);
             this.textBox8.Multiline = true;
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(200, 59);
@@ -174,16 +174,16 @@
             // 
             this.dtpFechaEntrada.Cursor = System.Windows.Forms.Cursors.Default;
             this.dtpFechaEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaEntrada.Location = new System.Drawing.Point(121, 42);
+            this.dtpFechaEntrada.Location = new System.Drawing.Point(121, 35);
             this.dtpFechaEntrada.Name = "dtpFechaEntrada";
             this.dtpFechaEntrada.Size = new System.Drawing.Size(200, 20);
             this.dtpFechaEntrada.TabIndex = 10;
             // 
             // btnAceptarEntrada
             // 
-            this.btnAceptarEntrada.Location = new System.Drawing.Point(163, 439);
+            this.btnAceptarEntrada.Location = new System.Drawing.Point(163, 422);
             this.btnAceptarEntrada.Name = "btnAceptarEntrada";
-            this.btnAceptarEntrada.Size = new System.Drawing.Size(75, 23);
+            this.btnAceptarEntrada.Size = new System.Drawing.Size(75, 35);
             this.btnAceptarEntrada.TabIndex = 90;
             this.btnAceptarEntrada.Text = "Aceptar";
             this.btnAceptarEntrada.UseVisualStyleBackColor = true;
@@ -191,9 +191,9 @@
             // btnCancelarEntrada
             // 
             this.btnCancelarEntrada.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancelarEntrada.Location = new System.Drawing.Point(246, 439);
+            this.btnCancelarEntrada.Location = new System.Drawing.Point(246, 422);
             this.btnCancelarEntrada.Name = "btnCancelarEntrada";
-            this.btnCancelarEntrada.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelarEntrada.Size = new System.Drawing.Size(75, 35);
             this.btnCancelarEntrada.TabIndex = 100;
             this.btnCancelarEntrada.Text = "Cancelar";
             this.btnCancelarEntrada.UseVisualStyleBackColor = true;
@@ -201,7 +201,8 @@
             // AñadirEntrada
             // 
             this.AcceptButton = this.btnAceptarEntrada;
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancelarEntrada;
             this.ClientSize = new System.Drawing.Size(379, 476);
             this.Controls.Add(this.btnCancelarEntrada);
