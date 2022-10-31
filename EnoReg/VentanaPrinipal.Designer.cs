@@ -65,6 +65,7 @@
             this.btnNuevoProducto.TabIndex = 5;
             this.btnNuevoProducto.Text = "NuevoProducto";
             this.btnNuevoProducto.UseVisualStyleBackColor = true;
+            this.btnNuevoProducto.Click += new System.EventHandler(this.btnNuevoProducto_Click);
             // 
             // btnAñadirSalida
             // 
@@ -99,6 +100,7 @@
             this.btnFiltros.TabIndex = 2;
             this.btnFiltros.Text = "Filtros";
             this.btnFiltros.UseVisualStyleBackColor = true;
+            this.btnFiltros.Click += new System.EventHandler(this.btnFiltros_Click);
             // 
             // btnMostrarTodo
             // 
@@ -109,6 +111,7 @@
             this.btnMostrarTodo.TabIndex = 1;
             this.btnMostrarTodo.Text = "Mostrar todo";
             this.btnMostrarTodo.UseVisualStyleBackColor = true;
+            this.btnMostrarTodo.Click += new System.EventHandler(this.btnMostrarTodo_Click);
             // 
             // tableLayoutPanel1
             // 
