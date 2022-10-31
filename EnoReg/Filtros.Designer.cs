@@ -87,16 +87,17 @@
             // 
             this.btn_filtrar.Location = new System.Drawing.Point(74, 298);
             this.btn_filtrar.Name = "btn_filtrar";
-            this.btn_filtrar.Size = new System.Drawing.Size(75, 23);
+            this.btn_filtrar.Size = new System.Drawing.Size(75, 35);
             this.btn_filtrar.TabIndex = 60;
             this.btn_filtrar.Text = "Filtrar";
             this.btn_filtrar.UseVisualStyleBackColor = true;
             // 
             // btn_cerrar
             // 
+            this.btn_cerrar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btn_cerrar.Location = new System.Drawing.Point(167, 298);
             this.btn_cerrar.Name = "btn_cerrar";
-            this.btn_cerrar.Size = new System.Drawing.Size(75, 23);
+            this.btn_cerrar.Size = new System.Drawing.Size(75, 35);
             this.btn_cerrar.TabIndex = 70;
             this.btn_cerrar.Text = "Cerrar";
             this.btn_cerrar.UseVisualStyleBackColor = true;
@@ -129,8 +130,10 @@
             // 
             // Filtros
             // 
+            this.AcceptButton = this.btn_filtrar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btn_cerrar;
             this.ClientSize = new System.Drawing.Size(365, 361);
             this.Controls.Add(this.lbl_dateLast);
             this.Controls.Add(this.lbl_dateFirst);
