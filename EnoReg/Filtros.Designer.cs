@@ -146,8 +146,10 @@
             this.Controls.Add(this.dtp_dateFirst);
             this.Controls.Add(this.cbx_registro);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Location = new System.Drawing.Point(1075, 200);
             this.MaximizeBox = false;
             this.Name = "Filtros";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Filtros";
             this.ResumeLayout(false);
             this.PerformLayout();

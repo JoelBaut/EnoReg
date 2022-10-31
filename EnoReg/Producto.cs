@@ -6,6 +6,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+/*Revisar si ponerlo como enum o como string*/
+public enum UnidadType { L, Kg };
+
 namespace EnoReg
 {
     internal class Producto
@@ -13,7 +17,7 @@ namespace EnoReg
         private int id;
         private string name;
         private double stock;
-        private string unidad;
+        private UnidadType unidad;
         private Bitmap image;
         private ArrayList entradas = new ArrayList();
         private ArrayList salidas = new ArrayList();
@@ -22,7 +26,7 @@ namespace EnoReg
         {
         }
 
-        public Producto(int id, string name, string unidad, Bitmap image)
+        public Producto(int id, string name, UnidadType unidad, Bitmap image)
         {
             this.id = id;
             this.name = name;
@@ -34,7 +38,7 @@ namespace EnoReg
         public int Id { get => id; set => id = value; }
         public string Name { get => name; set => name = value; }
         public double Stock { get => stock; set => stock = value; }
-        public string Unidad { get => unidad; set => unidad = value; }
+        public UnidadType Unidad { get => unidad; set => unidad = value; }
         public Bitmap Image { get => image; set => image = value; }
         public ArrayList Entradas { get => entradas; set => entradas = value; }
         public ArrayList Salidas { get => salidas; set => salidas = value; }

@@ -184,8 +184,10 @@
             this.Controls.Add(this.lblProducto);
             this.Controls.Add(this.lblFecha);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Location = new System.Drawing.Point(1075, 200);
             this.MaximizeBox = false;
             this.Name = "AñadirSalida";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Salidas";
             this.ResumeLayout(false);
             this.PerformLayout();
