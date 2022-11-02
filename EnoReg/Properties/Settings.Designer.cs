@@ -37,7 +37,7 @@ namespace EnoReg.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Bahnschrift, 12pt")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Calibri, 12pt, style=Bold")]
         public global::System.Drawing.Font Font {
             get {
                 return ((global::System.Drawing.Font)(this["Font"]));
