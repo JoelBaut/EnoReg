@@ -97,7 +97,6 @@
       <DependentUpon>AñadirSalidas.cs</DependentUpon>
     </Compile>
     <Compile Include="ConexionDB.cs" />
-    <Compile Include="Entrada.cs" />
     <Compile Include="Filtros.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,10 +109,7 @@
     <Compile Include="NuevoProductos.Designer.cs">
       <DependentUpon>NuevoProductos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Producto.cs" />
     <Compile Include="ProductoDAO.cs" />
-    <Compile Include="Registro.cs" />
-    <Compile Include="Salida.cs" />
     <Compile Include="VentanaPrinipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +162,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Imagenes\logoDptoIndAli.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoIES.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
