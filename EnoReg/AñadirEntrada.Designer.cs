@@ -224,8 +224,10 @@
             this.Controls.Add(this.lblProductoEntrada);
             this.Controls.Add(this.lblFechaEntrada);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Location = new System.Drawing.Point(1075, 200);
             this.MaximizeBox = false;
             this.Name = "AñadirEntrada";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "AñadirEntrada";
             this.Load += new System.EventHandler(this.AñadirEntrada_Load);
             this.ResumeLayout(false);

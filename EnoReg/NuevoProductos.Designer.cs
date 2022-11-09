@@ -138,8 +138,10 @@
             this.Controls.Add(this.lbl_unidad);
             this.Controls.Add(this.lbl_nombre);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Location = new System.Drawing.Point(1075, 200);
             this.MaximizeBox = false;
             this.Name = "NuevoProductos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Nuevo Producto";
             ((System.ComponentModel.ISupportInitialize)(this.pcb_imagen)).EndInit();
             this.ResumeLayout(false);
