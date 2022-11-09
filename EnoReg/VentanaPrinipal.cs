@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +14,7 @@ namespace EnoReg
 {
     public partial class VentanaPrinipal : Form
     {
+        private ProductoDAO productoDAO;
         public VentanaPrinipal()
         {
             InitializeComponent();
@@ -22,10 +25,22 @@ namespace EnoReg
             this.Font = Properties.Settings.Default.Font;
             this.BackColor = Properties.Settings.Default.ColorFondo;
             this.ForeColor = Properties.Settings.Default.ColorLetra;
+            productoDAO = new ProductoDAO();
+            CargarDataGrid();
+        }
+
+        private void CargarDataGrid()
+        {
+            DataTable dt = new DataTable();
+            dt.Load(productoDAO.CargarTodo());
+            dtgprincipal.DataSource = dt;
+            productoDAO.cerrarConexion();
+
         }
 
         private void btnMostrarTodo_Click(object sender, EventArgs e)
         {
+            CargarDataGrid();
         }
         private void btnAñadirEntrada_Click(object sender, EventArgs e)
         {
@@ -45,11 +60,10 @@ namespace EnoReg
             filtros.ShowDialog();
         }
 
-        private void btnNuevoProducto_Click(object sender, EventArgs e)
+        public void btnNuevoProducto_Click(object sender, EventArgs e)
         {
-            NuevoProductos nuevoProductos = new NuevoProductos();
+            NuevoProductos nuevoProductos = new NuevoProductos(productoDAO);
             nuevoProductos.ShowDialog();
-            ProductoDAO productoDAO = new ProductoDAO();
         }
     }
 }

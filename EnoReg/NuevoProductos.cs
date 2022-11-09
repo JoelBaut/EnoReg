@@ -12,8 +12,11 @@ namespace EnoReg
 {
     public partial class NuevoProductos : Form
     {
-        public NuevoProductos()
+        private ProductoDAO productoDAO;
+        string ruta;
+        public NuevoProductos(ProductoDAO productoDAO)
         {
+            this.productoDAO = productoDAO;
             InitializeComponent();
             this.Font = Properties.Settings.Default.Font;
             this.BackColor = Properties.Settings.Default.ColorFondo;
@@ -30,8 +33,15 @@ namespace EnoReg
             if (fil_explorar.ShowDialog() == DialogResult.OK)
             {
                 Bitmap imagen = new Bitmap(fil_explorar.FileName);
+                ruta = fil_explorar.FileName;
                 pcb_imagen.Image = imagen;
             }
+        }
+
+        private void btn_aceptar_Click(object sender, EventArgs e)
+        {
+            productoDAO.InsertarProducto(txb_Nombre.Text,txb_unidad.Text, ruta);
+            
         }
     }
 }
