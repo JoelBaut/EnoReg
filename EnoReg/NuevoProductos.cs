@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace EnoReg
 {
@@ -14,6 +17,7 @@ namespace EnoReg
     {
         private ProductoDAO productoDAO;
         string ruta;
+        byte[] img = null;
         public NuevoProductos(ProductoDAO productoDAO)
         {
             this.productoDAO = productoDAO;
@@ -33,15 +37,18 @@ namespace EnoReg
             if (fil_explorar.ShowDialog() == DialogResult.OK)
             {
                 Bitmap imagen = new Bitmap(fil_explorar.FileName);
-                ruta = fil_explorar.FileName;
+                ruta = fil_explorar.FileName.ToString();
                 pcb_imagen.Image = imagen;
             }
         }
 
         private void btn_aceptar_Click(object sender, EventArgs e)
         {
-            productoDAO.InsertarProducto(txb_Nombre.Text,txb_unidad.Text, ruta);
-            
+            FileStream stream = new FileStream(ruta, FileMode.Open, FileAccess.Read);
+            BinaryReader brs = new BinaryReader(stream);
+            img = brs.ReadBytes((int)stream.Length);
+
+            productoDAO.InsertarProducto(txb_Nombre.Text,txb_unidad.Text, img);
         }
     }
 }
