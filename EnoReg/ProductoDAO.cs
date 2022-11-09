@@ -34,11 +34,12 @@ namespace EnoReg
             return conexionDB.Select(sql);
         }
 
-        public void InsertarProducto(String nombre, String unidad, String rutaImagen)
+        public void InsertarProducto(String nombre, String unidad, byte[] image)
         {
 
-            String sql = "INSERT INTO `producto`(`nombre`, `unidad`, `imagen`) VALUES ('" + nombre + "', '" + unidad + "', LOAD_FILE('"+ rutaImagen + "'));";
-            conexionDB.Insertar(sql);
+            String sql = "INSERT INTO `producto`(`nombre`, `unidad`, `imagen`) VALUES ('" + nombre + "', '" + unidad + "',@pic);";
+            
+            conexionDB.InsertarProducto(sql,image);
         }
         public void InsertarEntrada() {
             
