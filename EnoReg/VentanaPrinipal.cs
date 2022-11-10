@@ -31,10 +31,29 @@ namespace EnoReg
 
         private void CargarDataGrid()
         {
+            // cargar datos
             DataTable dt = new DataTable();
             dt.Load(productoDAO.CargarTodo());
             dtgprincipal.DataSource = dt;
             productoDAO.cerrarConexion();
+
+            // añadir unidad a los valores
+            String nombre;
+            for (int i = 0; i < dtgprincipal.RowCount; i++)
+            {
+                nombre = (string)dtgprincipal.Rows[i].Cells[2].Value;
+
+
+                if (!dtgprincipal.Rows[i].Cells[6].Value.Equals("-"))
+                {
+                    dtgprincipal.Rows[i].Cells[6].Value += " kg";
+                }
+                if (!dtgprincipal.Rows[i].Cells[7].Value.Equals("-"))
+                {
+                    dtgprincipal.Rows[i].Cells[7].Value += " kg";
+                }
+                dtgprincipal.Rows[i].Cells[8].Value += " kg";
+            }
 
         }
 
