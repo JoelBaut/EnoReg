@@ -25,6 +25,8 @@ namespace EnoReg
             this.Font = Properties.Settings.Default.Font;
             this.BackColor = Properties.Settings.Default.ColorFondo;
             this.ForeColor = Properties.Settings.Default.ColorLetra;
+            cmbUnidad.Items.Add("Kg");
+            cmbUnidad.Items.Add("L");
         }
 
         private void btn_imagen_Click(object sender, EventArgs e)
@@ -48,7 +50,7 @@ namespace EnoReg
             BinaryReader brs = new BinaryReader(stream);
             img = brs.ReadBytes((int)stream.Length);
 
-            productoDAO.InsertarProducto(txb_Nombre.Text,txb_unidad.Text, img);
+            productoDAO.InsertarProducto(txb_Nombre.Text,cmbUnidad.Text, img);
         }
     }
 }
