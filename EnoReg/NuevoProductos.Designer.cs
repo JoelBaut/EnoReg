@@ -76,6 +76,7 @@
             this.btn_aceptar.TabIndex = 40;
             this.btn_aceptar.Text = "Aceptar";
             this.btn_aceptar.UseVisualStyleBackColor = true;
+            this.btn_aceptar.Click += new System.EventHandler(this.btn_aceptar_Click);
             // 
             // btn_cancelar
             // 
@@ -138,8 +139,10 @@
             this.Controls.Add(this.lbl_unidad);
             this.Controls.Add(this.lbl_nombre);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Location = new System.Drawing.Point(1075, 200);
             this.MaximizeBox = false;
             this.Name = "NuevoProductos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Nuevo Producto";
             ((System.ComponentModel.ISupportInitialize)(this.pcb_imagen)).EndInit();
             this.ResumeLayout(false);

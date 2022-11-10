@@ -91,6 +91,7 @@
             this.btn_filtrar.TabIndex = 60;
             this.btn_filtrar.Text = "Filtrar";
             this.btn_filtrar.UseVisualStyleBackColor = true;
+            this.btn_filtrar.Click += new System.EventHandler(this.btn_filtrar_Click);
             // 
             // btn_cerrar
             // 
@@ -146,8 +147,10 @@
             this.Controls.Add(this.dtp_dateFirst);
             this.Controls.Add(this.cbx_registro);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Location = new System.Drawing.Point(1075, 200);
             this.MaximizeBox = false;
             this.Name = "Filtros";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Filtros";
             this.ResumeLayout(false);
             this.PerformLayout();

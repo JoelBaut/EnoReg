@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VentanaPrinipal));
-            this.dtgprincipal = new System.Windows.Forms.DataGridView();
+            this.d = new System.Windows.Forms.DataGridView();
             this.btnNuevoProducto = new System.Windows.Forms.Button();
             this.btnAñadirSalida = new System.Windows.Forms.Button();
             this.btnAñadirEntrada = new System.Windows.Forms.Button();
@@ -38,33 +38,22 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.picImagenProducto = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgprincipal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.d)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picImagenProducto)).BeginInit();
             this.SuspendLayout();
             // 
-            // dtgprincipal
+            // d
             // 
-            this.dtgprincipal.AllowUserToAddRows = false;
-            this.dtgprincipal.AllowUserToDeleteRows = false;
-            this.dtgprincipal.AllowUserToOrderColumns = true;
-            this.dtgprincipal.AllowUserToResizeColumns = false;
-            this.dtgprincipal.AllowUserToResizeRows = false;
-            this.dtgprincipal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtgprincipal.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgprincipal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgprincipal.Location = new System.Drawing.Point(174, 97);
-            this.dtgprincipal.MultiSelect = false;
-            this.dtgprincipal.Name = "dtgprincipal";
-            this.dtgprincipal.ReadOnly = true;
-            this.dtgprincipal.RowHeadersVisible = false;
-            this.tableLayoutPanel1.SetRowSpan(this.dtgprincipal, 7);
-            this.dtgprincipal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgprincipal.Size = new System.Drawing.Size(879, 518);
-            this.dtgprincipal.TabIndex = 6;
+            this.d.AllowUserToOrderColumns = true;
+            this.d.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.d.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.d.Location = new System.Drawing.Point(174, 97);
+            this.d.Name = "d";
+            this.tableLayoutPanel1.SetRowSpan(this.d, 7);
+            this.d.Size = new System.Drawing.Size(879, 518);
+            this.d.TabIndex = 6;
             // 
             // btnNuevoProducto
             // 
@@ -131,7 +120,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 73.33334F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.666667F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.666667F));
-            this.tableLayoutPanel1.Controls.Add(this.dtgprincipal, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.d, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.btnAñadirSalida, 2, 5);
             this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnAñadirEntrada, 2, 4);
@@ -175,7 +164,7 @@
             // 
             this.picImagenProducto.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picImagenProducto.ErrorImage = global::EnoReg.Properties.Resources.logoDptoIndAli;
-            this.picImagenProducto.Image = global::EnoReg.Properties.Resources.logoIES;
+            this.picImagenProducto.Image = global::EnoReg.Properties.Resources.Jarabe_De_Sacarosa_1kg_3;
             this.picImagenProducto.InitialImage = global::EnoReg.Properties.Resources.logoDptoIndAli;
             this.picImagenProducto.Location = new System.Drawing.Point(13, 97);
             this.picImagenProducto.Name = "picImagenProducto";
@@ -198,7 +187,7 @@
             this.Text = "EnoReg";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.VentanaPrinipal_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgprincipal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.d)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picImagenProducto)).EndInit();
@@ -208,7 +197,7 @@
 
         #endregion
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.DataGridView dtgprincipal;
+        private System.Windows.Forms.DataGridView d;
         private System.Windows.Forms.Button btnAñadirSalida;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnAñadirEntrada;
