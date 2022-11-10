@@ -91,6 +91,7 @@
             this.btn_filtrar.TabIndex = 60;
             this.btn_filtrar.Text = "Filtrar";
             this.btn_filtrar.UseVisualStyleBackColor = true;
+            this.btn_filtrar.Click += new System.EventHandler(this.btn_filtrar_Click);
             // 
             // btn_cerrar
             // 

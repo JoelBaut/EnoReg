@@ -36,7 +36,6 @@
             this.lblProveedorEntrada = new System.Windows.Forms.Label();
             this.lblAlbaranEntrada = new System.Windows.Forms.Label();
             this.lblObservacionesEntrada = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
@@ -46,6 +45,7 @@
             this.dtpFechaEntrada = new System.Windows.Forms.DateTimePicker();
             this.btnAceptarEntrada = new System.Windows.Forms.Button();
             this.btnCancelarEntrada = new System.Windows.Forms.Button();
+            this.cmbProductos = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lblFechaEntrada
@@ -120,13 +120,6 @@
             this.lblObservacionesEntrada.TabIndex = 81;
             this.lblObservacionesEntrada.Text = "Observaciones:";
             // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(121, 80);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(200, 20);
-            this.textBox2.TabIndex = 20;
-            // 
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(121, 125);
@@ -187,6 +180,7 @@
             this.btnAceptarEntrada.TabIndex = 90;
             this.btnAceptarEntrada.Text = "Aceptar";
             this.btnAceptarEntrada.UseVisualStyleBackColor = true;
+            this.btnAceptarEntrada.Click += new System.EventHandler(this.btnAceptarEntrada_Click);
             // 
             // btnCancelarEntrada
             // 
@@ -198,6 +192,14 @@
             this.btnCancelarEntrada.Text = "Cancelar";
             this.btnCancelarEntrada.UseVisualStyleBackColor = true;
             // 
+            // cmbProductos
+            // 
+            this.cmbProductos.FormattingEnabled = true;
+            this.cmbProductos.Location = new System.Drawing.Point(121, 84);
+            this.cmbProductos.Name = "cmbProductos";
+            this.cmbProductos.Size = new System.Drawing.Size(200, 21);
+            this.cmbProductos.TabIndex = 101;
+            // 
             // AñadirEntrada
             // 
             this.AcceptButton = this.btnAceptarEntrada;
@@ -205,6 +207,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancelarEntrada;
             this.ClientSize = new System.Drawing.Size(379, 476);
+            this.Controls.Add(this.cmbProductos);
             this.Controls.Add(this.btnCancelarEntrada);
             this.Controls.Add(this.btnAceptarEntrada);
             this.Controls.Add(this.dtpFechaEntrada);
@@ -214,7 +217,6 @@
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.lblObservacionesEntrada);
             this.Controls.Add(this.lblAlbaranEntrada);
             this.Controls.Add(this.lblProveedorEntrada);
@@ -245,7 +247,6 @@
         private System.Windows.Forms.Label lblProveedorEntrada;
         private System.Windows.Forms.Label lblAlbaranEntrada;
         private System.Windows.Forms.Label lblObservacionesEntrada;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox5;
@@ -255,5 +256,6 @@
         private System.Windows.Forms.DateTimePicker dtpFechaEntrada;
         private System.Windows.Forms.Button btnAceptarEntrada;
         private System.Windows.Forms.Button btnCancelarEntrada;
+        private System.Windows.Forms.ComboBox cmbProductos;
     }
 }

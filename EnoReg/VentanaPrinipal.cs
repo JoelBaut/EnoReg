@@ -44,19 +44,20 @@ namespace EnoReg
         }
         private void btnAñadirEntrada_Click(object sender, EventArgs e)
         {
-            AñadirEntrada en = new AñadirEntrada();
+            AñadirEntrada en = new AñadirEntrada(productoDAO, productoDAO.Cargarproductos());
             en.ShowDialog();
         }
 
         private void btnAñadirSalida_Click(object sender, EventArgs e)
         {
-            AñadirSalida sa = new AñadirSalida();
+            AñadirSalida sa = new AñadirSalida(productoDAO, productoDAO.Cargarproductos());
             sa.ShowDialog();
         }
 
         private void btnFiltros_Click(object sender, EventArgs e)
         {
-            Filtros filtros = new Filtros();
+
+            Filtros filtros = new Filtros(productoDAO, productoDAO.Cargarproductos());
             filtros.ShowDialog();
         }
 
