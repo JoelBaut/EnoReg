@@ -38,6 +38,14 @@ namespace EnoReg
             cmd.ExecuteNonQuery();
             cerrarConexion();
         }
+        public void InsertarProducto(String sentenciaSQL, byte[] image)
+        {
+            crearConexion();
+            MySqlCommand cmd = new MySqlCommand(sentenciaSQL, conn);
+            cmd.Parameters.AddWithValue("@pic", image);
+            cmd.ExecuteNonQuery();
+            cerrarConexion();
+        }
 
 
     }
