@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data.OleDb;
 using System.Data.SqlClient;
@@ -8,11 +9,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace EnoReg
 {
     public class ProductoDAO
     {
+        ArrayList productos = new ArrayList();
         ConexionDB conexionDB = null;
 
         public ProductoDAO()
@@ -42,10 +45,18 @@ namespace EnoReg
             conexionDB.InsertarProducto(sql,image);
         }
         public void InsertarEntrada() {
-            
+
+            String sql = "INSERT INTO `producto_entrada`(`id_producto`, `fecha_entrada`, `lote`, `albaran`, `proveedor`, `fecha_caducidad`, `cantidad`) VALUES ('[value-2]','[value-3]','[value-4]','[value-5]','[value-6]','[value-7]','[value-8]');";
+
+            conexionDB.Insertar(sql);
         }
         public void InsertarSalida()
         {
+
+        }
+        public MySqlDataReader Cargarproductos() {
+            String sql = "Select id_producto,nombre from producto";
+            return conexionDB.Select(sql);
 
         }
     }
