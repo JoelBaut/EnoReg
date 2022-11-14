@@ -32,7 +32,7 @@ namespace EnoReg
 
         private void CargarDataGrid()
         {
-            // cargar datos
+            // cargar datos 
             DataTable dt = new DataTable();
             dt.Load(productoDAO.CargarTodo());
             dtgprincipal.DataSource = dt;

@@ -24,6 +24,7 @@ namespace EnoReg
             this.BackColor = Properties.Settings.Default.ColorFondo;
             this.ForeColor = Properties.Settings.Default.ColorLetra;
             cargarCombo(dr);
+            dtpFechaSalida.MaxDate = DateTime.Today;
         }
         private void cargarCombo(MySqlDataReader dr)
         {

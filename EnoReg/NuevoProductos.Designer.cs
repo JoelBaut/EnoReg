@@ -35,9 +35,9 @@
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.pcb_imagen = new System.Windows.Forms.PictureBox();
             this.txb_Nombre = new System.Windows.Forms.TextBox();
-            this.txb_unidad = new System.Windows.Forms.TextBox();
             this.btn_imagen = new System.Windows.Forms.Button();
             this.fil_explorar = new System.Windows.Forms.OpenFileDialog();
+            this.cmb_unidad = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pcb_imagen)).BeginInit();
             this.SuspendLayout();
             // 
@@ -105,13 +105,6 @@
             this.txb_Nombre.Size = new System.Drawing.Size(84, 20);
             this.txb_Nombre.TabIndex = 10;
             // 
-            // txb_unidad
-            // 
-            this.txb_unidad.Location = new System.Drawing.Point(118, 74);
-            this.txb_unidad.Name = "txb_unidad";
-            this.txb_unidad.Size = new System.Drawing.Size(87, 20);
-            this.txb_unidad.TabIndex = 20;
-            // 
             // btn_imagen
             // 
             this.btn_imagen.Location = new System.Drawing.Point(157, 131);
@@ -122,6 +115,15 @@
             this.btn_imagen.UseVisualStyleBackColor = true;
             this.btn_imagen.Click += new System.EventHandler(this.btn_imagen_Click);
             // 
+            // cmb_unidad
+            // 
+            this.cmb_unidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_unidad.FormattingEnabled = true;
+            this.cmb_unidad.Location = new System.Drawing.Point(121, 82);
+            this.cmb_unidad.Name = "cmb_unidad";
+            this.cmb_unidad.Size = new System.Drawing.Size(84, 21);
+            this.cmb_unidad.TabIndex = 51;
+            // 
             // NuevoProductos
             // 
             this.AcceptButton = this.btn_aceptar;
@@ -129,8 +131,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btn_cancelar;
             this.ClientSize = new System.Drawing.Size(299, 398);
+            this.Controls.Add(this.cmb_unidad);
             this.Controls.Add(this.btn_imagen);
-            this.Controls.Add(this.txb_unidad);
             this.Controls.Add(this.txb_Nombre);
             this.Controls.Add(this.pcb_imagen);
             this.Controls.Add(this.btn_cancelar);
@@ -159,8 +161,8 @@
         private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.PictureBox pcb_imagen;
         private System.Windows.Forms.TextBox txb_Nombre;
-        private System.Windows.Forms.TextBox txb_unidad;
         private System.Windows.Forms.Button btn_imagen;
         private System.Windows.Forms.OpenFileDialog fil_explorar;
+        private System.Windows.Forms.ComboBox cmb_unidad;
     }
 }
