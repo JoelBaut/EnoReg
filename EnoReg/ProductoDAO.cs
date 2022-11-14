@@ -42,6 +42,16 @@ namespace EnoReg
             String sql = "select unidad from producto where nombre='" + nombreProducto + "'";
             // conexionDB.
         }
+       /* public double ObtenerStock(String nombreProducto)
+        {
+            double stock;
+            String sql = "select stock from producto where nombre='" + nombreProducto + "';";
+            MySqlDataReader rd = conexionDB.Select(sql);
+            while (rd.NextResult()) {
+                stock = rd.GetDouble(1);
+            }
+            return stock;
+        } */
 
         public void InsertarProducto(String nombre, String unidad, byte[] image)
         {
@@ -57,9 +67,12 @@ namespace EnoReg
             sql = "Update producto set stock = stock + "+ cantidad + " where id_producto = (SELECT id_producto from producto WHERE nombre='" + nombre + "')";
             conexionDB.Update(sql);
         }
-        public void InsertarSalida()
+        public void InsertarSalida(string nombre, string fecha, string lote, string cantidad, string destino, string observaciones)
         {
-
+            String sql = "INSERT INTO `producto_salida`(`id_producto`, `fecha_salida`, `lote`, `cantidad`, `destino`, `observaciones`) VALUES ((SELECT id_producto from producto WHERE nombre='"+ nombre + "'),'"+ fecha+ "','"+lote+ "','"+ cantidad + "','"+ destino + "','"+ observaciones + "');";
+            conexionDB.Insertar(sql);
+            sql = "Update producto set stock = stock - " + cantidad + " where id_producto = (SELECT id_producto from producto WHERE nombre='" + nombre + "')";
+            conexionDB.Update(sql);
         }
         public MySqlDataReader Cargarproductos() {
             String sql = "Select id_producto,nombre from producto";
