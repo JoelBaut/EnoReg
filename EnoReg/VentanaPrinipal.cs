@@ -76,6 +76,10 @@ namespace EnoReg
         {
             AñadirSalida sa = new AñadirSalida(productoDAO, productoDAO.Cargarproductos());
             sa.ShowDialog();
+            if (sa.DialogResult == DialogResult.OK)
+            {
+                CargarDataGrid();
+            }
         }
 
         private void btnFiltros_Click(object sender, EventArgs e)
@@ -83,6 +87,7 @@ namespace EnoReg
 
             Filtros filtros = new Filtros(productoDAO, productoDAO.Cargarproductos());
             filtros.ShowDialog();
+
         }
 
         public void btnNuevoProducto_Click(object sender, EventArgs e)
