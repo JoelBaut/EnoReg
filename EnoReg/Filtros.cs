@@ -24,6 +24,7 @@ namespace EnoReg
             this.BackColor = Properties.Settings.Default.ColorFondo;
             this.ForeColor = Properties.Settings.Default.ColorLetra;
             cargarCombo(dr);
+            dtp_dateLast.MaxDate = DateTime.Today;
         }
         private void cargarCombo(MySqlDataReader dr)
         {
@@ -37,6 +38,10 @@ namespace EnoReg
             }
             cbx_producto.DisplayMember = "nombre";
             cbx_producto.ValueMember = "id";
+
+            // añadir opcion cualquier producto
+            cbx_producto.Items.Insert(0, new { id_marca = 0, nombre = "<Cualquiera>" });
+            cbx_producto.SelectedIndex = 0;
         }
         private void btn_filtrar_Click(object sender, EventArgs e)
         {

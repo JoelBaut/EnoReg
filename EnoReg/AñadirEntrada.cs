@@ -21,6 +21,7 @@ namespace EnoReg
             this.dr = mySqlDataReader;
             InitializeComponent();
             cargarCombo(dr);
+            dtpFechaEntrada.MaxDate = DateTime.Today;
         }
 
         private void cargarCombo(MySqlDataReader dr)
