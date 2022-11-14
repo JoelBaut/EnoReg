@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -39,20 +40,24 @@ namespace EnoReg
 
             // añadir unidad a los valores
             String nombre;
+            String unidad="";
+            MySqlDataReader dr;
             for (int i = 0; i < dtgprincipal.RowCount; i++)
             {
-                nombre = (string)dtgprincipal.Rows[i].Cells[2].Value;
-
-
+                nombre = (string)dtgprincipal.Rows[i].Cells[1].Value;
+                dr = productoDAO.ObtenerUnidad(nombre);
+                while (dr.Read()) {
+                    unidad = dr.GetString(0);
+                }
                 if (!dtgprincipal.Rows[i].Cells[6].Value.Equals("-"))
                 {
-                    dtgprincipal.Rows[i].Cells[6].Value += " kg";
+                    dtgprincipal.Rows[i].Cells[6].Value += " "+unidad;
                 }
                 if (!dtgprincipal.Rows[i].Cells[7].Value.Equals("-"))
                 {
-                    dtgprincipal.Rows[i].Cells[7].Value += " kg";
+                    dtgprincipal.Rows[i].Cells[7].Value += " " + unidad;
                 }
-                dtgprincipal.Rows[i].Cells[8].Value += " kg";
+                dtgprincipal.Rows[i].Cells[8].Value += " " + unidad;
             }
 
         }

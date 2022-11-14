@@ -37,10 +37,10 @@ namespace EnoReg
                 " order by fecha DESC;";
             return conexionDB.Select(sql);
         }
-        public void ObtenerUnidad(String nombreProducto)
+        public MySqlDataReader ObtenerUnidad(String nombreProducto)
         {
             String sql = "select unidad from producto where nombre='" + nombreProducto + "'";
-            // conexionDB.
+            return conexionDB.Select(sql);
         }
 
         public void InsertarProducto(String nombre, String unidad, byte[] image)
