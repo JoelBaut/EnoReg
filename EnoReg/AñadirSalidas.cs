@@ -23,7 +23,7 @@ namespace EnoReg
             this.Location = location;
             this.Font = Properties.Settings.Default.Font;
             this.BackColor = Properties.Settings.Default.ColorFondo;
-            this.ForeColor = Properties.Settings.Default.ColorLetra;
+            this.ForeColor = Properties.Settings.Default.ColorLetra;            
             cargarCombo(dr);
             dtpFechaSalida.MaxDate = DateTime.Today;
         }
@@ -54,15 +54,37 @@ namespace EnoReg
                 this.Hide();
             }
 
-            
-        }
+            // validaciones
 
-        private void AñadirSalida_Load(object sender, EventArgs e)
-        {
-            this.Location = new Point(this.Location.X - this.Size.Width, this.Location.Y);
-            this.Font = Properties.Settings.Default.Font;
-            this.BackColor = Properties.Settings.Default.ColorFondo;
-            this.ForeColor = Properties.Settings.Default.ColorLetra;
+            // productos
+            if(cmbProductos.SelectedIndex.Equals(-1))
+            {
+                MessageBox.Show("Tienes que seleccionar un producto",
+                    "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                cmbProductos.Focus();
+            }
+
+            // lote
+            if (string.IsNullOrEmpty(txbLote.Text))
+            {
+                MessageBox.Show("Rellena el campo Lote",
+                "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                txbLote.Focus();
+                txbLote.BackColor = Color.LightCoral;
+            }
+
+            // cantidad
+            if (string.IsNullOrEmpty(txbCantidad.Text))
+            {
+                MessageBox.Show("Rellena el campo Cantidad",
+                "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                txbCantidad.Focus();
+                txbCantidad.BackColor = Color.LightCoral;
+            }
+
         }
     }
 }
