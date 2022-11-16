@@ -3,9 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Common;
 using System.Data.OleDb;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -98,6 +100,29 @@ namespace EnoReg
         {
             NuevoProductos nuevoProductos = new NuevoProductos(productoDAO);
             nuevoProductos.ShowDialog();
+        }
+
+        private void dtgprincipal_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int fila = dtgprincipal.CurrentCell.RowIndex;
+            String nombre = (string)dtgprincipal.Rows[fila].Cells[1].Value;
+
+            MySqlDataReader dataReader =  productoDAO.CargarImagen(nombre);
+
+            if (dataReader.Read())
+            {
+                if (dataReader["imagen"] != DBNull.Value)
+                {
+                    // recuperamos la imagen...
+                    byte[] imagenByte = (byte[])dataReader["imagen"];
+                    MemoryStream ms = new MemoryStream(imagenByte);
+                    picImagenProducto.Image = Image.FromStream(ms);
+                }
+                else
+                {
+                    picImagenProducto.Image = null;
+                }
+            }
         }
     }
 }

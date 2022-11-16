@@ -79,5 +79,10 @@ namespace EnoReg
             return conexionDB.Select(sql);
 
         }
+        public MySqlDataReader CargarImagen(String nombre)
+        {
+            String sql = "Select imagen from producto where nombre = '"+nombre+"'";
+            return conexionDB.Select(sql);
+        }
     }
 }
