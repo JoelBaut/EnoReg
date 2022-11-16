@@ -68,6 +68,7 @@
             this.dtgprincipal.Size = new System.Drawing.Size(879, 518);
             this.dtgprincipal.TabIndex = 6;
             this.dtgprincipal.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgprincipal_CellClick);
+            this.dtgprincipal.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtgprincipal_ColumnHeaderMouseClick);
             // 
             // btnNuevoProducto
             // 
