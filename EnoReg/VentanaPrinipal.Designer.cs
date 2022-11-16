@@ -37,11 +37,15 @@
             this.btnMostrarTodo = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picImagenCentro = new System.Windows.Forms.PictureBox();
             this.picImagenProducto = new System.Windows.Forms.PictureBox();
+            this.LogoCentro = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtgprincipal)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picImagenCentro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picImagenProducto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LogoCentro)).BeginInit();
             this.SuspendLayout();
             // 
             // dtgprincipal
@@ -65,6 +69,7 @@
             this.dtgprincipal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgprincipal.Size = new System.Drawing.Size(879, 518);
             this.dtgprincipal.TabIndex = 6;
+            this.dtgprincipal.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgprincipal_CellClick);
             // 
             // btnNuevoProducto
             // 
@@ -138,7 +143,9 @@
             this.tableLayoutPanel1.Controls.Add(this.btnMostrarTodo, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.btnFiltros, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.btnNuevoProducto, 3, 6);
+            this.tableLayoutPanel1.Controls.Add(this.picImagenCentro, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.picImagenProducto, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.LogoCentro, 0, 6);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -171,19 +178,43 @@
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
+            // picImagenCentro
+            // 
+            this.picImagenCentro.Cursor = System.Windows.Forms.Cursors.Cross;
+            this.picImagenCentro.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picImagenCentro.ErrorImage = global::EnoReg.Properties.Resources.logoDptoIndAli;
+            this.picImagenCentro.Image = global::EnoReg.Properties.Resources.logoIES;
+            this.picImagenCentro.InitialImage = global::EnoReg.Properties.Resources.logoDptoIndAli;
+            this.picImagenCentro.Location = new System.Drawing.Point(13, 467);
+            this.picImagenCentro.Name = "picImagenCentro";
+            this.tableLayoutPanel1.SetRowSpan(this.picImagenCentro, 2);
+            this.picImagenCentro.Size = new System.Drawing.Size(155, 148);
+            this.picImagenCentro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picImagenCentro.TabIndex = 0;
+            this.picImagenCentro.TabStop = false;
+            // 
             // picImagenProducto
             // 
             this.picImagenProducto.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picImagenProducto.ErrorImage = global::EnoReg.Properties.Resources.logoDptoIndAli;
-            this.picImagenProducto.Image = global::EnoReg.Properties.Resources.logoIES;
-            this.picImagenProducto.InitialImage = global::EnoReg.Properties.Resources.logoDptoIndAli;
             this.picImagenProducto.Location = new System.Drawing.Point(13, 97);
             this.picImagenProducto.Name = "picImagenProducto";
             this.tableLayoutPanel1.SetRowSpan(this.picImagenProducto, 2);
             this.picImagenProducto.Size = new System.Drawing.Size(155, 142);
             this.picImagenProducto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picImagenProducto.TabIndex = 0;
+            this.picImagenProducto.TabIndex = 8;
             this.picImagenProducto.TabStop = false;
+            // 
+            // LogoCentro
+            // 
+            this.LogoCentro.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LogoCentro.InitialImage = global::EnoReg.Properties.Resources.logoIES;
+            this.LogoCentro.Location = new System.Drawing.Point(13, 467);
+            this.LogoCentro.Name = "LogoCentro";
+            this.tableLayoutPanel1.SetRowSpan(this.LogoCentro, 2);
+            this.LogoCentro.Size = new System.Drawing.Size(155, 148);
+            this.LogoCentro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.LogoCentro.TabIndex = 8;
+            this.LogoCentro.TabStop = false;
             // 
             // VentanaPrinipal
             // 
@@ -201,7 +232,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgprincipal)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picImagenCentro)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picImagenProducto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LogoCentro)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -212,9 +245,11 @@
         private System.Windows.Forms.Button btnAñadirSalida;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnAñadirEntrada;
-        private System.Windows.Forms.PictureBox picImagenProducto;
+        private System.Windows.Forms.PictureBox picImagenCentro;
         private System.Windows.Forms.Button btnMostrarTodo;
         private System.Windows.Forms.Button btnFiltros;
         private System.Windows.Forms.Button btnNuevoProducto;
+
+        private System.Windows.Forms.PictureBox picImagenProducto;
     }
 }
