@@ -37,10 +37,10 @@ namespace EnoReg
                 " order by fecha DESC;";
             return conexionDB.Select(sql);
         }
-        public void ObtenerUnidad(String nombreProducto)
+        public MySqlDataReader ObtenerUnidad(String nombreProducto)
         {
             String sql = "select unidad from producto where nombre='" + nombreProducto + "'";
-            // conexionDB.
+            return conexionDB.Select(sql);
         }
        public double ObtenerStock(String nombreProducto)
         {
@@ -78,6 +78,11 @@ namespace EnoReg
             String sql = "Select id_producto,nombre from producto";
             return conexionDB.Select(sql);
 
+        }
+        public MySqlDataReader CargarImagen(String nombre)
+        {
+            String sql = "Select imagen from producto where nombre = '"+nombre+"'";
+            return conexionDB.Select(sql);
         }
     }
 }

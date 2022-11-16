@@ -1,10 +1,13 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Common;
 using System.Data.OleDb;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,11 +30,15 @@ namespace EnoReg
             this.ForeColor = Properties.Settings.Default.ColorLetra;
             productoDAO = new ProductoDAO();
             CargarDataGrid();
+            // localizacion del boton mostrar todo
+            // Point localizacion = btnMostrarTodo.FindForm().PointToClient(
+            //    btnMostrarTodo.Parent.PointToScreen(btnMostrarTodo.Location));
+            // btnFiltros.Location = localizacion;
         }
 
         private void CargarDataGrid()
         {
-            // cargar datos
+            // cargar datos 
             DataTable dt = new DataTable();
             dt.Load(productoDAO.CargarTodo());
             dtgprincipal.DataSource = dt;
@@ -39,20 +46,24 @@ namespace EnoReg
 
             // añadir unidad a los valores
             String nombre;
+            String unidad="";
+            MySqlDataReader dr;
             for (int i = 0; i < dtgprincipal.RowCount; i++)
             {
-                nombre = (string)dtgprincipal.Rows[i].Cells[2].Value;
-
-
+                nombre = (string)dtgprincipal.Rows[i].Cells[1].Value;
+                dr = productoDAO.ObtenerUnidad(nombre);
+                while (dr.Read()) {
+                    unidad = dr.GetString(0);
+                }
                 if (!dtgprincipal.Rows[i].Cells[6].Value.Equals("-"))
                 {
-                    dtgprincipal.Rows[i].Cells[6].Value += " kg";
+                    dtgprincipal.Rows[i].Cells[6].Value += " "+unidad;
                 }
                 if (!dtgprincipal.Rows[i].Cells[7].Value.Equals("-"))
                 {
-                    dtgprincipal.Rows[i].Cells[7].Value += " kg";
+                    dtgprincipal.Rows[i].Cells[7].Value += " " + unidad;
                 }
-                dtgprincipal.Rows[i].Cells[8].Value += " kg";
+                dtgprincipal.Rows[i].Cells[8].Value += " " + unidad;
             }
 
         }
@@ -93,6 +104,29 @@ namespace EnoReg
         {
             NuevoProductos nuevoProductos = new NuevoProductos(productoDAO);
             nuevoProductos.ShowDialog();
+        }
+
+        private void dtgprincipal_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int fila = dtgprincipal.CurrentCell.RowIndex;
+            String nombre = (string)dtgprincipal.Rows[fila].Cells[1].Value;
+
+            MySqlDataReader dataReader =  productoDAO.CargarImagen(nombre);
+
+            if (dataReader.Read())
+            {
+                if (dataReader["imagen"] != DBNull.Value)
+                {
+                    // recuperamos la imagen...
+                    byte[] imagenByte = (byte[])dataReader["imagen"];
+                    MemoryStream ms = new MemoryStream(imagenByte);
+                    picImagenProducto.Image = Image.FromStream(ms);
+                }
+                else
+                {
+                    picImagenProducto.Image = null;
+                }
+            }
         }
     }
 }
