@@ -25,7 +25,8 @@ namespace EnoReg
             this.Font = Properties.Settings.Default.Font;
             this.BackColor = Properties.Settings.Default.ColorFondo;
             this.ForeColor = Properties.Settings.Default.ColorLetra;
-            cmb_unidad.Items.Add("kg");
+
+            cmb_unidad.Items.Add("Kg");
             cmb_unidad.Items.Add("L");
         }
 
@@ -49,8 +50,8 @@ namespace EnoReg
             FileStream stream = new FileStream(ruta, FileMode.Open, FileAccess.Read);
             BinaryReader brs = new BinaryReader(stream);
             img = brs.ReadBytes((int)stream.Length);
-
             productoDAO.InsertarProducto(txb_Nombre.Text,cmb_unidad.Text, img);
+
         }
     }
 }
