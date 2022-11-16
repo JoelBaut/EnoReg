@@ -48,7 +48,7 @@ namespace EnoReg
 
         private void btnAceptarEntrada_Click(object sender, EventArgs e)
         {
-            productoDAO.InsertarEntrada(cmbProductos.Text, dtpFechaEntrada.Value.ToString("yyyy-MM-dd"), cmbLote.Text, cmbAlbaran.Text,cmbProveedor.Text, dtpCaducidad.Value.ToString("yyyy-MM-dd"), cmbCantidad.Text);
+            productoDAO.InsertarEntrada(cmbProductos.Text, dtpFechaEntrada.Value.ToString("yyyy-MM-dd"), txbLote.Text, txbAlbaran.Text,txbProveedor.Text, dtpCaducidad.Value.ToString("yyyy-MM-dd"), txbCantidad.Text);
             productoDAO.cerrarConexion();
             DialogResult = DialogResult.OK;
             this.Hide();
