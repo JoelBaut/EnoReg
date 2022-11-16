@@ -42,16 +42,16 @@ namespace EnoReg
             String sql = "select unidad from producto where nombre='" + nombreProducto + "'";
             return conexionDB.Select(sql);
         }
-       /* public double ObtenerStock(String nombreProducto)
+       public double ObtenerStock(String nombreProducto)
         {
-            double stock;
+            double stock =-1;
             String sql = "select stock from producto where nombre='" + nombreProducto + "';";
             MySqlDataReader rd = conexionDB.Select(sql);
-            while (rd.NextResult()) {
-                stock = rd.GetDouble(1);
+            while (rd.Read()) {
+                stock = rd.GetDouble(0);
             }
             return stock;
-        } */
+        } 
 
         public void InsertarProducto(String nombre, String unidad, byte[] image)
         {

@@ -49,8 +49,8 @@ namespace EnoReg
             FileStream stream = new FileStream(ruta, FileMode.Open, FileAccess.Read);
             BinaryReader brs = new BinaryReader(stream);
             img = brs.ReadBytes((int)stream.Length);
-
             productoDAO.InsertarProducto(txb_Nombre.Text,cmb_unidad.Text, img);
+
         }
     }
 }
