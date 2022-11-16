@@ -3,9 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Common;
 using System.Data.OleDb;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -42,7 +44,7 @@ namespace EnoReg
             dtgprincipal.DataSource = dt;
             productoDAO.cerrarConexion();
 
-            // añadir unidad a los valores
+            // añadir unidad a los valores y colores
             String nombre;
             String unidad="";
             MySqlDataReader dr;
@@ -56,10 +58,12 @@ namespace EnoReg
                 if (!dtgprincipal.Rows[i].Cells[6].Value.Equals("-"))
                 {
                     dtgprincipal.Rows[i].Cells[6].Value += " "+unidad;
+                    dtgprincipal.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(218,255,202);
                 }
                 if (!dtgprincipal.Rows[i].Cells[7].Value.Equals("-"))
                 {
                     dtgprincipal.Rows[i].Cells[7].Value += " " + unidad;
+                    dtgprincipal.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(255, 192, 192);
                 }
                 dtgprincipal.Rows[i].Cells[8].Value += " " + unidad;
             }
@@ -74,6 +78,10 @@ namespace EnoReg
         {
             AñadirEntrada en = new AñadirEntrada(productoDAO, productoDAO.Cargarproductos());
             en.ShowDialog();
+            if (en.DialogResult == DialogResult.OK)
+            {
+                CargarDataGrid();
+            }
         }
 
         private void btnAñadirSalida_Click(object sender, EventArgs e)
@@ -98,6 +106,45 @@ namespace EnoReg
         {
             NuevoProductos nuevoProductos = new NuevoProductos(productoDAO);
             nuevoProductos.ShowDialog();
+        }
+
+        private void dtgprincipal_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int fila = dtgprincipal.CurrentCell.RowIndex;
+            String nombre = (string)dtgprincipal.Rows[fila].Cells[1].Value;
+
+            MySqlDataReader dataReader =  productoDAO.CargarImagen(nombre);
+
+            if (dataReader.Read())
+            {
+                if (dataReader["imagen"] != DBNull.Value)
+                {
+                    // recuperamos la imagen...
+                    byte[] imagenByte = (byte[])dataReader["imagen"];
+                    MemoryStream ms = new MemoryStream(imagenByte);
+                    picImagenProducto.Image = Image.FromStream(ms);
+                }
+                else
+                {
+                    picImagenProducto.Image = null;
+                }
+            }
+        }
+
+        private void dtgprincipal_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            // añadir colores cuando cambian el modo de ordenamiento al pulsar en el header de las columnas
+            for (int i = 0; i < dtgprincipal.RowCount; i++)
+            {
+                if (!dtgprincipal.Rows[i].Cells[6].Value.Equals("-"))
+                {
+                    dtgprincipal.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(218, 255, 202);
+                }
+                if (!dtgprincipal.Rows[i].Cells[7].Value.Equals("-"))
+                {
+                    dtgprincipal.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(255, 192, 192);
+                }
+            }
         }
     }
 }
