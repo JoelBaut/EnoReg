@@ -28,6 +28,10 @@ namespace EnoReg
             this.ForeColor = Properties.Settings.Default.ColorLetra;
             productoDAO = new ProductoDAO();
             CargarDataGrid();
+            // localizacion del boton mostrar todo
+            // Point localizacion = btnMostrarTodo.FindForm().PointToClient(
+            //    btnMostrarTodo.Parent.PointToScreen(btnMostrarTodo.Location));
+            // btnFiltros.Location = localizacion;
         }
 
         private void CargarDataGrid()
