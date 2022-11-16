@@ -44,7 +44,7 @@ namespace EnoReg
             dtgprincipal.DataSource = dt;
             productoDAO.cerrarConexion();
 
-            // añadir unidad a los valores
+            // añadir unidad a los valores y colores
             String nombre;
             String unidad="";
             MySqlDataReader dr;
@@ -58,10 +58,12 @@ namespace EnoReg
                 if (!dtgprincipal.Rows[i].Cells[6].Value.Equals("-"))
                 {
                     dtgprincipal.Rows[i].Cells[6].Value += " "+unidad;
+                    dtgprincipal.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(218,255,202);
                 }
                 if (!dtgprincipal.Rows[i].Cells[7].Value.Equals("-"))
                 {
                     dtgprincipal.Rows[i].Cells[7].Value += " " + unidad;
+                    dtgprincipal.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(255, 192, 192);
                 }
                 dtgprincipal.Rows[i].Cells[8].Value += " " + unidad;
             }
