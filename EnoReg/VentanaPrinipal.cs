@@ -130,5 +130,21 @@ namespace EnoReg
                 }
             }
         }
+
+        private void dtgprincipal_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            // añadir colores cuando cambian el modo de ordenamiento al pulsar en el header de las columnas
+            for (int i = 0; i < dtgprincipal.RowCount; i++)
+            {
+                if (!dtgprincipal.Rows[i].Cells[6].Value.Equals("-"))
+                {
+                    dtgprincipal.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(218, 255, 202);
+                }
+                if (!dtgprincipal.Rows[i].Cells[7].Value.Equals("-"))
+                {
+                    dtgprincipal.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(255, 192, 192);
+                }
+            }
+        }
     }
 }
