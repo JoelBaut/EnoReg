@@ -36,16 +36,16 @@
             this.lblProveedorEntrada = new System.Windows.Forms.Label();
             this.lblAlbaranEntrada = new System.Windows.Forms.Label();
             this.lblObservacionesEntrada = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.cmbLote = new System.Windows.Forms.TextBox();
+            this.cmbCantidad = new System.Windows.Forms.TextBox();
+            this.cmbProveedor = new System.Windows.Forms.TextBox();
+            this.cmbAlbaran = new System.Windows.Forms.TextBox();
+            this.cmbObservaciones = new System.Windows.Forms.TextBox();
             this.dtpFechaEntrada = new System.Windows.Forms.DateTimePicker();
             this.btnAceptarEntrada = new System.Windows.Forms.Button();
             this.btnCancelarEntrada = new System.Windows.Forms.Button();
             this.cmbProductos = new System.Windows.Forms.ComboBox();
+            this.dtpCaducidad = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // lblFechaEntrada
@@ -128,54 +128,48 @@
             this.lblObservacionesEntrada.TabIndex = 81;
             this.lblObservacionesEntrada.Text = "Observaciones:";
             // 
-            // textBox3
+            // cmbLote
             // 
-            this.textBox3.Location = new System.Drawing.Point(161, 154);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(265, 22);
-            this.textBox3.TabIndex = 30;
+
+            this.cmbLote.Location = new System.Drawing.Point(121, 125);
+            this.cmbLote.Name = "cmbLote";
+            this.cmbLote.Size = new System.Drawing.Size(200, 20);
+            this.cmbLote.TabIndex = 30;
+
             // 
-            // textBox4
+            // cmbCantidad
             // 
-            this.textBox4.Location = new System.Drawing.Point(161, 209);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(265, 22);
-            this.textBox4.TabIndex = 40;
+
+            this.cmbCantidad.Location = new System.Drawing.Point(121, 170);
+            this.cmbCantidad.Name = "cmbCantidad";
+            this.cmbCantidad.Size = new System.Drawing.Size(200, 20);
+            this.cmbCantidad.TabIndex = 40;
             // 
-            // textBox5
+            // cmbProveedor
             // 
-            this.textBox5.Location = new System.Drawing.Point(161, 265);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(265, 22);
-            this.textBox5.TabIndex = 50;
+            this.cmbProveedor.Location = new System.Drawing.Point(121, 260);
+            this.cmbProveedor.Name = "cmbProveedor";
+            this.cmbProveedor.Size = new System.Drawing.Size(200, 20);
+            this.cmbProveedor.TabIndex = 60;
+
             // 
-            // textBox6
+            // cmbAlbaran
             // 
-            this.textBox6.Location = new System.Drawing.Point(161, 320);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(265, 22);
-            this.textBox6.TabIndex = 60;
+
+            this.cmbAlbaran.Location = new System.Drawing.Point(121, 305);
+            this.cmbAlbaran.Name = "cmbAlbaran";
+            this.cmbAlbaran.Size = new System.Drawing.Size(200, 20);
+            this.cmbAlbaran.TabIndex = 70;
+
             // 
-            // textBox7
+            // cmbObservaciones
             // 
-            this.textBox7.Location = new System.Drawing.Point(161, 375);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(265, 22);
-            this.textBox7.TabIndex = 70;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(161, 431);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(265, 72);
-            this.textBox8.TabIndex = 80;
+
+            this.cmbObservaciones.Location = new System.Drawing.Point(121, 350);
+            this.cmbObservaciones.Multiline = true;
+            this.cmbObservaciones.Name = "cmbObservaciones";
+            this.cmbObservaciones.Size = new System.Drawing.Size(200, 59);
+            this.cmbObservaciones.TabIndex = 80;
             // 
             // dtpFechaEntrada
             // 
@@ -219,23 +213,33 @@
             this.cmbProductos.Size = new System.Drawing.Size(265, 24);
             this.cmbProductos.TabIndex = 101;
             // 
+            // dtpCaducidad
+            // 
+            this.dtpCaducidad.Cursor = System.Windows.Forms.Cursors.Default;
+            this.dtpCaducidad.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpCaducidad.Location = new System.Drawing.Point(121, 216);
+            this.dtpCaducidad.Name = "dtpCaducidad";
+            this.dtpCaducidad.Size = new System.Drawing.Size(200, 20);
+            this.dtpCaducidad.TabIndex = 102;
+            // 
             // AñadirEntrada
             // 
             this.AcceptButton = this.btnAceptarEntrada;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancelarEntrada;
-            this.ClientSize = new System.Drawing.Size(505, 586);
+
+            this.ClientSize = new System.Drawing.Size(379, 476);
+            this.Controls.Add(this.dtpCaducidad);
             this.Controls.Add(this.cmbProductos);
             this.Controls.Add(this.btnCancelarEntrada);
             this.Controls.Add(this.btnAceptarEntrada);
             this.Controls.Add(this.dtpFechaEntrada);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.cmbObservaciones);
+            this.Controls.Add(this.cmbAlbaran);
+            this.Controls.Add(this.cmbProveedor);
+            this.Controls.Add(this.cmbCantidad);
+            this.Controls.Add(this.cmbLote);
             this.Controls.Add(this.lblObservacionesEntrada);
             this.Controls.Add(this.lblAlbaranEntrada);
             this.Controls.Add(this.lblProveedorEntrada);
@@ -254,7 +258,6 @@
             this.Load += new System.EventHandler(this.AñadirEntrada_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion
@@ -267,15 +270,15 @@
         private System.Windows.Forms.Label lblProveedorEntrada;
         private System.Windows.Forms.Label lblAlbaranEntrada;
         private System.Windows.Forms.Label lblObservacionesEntrada;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox cmbLote;
+        private System.Windows.Forms.TextBox cmbCantidad;
+        private System.Windows.Forms.TextBox cmbProveedor;
+        private System.Windows.Forms.TextBox cmbAlbaran;
+        private System.Windows.Forms.TextBox cmbObservaciones;
         private System.Windows.Forms.DateTimePicker dtpFechaEntrada;
         private System.Windows.Forms.Button btnAceptarEntrada;
         private System.Windows.Forms.Button btnCancelarEntrada;
         private System.Windows.Forms.ComboBox cmbProductos;
+        private System.Windows.Forms.DateTimePicker dtpCaducidad;
     }
 }

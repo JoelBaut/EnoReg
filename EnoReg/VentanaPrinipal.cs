@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,14 +28,41 @@ namespace EnoReg
             this.ForeColor = Properties.Settings.Default.ColorLetra;
             productoDAO = new ProductoDAO();
             CargarDataGrid();
+            // localizacion del boton mostrar todo
+            // Point localizacion = btnMostrarTodo.FindForm().PointToClient(
+            //    btnMostrarTodo.Parent.PointToScreen(btnMostrarTodo.Location));
+            // btnFiltros.Location = localizacion;
         }
 
         private void CargarDataGrid()
         {
+            // cargar datos 
             DataTable dt = new DataTable();
             dt.Load(productoDAO.CargarTodo());
             dtgprincipal.DataSource = dt;
             productoDAO.cerrarConexion();
+
+            // añadir unidad a los valores
+            String nombre;
+            String unidad="";
+            MySqlDataReader dr;
+            for (int i = 0; i < dtgprincipal.RowCount; i++)
+            {
+                nombre = (string)dtgprincipal.Rows[i].Cells[1].Value;
+                dr = productoDAO.ObtenerUnidad(nombre);
+                while (dr.Read()) {
+                    unidad = dr.GetString(0);
+                }
+                if (!dtgprincipal.Rows[i].Cells[6].Value.Equals("-"))
+                {
+                    dtgprincipal.Rows[i].Cells[6].Value += " "+unidad;
+                }
+                if (!dtgprincipal.Rows[i].Cells[7].Value.Equals("-"))
+                {
+                    dtgprincipal.Rows[i].Cells[7].Value += " " + unidad;
+                }
+                dtgprincipal.Rows[i].Cells[8].Value += " " + unidad;
+            }
 
         }
 
@@ -52,6 +80,10 @@ namespace EnoReg
         {
             AñadirSalida sa = new AñadirSalida(productoDAO, productoDAO.Cargarproductos());
             sa.ShowDialog();
+            if (sa.DialogResult == DialogResult.OK)
+            {
+                CargarDataGrid();
+            }
         }
 
         private void btnFiltros_Click(object sender, EventArgs e)
@@ -59,6 +91,7 @@ namespace EnoReg
 
             Filtros filtros = new Filtros(productoDAO, productoDAO.Cargarproductos());
             filtros.ShowDialog();
+
         }
 
         public void btnNuevoProducto_Click(object sender, EventArgs e)

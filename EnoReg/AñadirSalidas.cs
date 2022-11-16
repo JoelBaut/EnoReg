@@ -24,6 +24,7 @@ namespace EnoReg
             this.BackColor = Properties.Settings.Default.ColorFondo;
             this.ForeColor = Properties.Settings.Default.ColorLetra;
             cargarCombo(dr);
+            dtpFechaSalida.MaxDate = DateTime.Today;
         }
         private void cargarCombo(MySqlDataReader dr)
         {
@@ -42,6 +43,11 @@ namespace EnoReg
         private void btnAceptar_Click(object sender, EventArgs e)
         {
 
+            productoDAO.InsertarSalida(cmbProductos.Text, dtpFechaSalida.Value.ToString("yyyy-MM-dd"),txbLote.Text, txbCantidad.Text, txbDestino.Text, txbObservaciones.Text);
+            productoDAO.cerrarConexion();
+            DialogResult = DialogResult.OK;
+            this.Hide();
+            
         }
 
     }
