@@ -51,6 +51,27 @@ namespace EnoReg
             img = brs.ReadBytes((int)stream.Length);
             productoDAO.InsertarProducto(txb_Nombre.Text,cmb_unidad.Text, img);
 
+            // validaciones
+
+            // nombre
+            if (string.IsNullOrEmpty(txb_Nombre.Text))
+            {
+                MessageBox.Show("Rellena el campo Nombre",
+                "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                txb_Nombre.Focus();
+                txb_Nombre.BackColor = Color.LightCoral;
+            }
+
+            // unidad
+            if (cmb_unidad.SelectedIndex.Equals(-1))
+            {
+                MessageBox.Show("Tienes que seleccionar una unidad",
+                    "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                cmb_unidad.Focus();
+                cmb_unidad.BackColor = Color.LightCoral;
+            }
         }
     }
 }

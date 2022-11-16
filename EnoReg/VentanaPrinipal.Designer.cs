@@ -38,14 +38,12 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.picImagenCentro = new System.Windows.Forms.PictureBox();
-            this.picImagenProducto = new System.Windows.Forms.PictureBox();
-            this.LogoCentro = new System.Windows.Forms.PictureBox();
+            this.picImagenProducto = new System.Windows.Forms.PictureBox();            
             ((System.ComponentModel.ISupportInitialize)(this.dtgprincipal)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picImagenCentro)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picImagenProducto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LogoCentro)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picImagenProducto)).BeginInit();           
             this.SuspendLayout();
             // 
             // dtgprincipal
@@ -144,8 +142,7 @@
             this.tableLayoutPanel1.Controls.Add(this.btnFiltros, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.btnNuevoProducto, 3, 6);
             this.tableLayoutPanel1.Controls.Add(this.picImagenCentro, 0, 6);
-            this.tableLayoutPanel1.Controls.Add(this.picImagenProducto, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.LogoCentro, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.picImagenProducto, 0, 1);            
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -203,19 +200,7 @@
             this.picImagenProducto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picImagenProducto.TabIndex = 8;
             this.picImagenProducto.TabStop = false;
-            // 
-            // LogoCentro
-            // 
-            this.LogoCentro.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LogoCentro.InitialImage = global::EnoReg.Properties.Resources.logoIES;
-            this.LogoCentro.Location = new System.Drawing.Point(13, 467);
-            this.LogoCentro.Name = "LogoCentro";
-            this.tableLayoutPanel1.SetRowSpan(this.LogoCentro, 2);
-            this.LogoCentro.Size = new System.Drawing.Size(155, 148);
-            this.LogoCentro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.LogoCentro.TabIndex = 8;
-            this.LogoCentro.TabStop = false;
-            // 
+            //             
             // VentanaPrinipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -233,8 +218,7 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picImagenCentro)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picImagenProducto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LogoCentro)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picImagenProducto)).EndInit();            
             this.ResumeLayout(false);
 
         }
