@@ -123,7 +123,7 @@
             // cmbLote
             // 
             this.cmbLote.Location = new System.Drawing.Point(121, 129);
-            this.cmbLote.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbLote.Margin = new System.Windows.Forms.Padding(2);
             this.cmbLote.Name = "cmbLote";
             this.cmbLote.Size = new System.Drawing.Size(200, 20);
             this.cmbLote.TabIndex = 30;
@@ -131,7 +131,7 @@
             // cmbCantidad
             // 
             this.cmbCantidad.Location = new System.Drawing.Point(121, 174);
-            this.cmbCantidad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbCantidad.Margin = new System.Windows.Forms.Padding(2);
             this.cmbCantidad.Name = "cmbCantidad";
             this.cmbCantidad.Size = new System.Drawing.Size(200, 20);
             this.cmbCantidad.TabIndex = 40;
@@ -139,7 +139,7 @@
             // cmbProveedor
             // 
             this.cmbProveedor.Location = new System.Drawing.Point(121, 264);
-            this.cmbProveedor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbProveedor.Margin = new System.Windows.Forms.Padding(2);
             this.cmbProveedor.Name = "cmbProveedor";
             this.cmbProveedor.Size = new System.Drawing.Size(200, 20);
             this.cmbProveedor.TabIndex = 60;
@@ -147,7 +147,7 @@
             // cmbAlbaran
             // 
             this.cmbAlbaran.Location = new System.Drawing.Point(121, 309);
-            this.cmbAlbaran.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbAlbaran.Margin = new System.Windows.Forms.Padding(2);
             this.cmbAlbaran.Name = "cmbAlbaran";
             this.cmbAlbaran.Size = new System.Drawing.Size(200, 20);
             this.cmbAlbaran.TabIndex = 70;
@@ -155,7 +155,7 @@
             // cmbObservaciones
             // 
             this.cmbObservaciones.Location = new System.Drawing.Point(121, 354);
-            this.cmbObservaciones.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbObservaciones.Margin = new System.Windows.Forms.Padding(2);
             this.cmbObservaciones.Multiline = true;
             this.cmbObservaciones.Name = "cmbObservaciones";
             this.cmbObservaciones.Size = new System.Drawing.Size(200, 49);
@@ -204,7 +204,7 @@
             this.dtpCaducidad.Cursor = System.Windows.Forms.Cursors.Default;
             this.dtpCaducidad.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpCaducidad.Location = new System.Drawing.Point(121, 216);
-            this.dtpCaducidad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpCaducidad.Margin = new System.Windows.Forms.Padding(2);
             this.dtpCaducidad.Name = "dtpCaducidad";
             this.dtpCaducidad.Size = new System.Drawing.Size(200, 20);
             this.dtpCaducidad.TabIndex = 102;
