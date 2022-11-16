@@ -84,7 +84,14 @@ namespace EnoReg
                 txbCantidad.Focus();
                 txbCantidad.BackColor = Color.LightCoral;
             }
+        }
 
+        private void AñadirSalida_Load(object sender, EventArgs e)
+        {
+            this.Location = new Point(this.Location.X - this.Size.Width, this.Location.Y);
+            this.Font = Properties.Settings.Default.Font;
+            this.BackColor = Properties.Settings.Default.ColorFondo;
+            this.ForeColor = Properties.Settings.Default.ColorLetra;
         }
     }
 }
