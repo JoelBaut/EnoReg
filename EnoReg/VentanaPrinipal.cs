@@ -65,6 +65,10 @@ namespace EnoReg
         {
             AñadirEntrada en = new AñadirEntrada(productoDAO, productoDAO.Cargarproductos());
             en.ShowDialog();
+            if (en.DialogResult == DialogResult.OK)
+            {
+                CargarDataGrid();
+            }
         }
 
         private void btnAñadirSalida_Click(object sender, EventArgs e)

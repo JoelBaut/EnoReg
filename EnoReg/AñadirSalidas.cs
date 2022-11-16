@@ -42,10 +42,16 @@ namespace EnoReg
         private void btnAceptar_Click(object sender, EventArgs e)
         {
 
-            productoDAO.InsertarSalida(cmbProductos.Text, dtpFechaSalida.Value.ToString("yyyy-MM-dd"),txbLote.Text, txbCantidad.Text, txbDestino.Text, txbObservaciones.Text);
-            productoDAO.cerrarConexion();
-            DialogResult = DialogResult.OK;
-            this.Hide();
+            if (productoDAO.ObtenerStock(cmbProductos.Text) - int.Parse(txbCantidad.Text)<=0) {
+                MessageBox.Show("Se pretende sacar mas productos de los disponibles.");
+            }
+            else {
+                productoDAO.InsertarSalida(cmbProductos.Text, dtpFechaSalida.Value.ToString("yyyy-MM-dd"), txbLote.Text, txbCantidad.Text, txbDestino.Text, txbObservaciones.Text);
+                productoDAO.cerrarConexion();
+                DialogResult = DialogResult.OK;
+                this.Hide();
+            }
+
             
         }
 
