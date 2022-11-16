@@ -38,7 +38,6 @@
             this.btn_imagen = new System.Windows.Forms.Button();
             this.fil_explorar = new System.Windows.Forms.OpenFileDialog();
             this.cmb_unidad = new System.Windows.Forms.ComboBox();
-
             ((System.ComponentModel.ISupportInitialize)(this.pcb_imagen)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,12 +69,12 @@
             this.lbl_imagen.Name = "lbl_imagen";
             this.lbl_imagen.Size = new System.Drawing.Size(52, 16);
             this.lbl_imagen.TabIndex = 2;
-            this.lbl_imagen.Text = "imagen";
+            this.lbl_imagen.Text = "Imagen";
             // 
             // btn_aceptar
             // 
-            this.btn_aceptar.Location = new System.Drawing.Point(72, 417);
-            this.btn_aceptar.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_aceptar.Location = new System.Drawing.Point(217, 519);
+            this.btn_aceptar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_aceptar.Name = "btn_aceptar";
             this.btn_aceptar.Size = new System.Drawing.Size(100, 43);
             this.btn_aceptar.TabIndex = 40;
@@ -86,8 +85,8 @@
             // btn_cancelar
             // 
             this.btn_cancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btn_cancelar.Location = new System.Drawing.Point(196, 417);
-            this.btn_cancelar.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_cancelar.Location = new System.Drawing.Point(328, 519);
+            this.btn_cancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_cancelar.Name = "btn_cancelar";
             this.btn_cancelar.Size = new System.Drawing.Size(100, 43);
             this.btn_cancelar.TabIndex = 50;
@@ -97,10 +96,10 @@
             // pcb_imagen
             // 
             this.pcb_imagen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pcb_imagen.Location = new System.Drawing.Point(97, 201);
-            this.pcb_imagen.Margin = new System.Windows.Forms.Padding(4);
+            this.pcb_imagen.Location = new System.Drawing.Point(97, 224);
+            this.pcb_imagen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pcb_imagen.Name = "pcb_imagen";
-            this.pcb_imagen.Size = new System.Drawing.Size(175, 155);
+            this.pcb_imagen.Size = new System.Drawing.Size(330, 288);
             this.pcb_imagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcb_imagen.TabIndex = 5;
             this.pcb_imagen.TabStop = false;
@@ -108,33 +107,31 @@
             // txb_Nombre
             // 
             this.txb_Nombre.Location = new System.Drawing.Point(161, 37);
-            this.txb_Nombre.Margin = new System.Windows.Forms.Padding(4);
+            this.txb_Nombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txb_Nombre.Name = "txb_Nombre";
-            this.txb_Nombre.Size = new System.Drawing.Size(111, 22);
+            this.txb_Nombre.Size = new System.Drawing.Size(265, 22);
             this.txb_Nombre.TabIndex = 10;
             // 
             // btn_imagen
             // 
-            this.btn_imagen.Location = new System.Drawing.Point(209, 161);
-            this.btn_imagen.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_imagen.Location = new System.Drawing.Point(161, 153);
+            this.btn_imagen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_imagen.Name = "btn_imagen";
-            this.btn_imagen.Size = new System.Drawing.Size(64, 26);
+            this.btn_imagen.Size = new System.Drawing.Size(100, 43);
             this.btn_imagen.TabIndex = 30;
-            this.btn_imagen.Text = "buscar";
+            this.btn_imagen.Text = "Buscar";
             this.btn_imagen.UseVisualStyleBackColor = true;
             this.btn_imagen.Click += new System.EventHandler(this.btn_imagen_Click);
             // 
-
             // cmb_unidad
             // 
             this.cmb_unidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_unidad.FormattingEnabled = true;
-            this.cmb_unidad.Location = new System.Drawing.Point(121, 82);
+            this.cmb_unidad.Location = new System.Drawing.Point(161, 97);
+            this.cmb_unidad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmb_unidad.Name = "cmb_unidad";
-            this.cmb_unidad.Size = new System.Drawing.Size(84, 21);
+            this.cmb_unidad.Size = new System.Drawing.Size(265, 24);
             this.cmb_unidad.TabIndex = 51;
-
-            
             // 
             // NuevoProductos
             // 
@@ -142,7 +139,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btn_cancelar;
-            this.ClientSize = new System.Drawing.Size(299, 398);
+            this.ClientSize = new System.Drawing.Size(505, 586);
             this.Controls.Add(this.cmb_unidad);
             this.Controls.Add(this.btn_imagen);
             this.Controls.Add(this.txb_Nombre);
@@ -154,11 +151,12 @@
             this.Controls.Add(this.lbl_nombre);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Location = new System.Drawing.Point(1075, 200);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "NuevoProductos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Nuevo Producto";
+            this.Load += new System.EventHandler(this.NuevoProductos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pcb_imagen)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

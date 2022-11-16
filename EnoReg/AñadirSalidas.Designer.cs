@@ -109,28 +109,40 @@
             // 
             // txbLote
             // 
-            this.txbLote.Location = new System.Drawing.Point(110, 155);
+
+            this.txbLote.Location = new System.Drawing.Point(147, 191);
+            this.txbLote.Margin = new System.Windows.Forms.Padding(4);
+
             this.txbLote.Name = "txbLote";
             this.txbLote.Size = new System.Drawing.Size(214, 20);
             this.txbLote.TabIndex = 30;
             // 
             // txbCantidad
             // 
-            this.txbCantidad.Location = new System.Drawing.Point(110, 212);
+
+            this.txbCantidad.Location = new System.Drawing.Point(147, 261);
+            this.txbCantidad.Margin = new System.Windows.Forms.Padding(4);
+
             this.txbCantidad.Name = "txbCantidad";
             this.txbCantidad.Size = new System.Drawing.Size(214, 20);
             this.txbCantidad.TabIndex = 40;
             // 
             // txbDestino
             // 
-            this.txbDestino.Location = new System.Drawing.Point(110, 269);
+
+            this.txbDestino.Location = new System.Drawing.Point(147, 331);
+            this.txbDestino.Margin = new System.Windows.Forms.Padding(4);
+
             this.txbDestino.Name = "txbDestino";
             this.txbDestino.Size = new System.Drawing.Size(214, 20);
             this.txbDestino.TabIndex = 50;
             // 
             // txbObservaciones
             // 
-            this.txbObservaciones.Location = new System.Drawing.Point(110, 326);
+
+            this.txbObservaciones.Location = new System.Drawing.Point(147, 401);
+            this.txbObservaciones.Margin = new System.Windows.Forms.Padding(4);
+
             this.txbObservaciones.Multiline = true;
             this.txbObservaciones.Name = "txbObservaciones";
             this.txbObservaciones.Size = new System.Drawing.Size(214, 53);
@@ -138,7 +150,10 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(163, 422);
+
+            this.btnAceptar.Location = new System.Drawing.Point(217, 519);
+            this.btnAceptar.Margin = new System.Windows.Forms.Padding(4);
+
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 35);
             this.btnAceptar.TabIndex = 80;
@@ -149,7 +164,10 @@
             // btnCancelar
             // 
             this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancelar.Location = new System.Drawing.Point(246, 422);
+
+            this.btnCancelar.Location = new System.Drawing.Point(328, 519);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
+
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 35);
             this.btnCancelar.TabIndex = 70;
@@ -160,7 +178,10 @@
             // 
             this.cmbProductos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProductos.FormattingEnabled = true;
-            this.cmbProductos.Location = new System.Drawing.Point(110, 101);
+
+            this.cmbProductos.Location = new System.Drawing.Point(147, 124);
+            this.cmbProductos.Margin = new System.Windows.Forms.Padding(4);
+
             this.cmbProductos.Name = "cmbProductos";
             this.cmbProductos.Size = new System.Drawing.Size(211, 21);
             this.cmbProductos.TabIndex = 81;
@@ -188,10 +209,12 @@
             this.Controls.Add(this.lblFecha);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Location = new System.Drawing.Point(1075, 200);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "AñadirSalida";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Salidas";
+            this.Load += new System.EventHandler(this.AñadirSalida_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

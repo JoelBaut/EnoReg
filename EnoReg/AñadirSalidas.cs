@@ -15,11 +15,12 @@ namespace EnoReg
     {
         private ProductoDAO productoDAO;
         MySqlDataReader dr;
-        public AñadirSalida(ProductoDAO productoDAO, MySqlDataReader mySqlDataReader)
+        public AñadirSalida(ProductoDAO productoDAO, MySqlDataReader mySqlDataReader, Point location)
         {
             this.productoDAO = productoDAO;
             this.dr = mySqlDataReader;
             InitializeComponent();
+            this.Location = location;
             this.Font = Properties.Settings.Default.Font;
             this.BackColor = Properties.Settings.Default.ColorFondo;
             this.ForeColor = Properties.Settings.Default.ColorLetra;            
@@ -83,6 +84,7 @@ namespace EnoReg
                 txbCantidad.Focus();
                 txbCantidad.BackColor = Color.LightCoral;
             }
+
         }
     }
 }

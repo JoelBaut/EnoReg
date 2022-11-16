@@ -18,10 +18,11 @@ namespace EnoReg
         private ProductoDAO productoDAO;
         string ruta;
         byte[] img = null;
-        public NuevoProductos(ProductoDAO productoDAO)
+        public NuevoProductos(ProductoDAO productoDAO,Point location)
         {
-            this.productoDAO = productoDAO;
+            this.productoDAO = productoDAO;            
             InitializeComponent();
+            this.Location = location;
             this.Font = Properties.Settings.Default.Font;
             this.BackColor = Properties.Settings.Default.ColorFondo;
             this.ForeColor = Properties.Settings.Default.ColorLetra;
@@ -72,6 +73,11 @@ namespace EnoReg
                 cmb_unidad.Focus();
                 cmb_unidad.BackColor = Color.LightCoral;
             }
+        }
+
+        private void NuevoProductos_Load(object sender, EventArgs e)
+        {
+            this.Location = new Point(this.Location.X - this.Size.Width, this.Location.Y);
         }
     }
 }
