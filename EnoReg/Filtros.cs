@@ -15,11 +15,12 @@ namespace EnoReg
     {
         private ProductoDAO productoDAO;
         MySqlDataReader dr;
-        public Filtros(ProductoDAO productoDAO, MySql.Data.MySqlClient.MySqlDataReader mySqlDataReader)
+        public Filtros(ProductoDAO productoDAO, MySql.Data.MySqlClient.MySqlDataReader mySqlDataReader,Point location)
         {
             this.productoDAO = productoDAO;
             this.dr = mySqlDataReader;
             InitializeComponent();
+            this.Location = location;   
             this.Font = Properties.Settings.Default.Font;
             this.BackColor = Properties.Settings.Default.ColorFondo;
             this.ForeColor = Properties.Settings.Default.ColorLetra;
@@ -57,6 +58,11 @@ namespace EnoReg
         private void btn_filtrar_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void Filtros_Load(object sender, EventArgs e)
+        {
+            this.Location = new Point(this.Location.X - this.Size.Width , this.Location.Y);
         }
     }
 }

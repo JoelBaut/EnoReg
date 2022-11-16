@@ -15,11 +15,12 @@ namespace EnoReg
     {
         private ProductoDAO productoDAO;
         MySqlDataReader dr;
-        public AñadirEntrada(ProductoDAO productoDAO, MySqlDataReader mySqlDataReader)
+        public AñadirEntrada(ProductoDAO productoDAO, MySqlDataReader mySqlDataReader, Point location)
         {
             this.productoDAO = productoDAO;
             this.dr = mySqlDataReader;
             InitializeComponent();
+            this.Location = location;
             cargarCombo(dr);
             dtpFechaEntrada.MaxDate = DateTime.Today;
         }
@@ -39,6 +40,7 @@ namespace EnoReg
 
         private void AñadirEntrada_Load(object sender, EventArgs e)
         {
+            this.Location = new Point(this.Location.X - this.Size.Width-130, this.Location.Y);
             this.Font = Properties.Settings.Default.Font;
             this.BackColor = Properties.Settings.Default.ColorFondo;
             this.ForeColor = Properties.Settings.Default.ColorLetra;

@@ -76,7 +76,7 @@ namespace EnoReg
         }
         private void btnAñadirEntrada_Click(object sender, EventArgs e)
         {
-            AñadirEntrada en = new AñadirEntrada(productoDAO, productoDAO.Cargarproductos());
+            AñadirEntrada en = new AñadirEntrada(productoDAO, productoDAO.Cargarproductos(), btnMostrarTodo.Location);
             en.ShowDialog();
             if (en.DialogResult == DialogResult.OK)
             {
@@ -86,7 +86,7 @@ namespace EnoReg
 
         private void btnAñadirSalida_Click(object sender, EventArgs e)
         {
-            AñadirSalida sa = new AñadirSalida(productoDAO, productoDAO.Cargarproductos());
+            AñadirSalida sa = new AñadirSalida(productoDAO, productoDAO.Cargarproductos(), btnMostrarTodo.Location);
             sa.ShowDialog();
             if (sa.DialogResult == DialogResult.OK)
             {
@@ -97,14 +97,14 @@ namespace EnoReg
         private void btnFiltros_Click(object sender, EventArgs e)
         {
 
-            Filtros filtros = new Filtros(productoDAO, productoDAO.Cargarproductos());
+            Filtros filtros = new Filtros(productoDAO, productoDAO.Cargarproductos(), btnMostrarTodo.Location);
             filtros.ShowDialog();
 
         }
 
         public void btnNuevoProducto_Click(object sender, EventArgs e)
         {
-            NuevoProductos nuevoProductos = new NuevoProductos(productoDAO);
+            NuevoProductos nuevoProductos = new NuevoProductos(productoDAO, btnMostrarTodo.Location);
             nuevoProductos.ShowDialog();
         }
 
@@ -127,6 +127,22 @@ namespace EnoReg
                 else
                 {
                     picImagenProducto.Image = null;
+                }
+            }
+        }
+
+        private void dtgprincipal_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            // añadir colores cuando cambian el modo de ordenamiento al pulsar en el header de las columnas
+            for (int i = 0; i < dtgprincipal.RowCount; i++)
+            {
+                if (!dtgprincipal.Rows[i].Cells[6].Value.Equals("-"))
+                {
+                    dtgprincipal.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(218, 255, 202);
+                }
+                if (!dtgprincipal.Rows[i].Cells[7].Value.Equals("-"))
+                {
+                    dtgprincipal.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(255, 192, 192);
                 }
             }
         }
