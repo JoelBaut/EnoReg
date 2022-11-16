@@ -6,7 +6,7 @@
       <Value Profile="(Default)">SERVER=localhost;DATABASE=bodega;UID=root;PASSWORD=;</Value>
     </Setting>
     <Setting Name="Font" Type="System.Drawing.Font" Scope="User">
-      <Value Profile="(Default)">Bahnschrift, 12pt</Value>
+      <Value Profile="(Default)">Calibri, 12pt, style=Bold</Value>
     </Setting>
     <Setting Name="ColorLetra" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">WindowFrame</Value>

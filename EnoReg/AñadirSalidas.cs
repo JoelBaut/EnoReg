@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,13 +13,42 @@ namespace EnoReg
 {
     public partial class AñadirSalida : Form
     {
-
-        public AñadirSalida()
+        private ProductoDAO productoDAO;
+        MySqlDataReader dr;
+        public AñadirSalida(ProductoDAO productoDAO, MySqlDataReader mySqlDataReader)
         {
+            this.productoDAO = productoDAO;
+            this.dr = mySqlDataReader;
             InitializeComponent();
             this.Font = Properties.Settings.Default.Font;
             this.BackColor = Properties.Settings.Default.ColorFondo;
             this.ForeColor = Properties.Settings.Default.ColorLetra;
+            cargarCombo(dr);
+            dtpFechaSalida.MaxDate = DateTime.Today;
         }
+        private void cargarCombo(MySqlDataReader dr)
+        {
+            while (dr.Read())
+            {
+                cmbProductos.Items.Add(new
+                {
+                    id = dr["id_producto"],
+                    nombre = dr["nombre"]
+                });
+            }
+            cmbProductos.DisplayMember = "nombre";
+            cmbProductos.ValueMember = "id";
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+
+            productoDAO.InsertarSalida(cmbProductos.Text, dtpFechaSalida.Value.ToString("yyyy-MM-dd"),txbLote.Text, txbCantidad.Text, txbDestino.Text, txbObservaciones.Text);
+            productoDAO.cerrarConexion();
+            DialogResult = DialogResult.OK;
+            this.Hide();
+            
+        }
+
     }
 }

@@ -38,6 +38,7 @@
             this.dtp_dateLast = new System.Windows.Forms.DateTimePicker();
             this.lbl_dateFirst = new System.Windows.Forms.Label();
             this.lbl_dateLast = new System.Windows.Forms.Label();
+            this.lbl_producto = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // cbx_registro
@@ -62,15 +63,15 @@
             // 
             this.cbx_producto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbx_producto.FormattingEnabled = true;
-            this.cbx_producto.Location = new System.Drawing.Point(57, 183);
+            this.cbx_producto.Location = new System.Drawing.Point(133, 183);
             this.cbx_producto.Name = "cbx_producto";
-            this.cbx_producto.Size = new System.Drawing.Size(201, 21);
+            this.cbx_producto.Size = new System.Drawing.Size(125, 21);
             this.cbx_producto.TabIndex = 40;
             // 
             // lbl_destino
             // 
             this.lbl_destino.AutoSize = true;
-            this.lbl_destino.Location = new System.Drawing.Point(54, 236);
+            this.lbl_destino.Location = new System.Drawing.Point(64, 240);
             this.lbl_destino.Name = "lbl_destino";
             this.lbl_destino.Size = new System.Drawing.Size(43, 13);
             this.lbl_destino.TabIndex = 3;
@@ -91,6 +92,7 @@
             this.btn_filtrar.TabIndex = 60;
             this.btn_filtrar.Text = "Filtrar";
             this.btn_filtrar.UseVisualStyleBackColor = true;
+            this.btn_filtrar.Click += new System.EventHandler(this.btn_filtrar_Click);
             // 
             // btn_cerrar
             // 
@@ -113,7 +115,7 @@
             // lbl_dateFirst
             // 
             this.lbl_dateFirst.AutoSize = true;
-            this.lbl_dateFirst.Location = new System.Drawing.Point(54, 98);
+            this.lbl_dateFirst.Location = new System.Drawing.Point(41, 98);
             this.lbl_dateFirst.Name = "lbl_dateFirst";
             this.lbl_dateFirst.Size = new System.Drawing.Size(66, 13);
             this.lbl_dateFirst.TabIndex = 8;
@@ -122,11 +124,20 @@
             // lbl_dateLast
             // 
             this.lbl_dateLast.AutoSize = true;
-            this.lbl_dateLast.Location = new System.Drawing.Point(54, 140);
+            this.lbl_dateLast.Location = new System.Drawing.Point(48, 141);
             this.lbl_dateLast.Name = "lbl_dateLast";
             this.lbl_dateLast.Size = new System.Drawing.Size(59, 13);
             this.lbl_dateLast.TabIndex = 9;
             this.lbl_dateLast.Text = "Fecha final";
+            // 
+            // lbl_producto
+            // 
+            this.lbl_producto.AutoSize = true;
+            this.lbl_producto.Location = new System.Drawing.Point(58, 191);
+            this.lbl_producto.Name = "lbl_producto";
+            this.lbl_producto.Size = new System.Drawing.Size(49, 13);
+            this.lbl_producto.TabIndex = 71;
+            this.lbl_producto.Text = "producto";
             // 
             // Filtros
             // 
@@ -135,6 +146,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btn_cerrar;
             this.ClientSize = new System.Drawing.Size(365, 361);
+            this.Controls.Add(this.lbl_producto);
             this.Controls.Add(this.lbl_dateLast);
             this.Controls.Add(this.lbl_dateFirst);
             this.Controls.Add(this.dtp_dateLast);
@@ -168,5 +180,6 @@
         private System.Windows.Forms.DateTimePicker dtp_dateLast;
         private System.Windows.Forms.Label lbl_dateFirst;
         private System.Windows.Forms.Label lbl_dateLast;
+        private System.Windows.Forms.Label lbl_producto;
     }
 }
