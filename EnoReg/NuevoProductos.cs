@@ -18,11 +18,12 @@ namespace EnoReg
         private ProductoDAO productoDAO;
         string ruta;
         byte[] img = null;
-        public NuevoProductos(ProductoDAO productoDAO,Point location)
+        Image imagen;
+        public NuevoProductos(ProductoDAO productoDAO, Point location)
         {
-            this.productoDAO = productoDAO;            
+            this.productoDAO = productoDAO;
             InitializeComponent();
-            this.Location = location;
+            this.Location = new Point(this.Location.X, this.Location.Y);
             this.Font = Properties.Settings.Default.Font;
             this.BackColor = Properties.Settings.Default.ColorFondo;
             this.ForeColor = Properties.Settings.Default.ColorLetra;
@@ -50,16 +51,23 @@ namespace EnoReg
             FileStream stream = new FileStream(ruta, FileMode.Open, FileAccess.Read);
             BinaryReader brs = new BinaryReader(stream);
             img = brs.ReadBytes((int)stream.Length);
-            productoDAO.InsertarProducto(txb_Nombre.Text,cmb_unidad.Text, img);
+            imagen = pcb_imagen.Image;
+            if (string.IsNullOrEmpty(txb_Nombre.Text))
+            {
+                MessageBox.Show("Rellena el campo Nombre",
+                    "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (cmb_unidad.SelectedIndex != 0)
+            {
+                MessageBox.Show("Selecciona una Unidad", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                productoDAO.InsertarProducto(txb_Nombre.Text, cmb_unidad.Text, img);
+                txb_Nombre.ResetText();
+                cmb_unidad.SelectedIndex = 0;
+            }
 
-            MessageBox.Show("Producto insertado correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            txb_Nombre.ResetText();
-
-        }
-
-        private void NuevoProductos_Load(object sender, EventArgs e)
-        {
-            this.Location = new Point(this.Location.X - this.Size.Width, this.Location.Y);
         }
     }
 }

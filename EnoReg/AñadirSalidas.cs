@@ -20,7 +20,7 @@ namespace EnoReg
             this.productoDAO = productoDAO;
             this.dr = mySqlDataReader;
             InitializeComponent();
-            this.Location = location;
+            this.Location = new Point(this.Location.X, this.Location.Y);
             this.Font = Properties.Settings.Default.Font;
             this.BackColor = Properties.Settings.Default.ColorFondo;
             this.ForeColor = Properties.Settings.Default.ColorLetra;            
@@ -46,37 +46,21 @@ namespace EnoReg
 
             if (productoDAO.ObtenerStock(cmbProductos.Text) - int.Parse(txbCantidad.Text)<=0) {
                 MessageBox.Show("Se pretende sacar mas productos de los disponibles.");
-            }
-            else {
-                productoDAO.InsertarSalida(cmbProductos.Text, dtpFechaSalida.Value.ToString("yyyy-MM-dd"), txbLote.Text, txbCantidad.Text, txbDestino.Text, txbObservaciones.Text);
-                productoDAO.cerrarConexion();
-                DialogResult = DialogResult.OK;
-                this.Hide();
-            }
-
-            // validaciones
-
-            // productos
-            if(cmbProductos.SelectedIndex.Equals(-1))
+            }else if (cmbProductos.SelectedIndex.Equals(-1))
             {
                 MessageBox.Show("Tienes que seleccionar un producto",
                     "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 cmbProductos.Focus();
             }
-
-            // lote
-            if (string.IsNullOrEmpty(txbLote.Text))
+            else if (string.IsNullOrEmpty(txbLote.Text))
             {
                 MessageBox.Show("Rellena el campo Lote",
                 "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 txbLote.Focus();
                 txbLote.BackColor = Color.LightCoral;
-            }
-
-            // cantidad
-            if (string.IsNullOrEmpty(txbCantidad.Text))
+            }else if (string.IsNullOrEmpty(txbCantidad.Text))
             {
                 MessageBox.Show("Rellena el campo Cantidad",
                 "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -84,11 +68,17 @@ namespace EnoReg
                 txbCantidad.Focus();
                 txbCantidad.BackColor = Color.LightCoral;
             }
+            else {
+                productoDAO.InsertarSalida(cmbProductos.Text, dtpFechaSalida.Value.ToString("yyyy-MM-dd"), txbLote.Text, txbCantidad.Text, txbDestino.Text, txbObservaciones.Text);
+                productoDAO.cerrarConexion();
+                DialogResult = DialogResult.OK;
+                this.Close();
+            }          
         }
 
         private void AñadirSalida_Load(object sender, EventArgs e)
         {
-            this.Location = new Point(this.Location.X - this.Size.Width, this.Location.Y);
+            
             this.Font = Properties.Settings.Default.Font;
             this.BackColor = Properties.Settings.Default.ColorFondo;
             this.ForeColor = Properties.Settings.Default.ColorLetra;

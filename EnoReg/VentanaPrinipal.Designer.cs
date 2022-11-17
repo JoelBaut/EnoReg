@@ -38,16 +38,12 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.picImagenCentro = new System.Windows.Forms.PictureBox();
-
             this.picImagenProducto = new System.Windows.Forms.PictureBox();
-
             ((System.ComponentModel.ISupportInitialize)(this.dtgprincipal)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picImagenCentro)).BeginInit();
-
             ((System.ComponentModel.ISupportInitialize)(this.picImagenProducto)).BeginInit();
-
             this.SuspendLayout();
             // 
             // dtgprincipal
@@ -225,7 +221,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picImagenCentro)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picImagenProducto)).EndInit();
-
             this.ResumeLayout(false);
 
         }
