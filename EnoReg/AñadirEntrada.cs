@@ -20,12 +20,10 @@ namespace EnoReg
             this.productoDAO = productoDAO;
             this.dr = mySqlDataReader;
             InitializeComponent();
-
             this.Font = Properties.Settings.Default.Font;
             this.BackColor = Properties.Settings.Default.ColorFondo;
             this.ForeColor = Properties.Settings.Default.ColorLetra;
-
-            this.Location = location;
+            this.Location = new Point(this.Location.X, this.Location.Y);
 
             cargarCombo(dr);
             dtpFechaEntrada.MaxDate = DateTime.Today;
@@ -48,22 +46,13 @@ namespace EnoReg
 
         private void AñadirEntrada_Load(object sender, EventArgs e)
         {
-            this.Location = new Point(this.Location.X - this.Size.Width-126, this.Location.Y);
             this.Font = Properties.Settings.Default.Font;
             this.BackColor = Properties.Settings.Default.ColorFondo;
             this.ForeColor = Properties.Settings.Default.ColorLetra;
         }
 
         private void btnAceptarEntrada_Click(object sender, EventArgs e)
-        {
-            productoDAO.InsertarEntrada(cmbProductos.Text, dtpFechaEntrada.Value.ToString("yyyy-MM-dd"), txbLote.Text, txbAlbaran.Text,txbProveedor.Text, dtpCaducidad.Value.ToString("yyyy-MM-dd"), txbCantidad.Text);
-            productoDAO.cerrarConexion();
-            DialogResult = DialogResult.OK;
-            this.Hide();
-
-            // validaciones
-
-            // productos
+        {       
             if (cmbProductos.SelectedIndex.Equals(-1))
             {
                 MessageBox.Show("Tienes que seleccionar un producto",
@@ -71,9 +60,7 @@ namespace EnoReg
 
                 cmbProductos.Focus();
             }
-
-            // lote
-            if (string.IsNullOrEmpty(txbLote.Text))
+            else if (string.IsNullOrEmpty(txbLote.Text))
             {
                 MessageBox.Show("Rellena el campo Lote",
                 "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -81,9 +68,7 @@ namespace EnoReg
                 txbLote.Focus();
                 txbLote.BackColor = Color.LightCoral;
             }
-
-            // cantidad
-            if (string.IsNullOrEmpty(txbCantidad.Text))
+            else if (string.IsNullOrEmpty(txbCantidad.Text))
             {
                 MessageBox.Show("Rellena el campo Cantidad",
                 "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -91,9 +76,7 @@ namespace EnoReg
                 txbCantidad.Focus();
                 txbCantidad.BackColor = Color.LightCoral;
             }
-
-            // proveedor
-            if (string.IsNullOrEmpty(txbProveedor.Text))
+            else if (string.IsNullOrEmpty(txbProveedor.Text))
             {
                 MessageBox.Show("Rellena el campo Proveedor",
                 "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -101,15 +84,19 @@ namespace EnoReg
                 txbProveedor.Focus();
                 txbProveedor.BackColor = Color.LightCoral;
             }
-
-            // albaran
-            if (string.IsNullOrEmpty(txbAlbaran.Text))
+            else if (string.IsNullOrEmpty(txbAlbaran.Text))
             {
                 MessageBox.Show("Rellena el campo Albarán",
                 "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 txbAlbaran.Focus();
                 txbAlbaran.BackColor = Color.LightCoral;
+            }
+            else {
+                productoDAO.InsertarEntrada(cmbProductos.Text, dtpFechaEntrada.Value.ToString("yyyy-MM-dd"), txbLote.Text, txbAlbaran.Text, txbProveedor.Text, dtpCaducidad.Value.ToString("yyyy-MM-dd"), txbCantidad.Text);
+                productoDAO.cerrarConexion();
+                DialogResult = DialogResult.OK;
+                this.Close();
             }
         }
     }

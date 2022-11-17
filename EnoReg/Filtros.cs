@@ -20,7 +20,7 @@ namespace EnoReg
             this.productoDAO = productoDAO;
             this.dr = mySqlDataReader;
             InitializeComponent();
-            this.Location = location;   
+            this.Location = new Point(this.Location.X, this.Location.Y);
             this.Font = Properties.Settings.Default.Font;
             this.BackColor = Properties.Settings.Default.ColorFondo;
             this.ForeColor = Properties.Settings.Default.ColorLetra;
@@ -52,17 +52,7 @@ namespace EnoReg
 
             cbx_registro.DisplayMember = "nombre";
             cbx_registro.ValueMember = "id";
-            cbx_registro.SelectedIndex = 0;
-            
-        }
-        private void btn_filtrar_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void Filtros_Load(object sender, EventArgs e)
-        {
-            this.Location = new Point(this.Location.X - this.Size.Width , this.Location.Y);
+            cbx_registro.SelectedIndex = 0;            
         }
     }
 }
