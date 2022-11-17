@@ -257,7 +257,8 @@
             this.MaximizeBox = false;
             this.Name = "AñadirEntrada";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "AñadirEntrada";            
+            this.Text = "AñadirEntrada";
+            this.Load += new System.EventHandler(this.AñadirEntrada_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

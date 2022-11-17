@@ -66,7 +66,7 @@ namespace EnoReg
             }
 
             // lote
-            if (string.IsNullOrEmpty(txbLote.Text))
+            else if (string.IsNullOrEmpty(txbLote.Text))
             {
                 MessageBox.Show("Rellena el campo Lote",
                 "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -76,7 +76,7 @@ namespace EnoReg
             }
 
             // cantidad
-            if (string.IsNullOrEmpty(txbCantidad.Text))
+            else if (string.IsNullOrEmpty(txbCantidad.Text))
             {
                 MessageBox.Show("Rellena el campo Cantidad",
                 "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -89,9 +89,6 @@ namespace EnoReg
         private void AñadirSalida_Load(object sender, EventArgs e)
         {
             this.Location = new Point(this.Location.X - this.Size.Width, this.Location.Y);
-            this.Font = Properties.Settings.Default.Font;
-            this.BackColor = Properties.Settings.Default.ColorFondo;
-            this.ForeColor = Properties.Settings.Default.ColorLetra;
         }
     }
 }

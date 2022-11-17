@@ -65,7 +65,7 @@ namespace EnoReg
             }
 
             // unidad
-            if (cmb_unidad.SelectedIndex.Equals(-1))
+            else if (cmb_unidad.SelectedIndex.Equals(-1))
             {
                 MessageBox.Show("Tienes que seleccionar una unidad",
                     "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -74,10 +74,10 @@ namespace EnoReg
                 cmb_unidad.BackColor = Color.LightCoral;
             }
         }
-
+        
         private void NuevoProductos_Load(object sender, EventArgs e)
         {
             this.Location = new Point(this.Location.X - this.Size.Width, this.Location.Y);
-        }
+        }   
     }
 }

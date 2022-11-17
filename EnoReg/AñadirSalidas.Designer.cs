@@ -200,6 +200,7 @@
             this.Name = "AñadirSalida";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Salidas";
+            this.Load += new System.EventHandler(this.AñadirSalida_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

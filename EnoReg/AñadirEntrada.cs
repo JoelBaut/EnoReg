@@ -48,10 +48,7 @@ namespace EnoReg
 
         private void AñadirEntrada_Load(object sender, EventArgs e)
         {
-            this.Location = new Point(this.Location.X - this.Size.Width-130, this.Location.Y);
-            this.Font = Properties.Settings.Default.Font;
-            this.BackColor = Properties.Settings.Default.ColorFondo;
-            this.ForeColor = Properties.Settings.Default.ColorLetra;
+            this.Location = new Point(this.Location.X - this.Size.Width, this.Location.Y);
         }
 
         private void btnAceptarEntrada_Click(object sender, EventArgs e)
@@ -73,7 +70,7 @@ namespace EnoReg
             }
 
             // lote
-            if (string.IsNullOrEmpty(txbLote.Text))
+            else if (string.IsNullOrEmpty(txbLote.Text))
             {
                 MessageBox.Show("Rellena el campo Lote",
                 "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -83,7 +80,7 @@ namespace EnoReg
             }
 
             // cantidad
-            if (string.IsNullOrEmpty(txbCantidad.Text))
+            else if (string.IsNullOrEmpty(txbCantidad.Text))
             {
                 MessageBox.Show("Rellena el campo Cantidad",
                 "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -93,7 +90,7 @@ namespace EnoReg
             }
 
             // proveedor
-            if (string.IsNullOrEmpty(txbProveedor.Text))
+            else if (string.IsNullOrEmpty(txbProveedor.Text))
             {
                 MessageBox.Show("Rellena el campo Proveedor",
                 "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -103,7 +100,7 @@ namespace EnoReg
             }
 
             // albaran
-            if (string.IsNullOrEmpty(txbAlbaran.Text))
+            else if (string.IsNullOrEmpty(txbAlbaran.Text))
             {
                 MessageBox.Show("Rellena el campo Albarán",
                 "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
