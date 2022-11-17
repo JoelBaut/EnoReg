@@ -36,11 +36,11 @@
             this.lblProveedorEntrada = new System.Windows.Forms.Label();
             this.lblAlbaranEntrada = new System.Windows.Forms.Label();
             this.lblObservacionesEntrada = new System.Windows.Forms.Label();
-            this.cmbLote = new System.Windows.Forms.TextBox();
-            this.cmbCantidad = new System.Windows.Forms.TextBox();
-            this.cmbProveedor = new System.Windows.Forms.TextBox();
-            this.cmbAlbaran = new System.Windows.Forms.TextBox();
-            this.cmbObservaciones = new System.Windows.Forms.TextBox();
+            this.txbLote = new System.Windows.Forms.TextBox();
+            this.txbCantidad = new System.Windows.Forms.TextBox();
+            this.txbProveedor = new System.Windows.Forms.TextBox();
+            this.txbAlbaran = new System.Windows.Forms.TextBox();
+            this.txbObservaciones = new System.Windows.Forms.TextBox();
             this.dtpFechaEntrada = new System.Windows.Forms.DateTimePicker();
             this.btnAceptarEntrada = new System.Windows.Forms.Button();
             this.btnCancelarEntrada = new System.Windows.Forms.Button();
@@ -120,42 +120,42 @@
             this.lblObservacionesEntrada.TabIndex = 81;
             this.lblObservacionesEntrada.Text = "Observaciones:";
             // 
-            // cmbLote
+            // txbLote
             // 
             this.cmbLote.Location = new System.Drawing.Point(121, 129);
-            this.cmbLote.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbLote.Margin = new System.Windows.Forms.Padding(2);
             this.cmbLote.Name = "cmbLote";
             this.cmbLote.Size = new System.Drawing.Size(200, 20);
             this.cmbLote.TabIndex = 30;
             // 
-            // cmbCantidad
+            // txbCantidad
             // 
             this.cmbCantidad.Location = new System.Drawing.Point(121, 174);
-            this.cmbCantidad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbCantidad.Margin = new System.Windows.Forms.Padding(2);
             this.cmbCantidad.Name = "cmbCantidad";
             this.cmbCantidad.Size = new System.Drawing.Size(200, 20);
             this.cmbCantidad.TabIndex = 40;
             // 
-            // cmbProveedor
+            // txbProveedor
             // 
             this.cmbProveedor.Location = new System.Drawing.Point(121, 264);
-            this.cmbProveedor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbProveedor.Margin = new System.Windows.Forms.Padding(2);
             this.cmbProveedor.Name = "cmbProveedor";
             this.cmbProveedor.Size = new System.Drawing.Size(200, 20);
             this.cmbProveedor.TabIndex = 60;
             // 
-            // cmbAlbaran
+            // txbAlbaran
             // 
             this.cmbAlbaran.Location = new System.Drawing.Point(121, 309);
-            this.cmbAlbaran.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbAlbaran.Margin = new System.Windows.Forms.Padding(2);
             this.cmbAlbaran.Name = "cmbAlbaran";
             this.cmbAlbaran.Size = new System.Drawing.Size(200, 20);
             this.cmbAlbaran.TabIndex = 70;
             // 
-            // cmbObservaciones
+            // txbObservaciones
             // 
             this.cmbObservaciones.Location = new System.Drawing.Point(121, 354);
-            this.cmbObservaciones.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbObservaciones.Margin = new System.Windows.Forms.Padding(2);
             this.cmbObservaciones.Multiline = true;
             this.cmbObservaciones.Name = "cmbObservaciones";
             this.cmbObservaciones.Size = new System.Drawing.Size(200, 49);
@@ -165,7 +165,9 @@
             // 
             this.dtpFechaEntrada.Cursor = System.Windows.Forms.Cursors.Default;
             this.dtpFechaEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+
             this.dtpFechaEntrada.Location = new System.Drawing.Point(121, 35);
+
             this.dtpFechaEntrada.Name = "dtpFechaEntrada";
             this.dtpFechaEntrada.Size = new System.Drawing.Size(200, 20);
             this.dtpFechaEntrada.TabIndex = 10;
@@ -194,7 +196,9 @@
             // 
             this.cmbProductos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProductos.FormattingEnabled = true;
+
             this.cmbProductos.Location = new System.Drawing.Point(121, 84);
+
             this.cmbProductos.Name = "cmbProductos";
             this.cmbProductos.Size = new System.Drawing.Size(200, 21);
             this.cmbProductos.TabIndex = 101;
@@ -203,10 +207,11 @@
             // 
             this.dtpCaducidad.Cursor = System.Windows.Forms.Cursors.Default;
             this.dtpCaducidad.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+
             this.dtpCaducidad.Location = new System.Drawing.Point(121, 216);
-            this.dtpCaducidad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpCaducidad.Margin = new System.Windows.Forms.Padding(2);
             this.dtpCaducidad.Name = "dtpCaducidad";
-            this.dtpCaducidad.Size = new System.Drawing.Size(200, 20);
+            this.dtpCaducidad.Size = new System.Drawing.Size(151, 20);
             this.dtpCaducidad.TabIndex = 102;
             // 
             // AñadirEntrada
@@ -215,17 +220,19 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancelarEntrada;
+
             this.ClientSize = new System.Drawing.Size(379, 476);
+
             this.Controls.Add(this.dtpCaducidad);
             this.Controls.Add(this.cmbProductos);
             this.Controls.Add(this.btnCancelarEntrada);
             this.Controls.Add(this.btnAceptarEntrada);
             this.Controls.Add(this.dtpFechaEntrada);
-            this.Controls.Add(this.cmbObservaciones);
-            this.Controls.Add(this.cmbAlbaran);
-            this.Controls.Add(this.cmbProveedor);
-            this.Controls.Add(this.cmbCantidad);
-            this.Controls.Add(this.cmbLote);
+            this.Controls.Add(this.txbObservaciones);
+            this.Controls.Add(this.txbAlbaran);
+            this.Controls.Add(this.txbProveedor);
+            this.Controls.Add(this.txbCantidad);
+            this.Controls.Add(this.txbLote);
             this.Controls.Add(this.lblObservacionesEntrada);
             this.Controls.Add(this.lblAlbaranEntrada);
             this.Controls.Add(this.lblProveedorEntrada);
@@ -239,8 +246,7 @@
             this.MaximizeBox = false;
             this.Name = "AñadirEntrada";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "AñadirEntrada";
-            this.Load += new System.EventHandler(this.AñadirEntrada_Load);
+            this.Text = "AñadirEntrada";            
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -256,11 +262,11 @@
         private System.Windows.Forms.Label lblProveedorEntrada;
         private System.Windows.Forms.Label lblAlbaranEntrada;
         private System.Windows.Forms.Label lblObservacionesEntrada;
-        private System.Windows.Forms.TextBox cmbLote;
-        private System.Windows.Forms.TextBox cmbCantidad;
-        private System.Windows.Forms.TextBox cmbProveedor;
-        private System.Windows.Forms.TextBox cmbAlbaran;
-        private System.Windows.Forms.TextBox cmbObservaciones;
+        private System.Windows.Forms.TextBox txbLote;
+        private System.Windows.Forms.TextBox txbCantidad;
+        private System.Windows.Forms.TextBox txbProveedor;
+        private System.Windows.Forms.TextBox txbAlbaran;
+        private System.Windows.Forms.TextBox txbObservaciones;
         private System.Windows.Forms.DateTimePicker dtpFechaEntrada;
         private System.Windows.Forms.Button btnAceptarEntrada;
         private System.Windows.Forms.Button btnCancelarEntrada;

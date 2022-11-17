@@ -51,8 +51,10 @@ namespace EnoReg
             BinaryReader brs = new BinaryReader(stream);
             img = brs.ReadBytes((int)stream.Length);
             productoDAO.InsertarProducto(txb_Nombre.Text,cmb_unidad.Text, img);
+
             MessageBox.Show("Producto insertado correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             txb_Nombre.ResetText();
+
         }
 
         private void NuevoProductos_Load(object sender, EventArgs e)

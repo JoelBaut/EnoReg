@@ -38,12 +38,16 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.picImagenCentro = new System.Windows.Forms.PictureBox();
+
             this.picImagenProducto = new System.Windows.Forms.PictureBox();
+
             ((System.ComponentModel.ISupportInitialize)(this.dtgprincipal)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picImagenCentro)).BeginInit();
+
             ((System.ComponentModel.ISupportInitialize)(this.picImagenProducto)).BeginInit();
+
             this.SuspendLayout();
             // 
             // dtgprincipal
@@ -58,14 +62,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtgprincipal.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgprincipal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgprincipal.Location = new System.Drawing.Point(174, 97);
+            this.dtgprincipal.Location = new System.Drawing.Point(174, 106);
             this.dtgprincipal.MultiSelect = false;
             this.dtgprincipal.Name = "dtgprincipal";
             this.dtgprincipal.ReadOnly = true;
             this.dtgprincipal.RowHeadersVisible = false;
             this.tableLayoutPanel1.SetRowSpan(this.dtgprincipal, 7);
             this.dtgprincipal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgprincipal.Size = new System.Drawing.Size(879, 518);
+            this.dtgprincipal.Size = new System.Drawing.Size(884, 582);
             this.dtgprincipal.TabIndex = 6;
             this.dtgprincipal.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgprincipal_CellClick);
             this.dtgprincipal.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtgprincipal_ColumnHeaderMouseClick);
@@ -74,9 +78,9 @@
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.btnNuevoProducto, 2);
             this.btnNuevoProducto.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnNuevoProducto.Location = new System.Drawing.Point(1059, 541);
+            this.btnNuevoProducto.Location = new System.Drawing.Point(1064, 604);
             this.btnNuevoProducto.Name = "btnNuevoProducto";
-            this.btnNuevoProducto.Size = new System.Drawing.Size(156, 74);
+            this.btnNuevoProducto.Size = new System.Drawing.Size(157, 84);
             this.btnNuevoProducto.TabIndex = 5;
             this.btnNuevoProducto.Text = "NuevoProducto";
             this.btnNuevoProducto.UseVisualStyleBackColor = true;
@@ -86,9 +90,9 @@
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.btnAñadirSalida, 2);
             this.btnAñadirSalida.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAñadirSalida.Location = new System.Drawing.Point(1059, 393);
+            this.btnAñadirSalida.Location = new System.Drawing.Point(1064, 438);
             this.btnAñadirSalida.Name = "btnAñadirSalida";
-            this.btnAñadirSalida.Size = new System.Drawing.Size(156, 68);
+            this.btnAñadirSalida.Size = new System.Drawing.Size(157, 77);
             this.btnAñadirSalida.TabIndex = 4;
             this.btnAñadirSalida.Text = "Añadir Salida";
             this.btnAñadirSalida.UseVisualStyleBackColor = true;
@@ -98,9 +102,9 @@
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.btnAñadirEntrada, 2);
             this.btnAñadirEntrada.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAñadirEntrada.Location = new System.Drawing.Point(1059, 319);
+            this.btnAñadirEntrada.Location = new System.Drawing.Point(1064, 355);
             this.btnAñadirEntrada.Name = "btnAñadirEntrada";
-            this.btnAñadirEntrada.Size = new System.Drawing.Size(156, 68);
+            this.btnAñadirEntrada.Size = new System.Drawing.Size(157, 77);
             this.btnAñadirEntrada.TabIndex = 3;
             this.btnAñadirEntrada.Text = "Añadir Entrada";
             this.btnAñadirEntrada.UseVisualStyleBackColor = true;
@@ -109,9 +113,9 @@
             // btnFiltros
             // 
             this.btnFiltros.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFiltros.Location = new System.Drawing.Point(1139, 97);
+            this.btnFiltros.Location = new System.Drawing.Point(1144, 106);
             this.btnFiltros.Name = "btnFiltros";
-            this.btnFiltros.Size = new System.Drawing.Size(76, 68);
+            this.btnFiltros.Size = new System.Drawing.Size(77, 77);
             this.btnFiltros.TabIndex = 2;
             this.btnFiltros.Text = "Filtros";
             this.btnFiltros.UseVisualStyleBackColor = true;
@@ -120,9 +124,9 @@
             // btnMostrarTodo
             // 
             this.btnMostrarTodo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnMostrarTodo.Location = new System.Drawing.Point(1059, 97);
+            this.btnMostrarTodo.Location = new System.Drawing.Point(1064, 106);
             this.btnMostrarTodo.Name = "btnMostrarTodo";
-            this.btnMostrarTodo.Size = new System.Drawing.Size(74, 68);
+            this.btnMostrarTodo.Size = new System.Drawing.Size(74, 77);
             this.btnMostrarTodo.TabIndex = 1;
             this.btnMostrarTodo.Text = "Mostrar todo";
             this.btnMostrarTodo.UseVisualStyleBackColor = true;
@@ -161,7 +165,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1228, 638);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1234, 711);
             this.tableLayoutPanel1.TabIndex = 8;
             // 
             // pictureBox1
@@ -169,9 +173,9 @@
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = global::EnoReg.Properties.Resources.logoDptoIndAli;
             this.pictureBox1.InitialImage = global::EnoReg.Properties.Resources.logoDptoIndAli;
-            this.pictureBox1.Location = new System.Drawing.Point(1139, 23);
+            this.pictureBox1.Location = new System.Drawing.Point(1144, 23);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(76, 68);
+            this.pictureBox1.Size = new System.Drawing.Size(77, 77);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
@@ -183,10 +187,10 @@
             this.picImagenCentro.ErrorImage = global::EnoReg.Properties.Resources.logoDptoIndAli;
             this.picImagenCentro.Image = global::EnoReg.Properties.Resources.logoIES;
             this.picImagenCentro.InitialImage = global::EnoReg.Properties.Resources.logoDptoIndAli;
-            this.picImagenCentro.Location = new System.Drawing.Point(13, 467);
+            this.picImagenCentro.Location = new System.Drawing.Point(13, 521);
             this.picImagenCentro.Name = "picImagenCentro";
             this.tableLayoutPanel1.SetRowSpan(this.picImagenCentro, 2);
-            this.picImagenCentro.Size = new System.Drawing.Size(155, 148);
+            this.picImagenCentro.Size = new System.Drawing.Size(155, 167);
             this.picImagenCentro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picImagenCentro.TabIndex = 0;
             this.picImagenCentro.TabStop = false;
@@ -194,10 +198,10 @@
             // picImagenProducto
             // 
             this.picImagenProducto.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picImagenProducto.Location = new System.Drawing.Point(13, 97);
+            this.picImagenProducto.Location = new System.Drawing.Point(13, 106);
             this.picImagenProducto.Name = "picImagenProducto";
             this.tableLayoutPanel1.SetRowSpan(this.picImagenProducto, 2);
-            this.picImagenProducto.Size = new System.Drawing.Size(155, 142);
+            this.picImagenProducto.Size = new System.Drawing.Size(155, 160);
             this.picImagenProducto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picImagenProducto.TabIndex = 8;
             this.picImagenProducto.TabStop = false;
@@ -208,9 +212,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.GhostWhite;
-            this.ClientSize = new System.Drawing.Size(1228, 638);
+            this.ClientSize = new System.Drawing.Size(1234, 711);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(1250, 750);
             this.Name = "VentanaPrinipal";
             this.Text = "EnoReg";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -220,6 +225,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picImagenCentro)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picImagenProducto)).EndInit();
+
             this.ResumeLayout(false);
 
         }
