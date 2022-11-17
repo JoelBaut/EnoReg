@@ -67,7 +67,7 @@ namespace EnoReg
             // unidad
             else if (cmb_unidad.SelectedIndex.Equals(-1))
             {
-                MessageBox.Show("Tienes que seleccionar una unidad",
+                MessageBox.Show("Tienes que seleccionar una unidad (kg o l)",
                     "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 cmb_unidad.Focus();

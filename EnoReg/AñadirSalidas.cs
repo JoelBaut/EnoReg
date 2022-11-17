@@ -59,7 +59,7 @@ namespace EnoReg
             // productos
             if(cmbProductos.SelectedIndex.Equals(-1))
             {
-                MessageBox.Show("Tienes que seleccionar un producto",
+                MessageBox.Show("Tienes que seleccionar un producto de la lista",
                     "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 cmbProductos.Focus();
