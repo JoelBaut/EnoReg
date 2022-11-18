@@ -97,7 +97,7 @@ namespace EnoReg
         private void btnFiltros_Click(object sender, EventArgs e)
         {
 
-            Filtros filtros = new Filtros(productoDAO, productoDAO.Cargarproductos(), btnMostrarTodo.Location);
+            Filtros filtros = new Filtros(productoDAO, productoDAO.Cargarproductos(), btnMostrarTodo.Location, dtgprincipal);
             filtros.ShowDialog();
 
         }

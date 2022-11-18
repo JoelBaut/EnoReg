@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.OleDb;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -15,7 +16,6 @@ namespace EnoReg
 {
     public class ProductoDAO
     {
-        ArrayList productos = new ArrayList();
         ConexionDB conexionDB = null;
 
         public ProductoDAO()
@@ -82,6 +82,62 @@ namespace EnoReg
         public MySqlDataReader CargarImagen(String nombre)
         {
             String sql = "Select imagen from producto where nombre = '"+nombre+"'";
+            return conexionDB.Select(sql);
+        }
+
+        internal IDataReader CargarFiltro(string registro, string fechaInicial, string FechaFinal, string Producto, string Destino)
+        {
+            String sql;
+            String consultaStringProducto;
+            String consultaStringDestino;
+            String consultaStringFechaSalida;
+            String consultaStringFechaEntrada;
+            if (Producto.Equals("<Cualquiera>"))
+            {
+                consultaStringProducto = "";
+            }
+            else {
+                consultaStringProducto = "and producto.id_producto = (SELECT id_producto from producto WHERE nombre = '" + Producto + "') ";
+            }
+
+            if (Destino.Equals(""))
+            {
+                consultaStringDestino = "";
+            }
+            else
+            {
+                consultaStringDestino = "and `destino` =  '" + Destino + "' ";
+            }
+
+            consultaStringFechaEntrada = "and `fecha_entrada` between '" + fechaInicial + "' and '" + FechaFinal + "' ";
+            consultaStringFechaSalida = "and `fecha_salida` between '" + fechaInicial + "' and '" + FechaFinal + "' ";
+
+
+            if (registro.Equals("Entradas/Salidas"))
+            {
+                sql = "select fecha_entrada Fecha, nombre Nombre, proveedor Proveedor, lote Lote, fecha_caducidad Caducidad, albaran Albaran,FORMAT(cantidad,3) Entrada,'-' Salida, FORMAT(stock,3) Stock, '-' Destino, '-' Observaciones" +
+                   " from producto_entrada, producto" +
+                   " where producto_entrada.id_producto = producto.id_producto " + consultaStringProducto + consultaStringFechaEntrada +
+                   " Union" +
+                   " select fecha_salida Fecha, nombre Nombre, '-' Proveedor, lote Lote, '-'Caducidad, '-'Albaran,'-'Entrada,FORMAT(cantidad,3) Salida, FORMAT(stock,3) Stock, destino Destino, observaciones Observaciones" +
+                   " from producto_salida, producto" +
+                   " where producto_salida.id_producto = producto.id_producto " + consultaStringProducto + consultaStringFechaSalida +
+                   " order by fecha DESC;";
+
+            } else if (registro.Equals("Entradas")) {
+                sql = "select fecha_entrada Fecha, nombre Nombre, proveedor Proveedor, lote Lote, fecha_caducidad Caducidad, albaran Albaran,FORMAT(cantidad,3) Entrada,'-' Salida, FORMAT(stock,3) Stock, '-' Destino, '-' Observaciones" +
+                   " from producto_entrada, producto" +
+                   " where producto_entrada.id_producto = producto.id_producto " + consultaStringProducto + consultaStringFechaEntrada +
+                   " order by fecha DESC;";
+            }
+            else {
+                sql = " select fecha_salida Fecha, nombre Nombre, '-' Proveedor, lote Lote, '-'Caducidad, '-'Albaran,'-'Entrada,FORMAT(cantidad,3) Salida, FORMAT(stock,3) Stock, destino Destino, observaciones Observaciones" +
+                   " from producto_salida, producto" +
+                   " where producto_salida.id_producto = producto.id_producto " + consultaStringProducto + consultaStringFechaSalida + consultaStringDestino +
+                   " order by fecha DESC;";
+            }
+
+
             return conexionDB.Select(sql);
         }
     }
