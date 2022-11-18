@@ -14,11 +14,13 @@ namespace EnoReg
     public partial class Filtros : Form
     {
         private ProductoDAO productoDAO;
+        DataGridView dtgprincipal;
         MySqlDataReader dr;
-        public Filtros(ProductoDAO productoDAO, MySql.Data.MySqlClient.MySqlDataReader mySqlDataReader,Point location)
+        public Filtros(ProductoDAO productoDAO, MySql.Data.MySqlClient.MySqlDataReader mySqlDataReader,Point location, DataGridView dtgprincipal)
         {
             this.productoDAO = productoDAO;
             this.dr = mySqlDataReader;
+            this.dtgprincipal = dtgprincipal;
             InitializeComponent();
             this.Location = new Point(this.Location.X, this.Location.Y);
             this.Font = Properties.Settings.Default.Font;
@@ -53,6 +55,53 @@ namespace EnoReg
             cbx_registro.DisplayMember = "nombre";
             cbx_registro.ValueMember = "id";
             cbx_registro.SelectedIndex = 0;            
+        }
+
+        private void btn_filtrar_Click(object sender, EventArgs e)
+        {      
+            DataTable dt = new DataTable();
+            dt.Load(productoDAO.CargarFiltro(cbx_registro.Text,dtp_dateFirst.Value.ToString("yyyy-MM-dd"), dtp_dateLast.Value.ToString("yyyy-MM-dd"), cbx_producto.Text,txb_destino.Text));
+            dtgprincipal.DataSource = dt;
+            productoDAO.cerrarConexion();
+
+            // añadir unidad a los valores y colores
+            String nombre;
+            String unidad = "";
+            MySqlDataReader dr;
+            for (int i = 0; i < dtgprincipal.RowCount; i++)
+            {
+                nombre = (string)dtgprincipal.Rows[i].Cells[1].Value;
+                dr = productoDAO.ObtenerUnidad(nombre);
+                while (dr.Read())
+                {
+                    unidad = dr.GetString(0);
+                }
+                if (!dtgprincipal.Rows[i].Cells[6].Value.Equals("-"))
+                {
+                    dtgprincipal.Rows[i].Cells[6].Value += " " + unidad;
+                    dtgprincipal.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(218, 255, 202);
+                }
+                if (!dtgprincipal.Rows[i].Cells[7].Value.Equals("-"))
+                {
+                    dtgprincipal.Rows[i].Cells[7].Value += " " + unidad;
+                    dtgprincipal.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(255, 192, 192);
+                }
+                dtgprincipal.Rows[i].Cells[8].Value += " " + unidad;
+            }
+
+
+            DialogResult = DialogResult.OK;
+            this.Close();
+        }
+
+        private void txb_destino_TextChanged(object sender, EventArgs e)
+        {
+            if (!txb_destino.Text.Equals("")) {
+                cbx_registro.SelectedIndex = 2;
+            }
+            else {
+                cbx_registro.SelectedIndex = 0;
+            }
         }
     }
 }
