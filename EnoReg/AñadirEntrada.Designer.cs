@@ -132,6 +132,7 @@
             // 
             this.txbCantidad.Location = new System.Drawing.Point(121, 174);
             this.txbCantidad.Margin = new System.Windows.Forms.Padding(2);
+            this.txbCantidad.MaxLength = 10;
             this.txbCantidad.Name = "txbCantidad";
             this.txbCantidad.Size = new System.Drawing.Size(200, 20);
             this.txbCantidad.TabIndex = 40;

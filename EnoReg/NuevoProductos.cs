@@ -48,25 +48,41 @@ namespace EnoReg
 
         private void btn_aceptar_Click(object sender, EventArgs e)
         {
+            Boolean valor = false;
+            String mensaje= "Tienes que rellenar o seleccionar:";
             FileStream stream = new FileStream(ruta, FileMode.Open, FileAccess.Read);
             BinaryReader brs = new BinaryReader(stream);
             img = brs.ReadBytes((int)stream.Length);
             imagen = pcb_imagen.Image;
             if (string.IsNullOrEmpty(txb_Nombre.Text))
             {
-                MessageBox.Show("Rellena el campo Nombre",
-                    "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (mensaje.Length > 34)
+                {
+                    mensaje += ",";
+                }
+                mensaje += " Nombre";
+                txb_Nombre.Focus();
+                txb_Nombre.BackColor = Color.LightCoral;
+                valor = true;
             }
-            else if (cmb_unidad.SelectedIndex != 0)
+            if (cmb_unidad.SelectedIndex != 0)
             {
-                MessageBox.Show("Selecciona una Unidad", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (mensaje.Length > 34)
+                {
+                    mensaje += ",";
+                }
+                mensaje += " Unidad";
+                cmb_unidad.Focus();
+                cmb_unidad.BackColor = Color.LightCoral;
+                valor = true;
             }
-            else
+            if(valor==false)
             {
+                mensaje = "Producto introducido correctamente";
                 productoDAO.InsertarProducto(txb_Nombre.Text, cmb_unidad.Text, img);
-                txb_Nombre.ResetText();
-                cmb_unidad.SelectedIndex = 0;
+                Close();
             }
+            MessageBox.Show(mensaje+".", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
     }
