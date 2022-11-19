@@ -43,37 +43,59 @@ namespace EnoReg
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-
-            if (productoDAO.ObtenerStock(cmbProductos.Text) - int.Parse(txbCantidad.Text)<=0) {
-                MessageBox.Show("Se pretende sacar mas productos de los disponibles.");
-            }else if (cmbProductos.SelectedIndex.Equals(-1))
+            String mensaje = "Tienes que rellenar o seleccionar:";
+            Boolean valor = false;
+            
+            if (cmbProductos.SelectedIndex.Equals(-1))
             {
-                MessageBox.Show("Tienes que seleccionar un producto",
-                    "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+                if (mensaje.Length > 34)
+                {
+                    mensaje += ",";
+                }
+                mensaje += " Producto";
                 cmbProductos.Focus();
+                cmbProductos.BackColor = Color.LightCoral;
+                valor = true;
             }
-            else if (string.IsNullOrEmpty(txbLote.Text))
+            if (string.IsNullOrEmpty(txbLote.Text))
             {
-                MessageBox.Show("Rellena el campo Lote",
-                "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+                if (mensaje.Length > 34)
+                {
+                    mensaje += ",";
+                }
+                mensaje += " Lote";          
                 txbLote.Focus();
                 txbLote.BackColor = Color.LightCoral;
-            }else if (string.IsNullOrEmpty(txbCantidad.Text))
+                valor = true;
+            }
+            if (string.IsNullOrEmpty(txbCantidad.Text))
             {
-                MessageBox.Show("Rellena el campo Cantidad",
-                "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+                if (mensaje.Length > 34)
+                {
+                    mensaje += ",";
+                }
+                mensaje += " Cantidad";              
                 txbCantidad.Focus();
                 txbCantidad.BackColor = Color.LightCoral;
+                valor = true;
             }
-            else {
+            if (valor == false &&(productoDAO.ObtenerStock(cmbProductos.Text) - int.Parse(txbCantidad.Text)) <= 0 )
+            {
+                MessageBox.Show("Se pretende sacar mas productos de los disponibles.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                valor = true;
+            }
+            if (valor==false) {
+                mensaje = "Salida introducida correctamente";
                 productoDAO.InsertarSalida(cmbProductos.Text, dtpFechaSalida.Value.ToString("yyyy-MM-dd"), txbLote.Text, txbCantidad.Text, txbDestino.Text, txbObservaciones.Text);
                 productoDAO.cerrarConexion();
                 DialogResult = DialogResult.OK;
                 this.Close();
-            }          
+            }
+            if (mensaje.Length > 34)
+            {
+                MessageBox.Show(mensaje + ".", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            
         }
 
         private void AñadirSalida_Load(object sender, EventArgs e)
