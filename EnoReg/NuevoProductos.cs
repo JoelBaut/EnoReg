@@ -16,7 +16,7 @@ namespace EnoReg
     public partial class NuevoProductos : Form
     {
         private ProductoDAO productoDAO;
-        string ruta;
+        string ruta ="";
         byte[] img = null;
         Image imagen;
         public NuevoProductos(ProductoDAO productoDAO, Point location)
@@ -48,10 +48,12 @@ namespace EnoReg
 
         private void btn_aceptar_Click(object sender, EventArgs e)
         {
-            FileStream stream = new FileStream(ruta, FileMode.Open, FileAccess.Read);
-            BinaryReader brs = new BinaryReader(stream);
-            img = brs.ReadBytes((int)stream.Length);
-            imagen = pcb_imagen.Image;
+            if (!ruta.Equals("")) {
+                FileStream stream = new FileStream(ruta, FileMode.Open, FileAccess.Read);
+                BinaryReader brs = new BinaryReader(stream);
+                img = brs.ReadBytes((int)stream.Length);
+                imagen = pcb_imagen.Image;
+            }
             if (string.IsNullOrEmpty(txb_Nombre.Text))
             {
                 MessageBox.Show("Rellena el campo Nombre",
@@ -63,9 +65,18 @@ namespace EnoReg
             }
             else
             {
-                productoDAO.InsertarProducto(txb_Nombre.Text, cmb_unidad.Text, img);
-                txb_Nombre.ResetText();
-                cmb_unidad.SelectedIndex = 0;
+                if (!ruta.Equals(""))
+                {
+                    productoDAO.InsertarProducto(txb_Nombre.Text, cmb_unidad.Text, img);
+                    txb_Nombre.ResetText();
+                    cmb_unidad.SelectedIndex = 0;
+                }
+                else {
+                    productoDAO.InsertarProducto(txb_Nombre.Text, cmb_unidad.Text);
+                    txb_Nombre.ResetText();
+                    cmb_unidad.SelectedIndex = 0;
+                }
+
             }
 
         }

@@ -140,5 +140,13 @@ namespace EnoReg
 
             return conexionDB.Select(sql);
         }
+
+        internal void InsertarProducto(string nombre, string unidad)
+        {
+
+            String sql = "INSERT INTO `producto`(`nombre`, `unidad`) VALUES ('" + nombre + "', '" + unidad + "');";
+
+            conexionDB.InsertarProducto(sql);
+        }
     }
 }
