@@ -20,7 +20,6 @@ namespace EnoReg
             this.productoDAO = productoDAO;
             this.dr = mySqlDataReader;
             InitializeComponent();
-            this.Location = new Point(this.Location.X, this.Location.Y);
             this.Font = Properties.Settings.Default.Font;
             this.BackColor = Properties.Settings.Default.ColorFondo;
             this.ForeColor = Properties.Settings.Default.ColorLetra;            
@@ -43,7 +42,7 @@ namespace EnoReg
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            String mensaje = "Tienes que rellenar o seleccionar:";
+            string mensaje = "Tienes que rellenar o seleccionar:";
             Boolean valor = false;
             
             if (cmbProductos.SelectedIndex.Equals(-1))
@@ -57,6 +56,10 @@ namespace EnoReg
                 cmbProductos.BackColor = Color.LightCoral;
                 valor = true;
             }
+            else
+            {
+                cmbProductos.BackColor = Color.White;
+            }
             if (string.IsNullOrEmpty(txbLote.Text))
             {
                 if (mensaje.Length > 34)
@@ -68,6 +71,10 @@ namespace EnoReg
                 txbLote.BackColor = Color.LightCoral;
                 valor = true;
             }
+            else
+            {
+                txbLote.BackColor = Color.White;
+            }
             if (string.IsNullOrEmpty(txbCantidad.Text))
             {
                 if (mensaje.Length > 34)
@@ -78,6 +85,10 @@ namespace EnoReg
                 txbCantidad.Focus();
                 txbCantidad.BackColor = Color.LightCoral;
                 valor = true;
+            }
+            else
+            {
+                txbCantidad.BackColor = Color.White;
             }
             if (valor == false &&(productoDAO.ObtenerStock(cmbProductos.Text) - int.Parse(txbCantidad.Text)) <= 0 )
             {

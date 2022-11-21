@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,15 +17,15 @@ namespace EnoReg
 {
     public partial class NuevoProductos : Form
     {
+        
         private ProductoDAO productoDAO;
-        string ruta;
+        string ruta="";
         byte[] img = null;
         Image imagen;
         public NuevoProductos(ProductoDAO productoDAO, Point location)
         {
             this.productoDAO = productoDAO;
             InitializeComponent();
-            this.Location = new Point(this.Location.X, this.Location.Y);
             this.Font = Properties.Settings.Default.Font;
             this.BackColor = Properties.Settings.Default.ColorFondo;
             this.ForeColor = Properties.Settings.Default.ColorLetra;
@@ -49,11 +51,14 @@ namespace EnoReg
         private void btn_aceptar_Click(object sender, EventArgs e)
         {
             Boolean valor = false;
-            String mensaje= "Tienes que rellenar o seleccionar:";
-            FileStream stream = new FileStream(ruta, FileMode.Open, FileAccess.Read);
-            BinaryReader brs = new BinaryReader(stream);
-            img = brs.ReadBytes((int)stream.Length);
-            imagen = pcb_imagen.Image;
+            string mensaje= "Tienes que rellenar o seleccionar:";
+            if (!ruta.Equals(""))
+            {
+                FileStream stream = new FileStream(ruta, FileMode.Open, FileAccess.Read);
+                BinaryReader brs = new BinaryReader(stream);
+                img = brs.ReadBytes((int)stream.Length);
+                imagen = pcb_imagen.Image;
+            }
             if (string.IsNullOrEmpty(txb_Nombre.Text))
             {
                 if (mensaje.Length > 34)
@@ -64,6 +69,20 @@ namespace EnoReg
                 txb_Nombre.Focus();
                 txb_Nombre.BackColor = Color.LightCoral;
                 valor = true;
+            }
+            else {
+                
+                string check = "-1";
+                MySqlDataReader dr = productoDAO.CargarNombres(txb_Nombre.Text);
+                
+                    while(dr.Read()) {
+                    check=dr.GetString(0);
+                }                
+                if (!check.Equals("-1")) {
+                    mensaje = "No se pueden introducir un producto existente";
+                    valor = true;
+                }
+                txb_Nombre.BackColor = Color.White;
             }
             if (cmb_unidad.SelectedIndex != 0)
             {
@@ -76,10 +95,26 @@ namespace EnoReg
                 cmb_unidad.BackColor = Color.LightCoral;
                 valor = true;
             }
-            if(valor==false)
+            else
+            {
+                cmb_unidad.BackColor = Color.White;
+            }
+            if (valor==false)
             {
                 mensaje = "Producto introducido correctamente";
-                productoDAO.InsertarProducto(txb_Nombre.Text, cmb_unidad.Text, img);
+                if (!ruta.Equals(""))
+                {
+
+                    productoDAO.InsertarProducto(txb_Nombre.Text, cmb_unidad.Text, img);
+                    txb_Nombre.ResetText();
+                    cmb_unidad.SelectedIndex = 0;
+                }
+                else
+                {
+                    productoDAO.InsertarProducto(txb_Nombre.Text, cmb_unidad.Text);
+                    txb_Nombre.ResetText();
+                    cmb_unidad.SelectedIndex = 0;
+                }
                 Close();
             }
             MessageBox.Show(mensaje+".", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);

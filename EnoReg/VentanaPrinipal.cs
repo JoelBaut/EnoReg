@@ -45,8 +45,8 @@ namespace EnoReg
             productoDAO.cerrarConexion();
 
             // añadir unidad a los valores y colores
-            String nombre;
-            String unidad="";
+            string nombre;
+            string unidad="";
             MySqlDataReader dr;
             for (int i = 0; i < dtgprincipal.RowCount; i++)
             {
@@ -111,7 +111,7 @@ namespace EnoReg
         private void dtgprincipal_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int fila = dtgprincipal.CurrentCell.RowIndex;
-            String nombre = (string)dtgprincipal.Rows[fila].Cells[1].Value;
+            string nombre = (string)dtgprincipal.Rows[fila].Cells[1].Value;
 
             MySqlDataReader dataReader =  productoDAO.CargarImagen(nombre);
 
