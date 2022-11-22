@@ -56,12 +56,5 @@ namespace EnoReg
             MySqlCommand cmd = new MySqlCommand(sentenciaSQL, conn);
             cmd.ExecuteNonQuery();
         }
-
-        internal void InsertarProducto(string sentenciaSQL)
-        {
-            crearConexion();
-            MySqlCommand cmd = new MySqlCommand(sentenciaSQL, conn);
-            cmd.ExecuteNonQuery();
-        }
     }
 }

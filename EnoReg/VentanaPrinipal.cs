@@ -129,6 +129,15 @@ namespace EnoReg
                     picImagenProducto.Image = null;
                 }
             }
+
+            if (!dtgprincipal.Rows[fila].Cells[7].Value.Equals("-"))
+            {
+                txbObservacioens.Text = dtgprincipal.Rows[fila].Cells[10].Value.ToString();
+
+            }
+            else {
+                txbObservacioens.Text = "Observaciones:";
+            }
         }
 
         private void dtgprincipal_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)

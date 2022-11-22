@@ -50,6 +50,8 @@ namespace EnoReg
 
         private void btn_aceptar_Click(object sender, EventArgs e)
         {
+            Boolean valor = false;
+            string mensaje = "Tienes que rellenar o seleccionar:";
             FileStream stream = new FileStream(ruta, FileMode.Open, FileAccess.Read);
             BinaryReader brs = new BinaryReader(stream);
             img = brs.ReadBytes((int)stream.Length);
