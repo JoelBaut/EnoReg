@@ -23,7 +23,6 @@ namespace EnoReg
             this.Font = Properties.Settings.Default.Font;
             this.BackColor = Properties.Settings.Default.ColorFondo;
             this.ForeColor = Properties.Settings.Default.ColorLetra;
-            this.Location = new Point(this.Location.X, this.Location.Y);
 
             cargarCombo(dr);
             dtpFechaEntrada.MaxDate = DateTime.Today;
@@ -55,7 +54,7 @@ namespace EnoReg
         private void btnAceptarEntrada_Click(object sender, EventArgs e)
         {     
             Boolean valor = false;
-            String mensaje = "Tienes que rellenar o seleccionar:";
+            string mensaje = "Tienes que rellenar o seleccionar:";
             if (cmbProductos.SelectedIndex.Equals(-1))
             {
                 if (mensaje.Length > 34)
@@ -67,6 +66,10 @@ namespace EnoReg
                 cmbProductos.BackColor = Color.LightCoral;
                 valor = true;
             }
+            else
+            {
+                cmbProductos.BackColor = Color.White;
+            }
             if (string.IsNullOrEmpty(txbLote.Text))
             {
                 if (mensaje.Length > 34) {
@@ -76,6 +79,10 @@ namespace EnoReg
                 txbLote.Focus();
                 txbLote.BackColor = Color.LightCoral;
                 valor = true;
+            }
+            else
+            {
+                txbLote.BackColor = Color.White;
             }
             if (string.IsNullOrEmpty(txbCantidad.Text))
             {
@@ -88,6 +95,10 @@ namespace EnoReg
                 txbCantidad.BackColor = Color.LightCoral;
                 valor = true;
             }
+            else
+            {
+                txbCantidad.BackColor = Color.White;
+            }
             if (dtpCaducidad.Value.Date == DateTime.Now.Date)
             {
                 if (mensaje.Length > 34)
@@ -97,7 +108,7 @@ namespace EnoReg
                 mensaje += " Fecha de Caducidad";
                 dtpCaducidad.Focus();
                 valor = true;
-            }
+            }  
             if (string.IsNullOrEmpty(txbProveedor.Text))
             {
                 if (mensaje.Length > 34)
@@ -109,6 +120,10 @@ namespace EnoReg
                 txbProveedor.BackColor = Color.LightCoral;
                 valor = true;
             }
+            else
+            {
+                txbProveedor.BackColor = Color.White;
+            }
             if (string.IsNullOrEmpty(txbAlbaran.Text))
             {
                 if (mensaje.Length > 34)
@@ -119,6 +134,10 @@ namespace EnoReg
                 txbAlbaran.Focus();
                 txbAlbaran.BackColor = Color.LightCoral;
                 valor = true;
+            }
+            else
+            {
+                txbAlbaran.BackColor = Color.White;
             }
             if(valor==false) {
                 mensaje = "Entrada introducida correctamente";

@@ -24,7 +24,7 @@ namespace EnoReg
         public void cerrarConexion() {
             conn.Close(); 
         }
-        public MySqlDataReader Select( String sentenciaSQL)
+        public MySqlDataReader Select( string sentenciaSQL)
         {
             crearConexion();
             MySqlCommand cmd = new MySqlCommand(sentenciaSQL, conn);
@@ -45,6 +45,12 @@ namespace EnoReg
             cmd.ExecuteNonQuery();
         }
         public void Update(String sentenciaSQL)
+        {
+            crearConexion();
+            MySqlCommand cmd = new MySqlCommand(sentenciaSQL, conn);
+            cmd.ExecuteNonQuery();
+        }
+        internal void InsertarProducto(string sentenciaSQL)
         {
             crearConexion();
             MySqlCommand cmd = new MySqlCommand(sentenciaSQL, conn);

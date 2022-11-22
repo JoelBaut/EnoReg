@@ -47,106 +47,112 @@
             // lblFecha
             // 
             this.lblFecha.AutoSize = true;
-            this.lblFecha.Location = new System.Drawing.Point(58, 48);
+            this.lblFecha.Location = new System.Drawing.Point(77, 59);
+            this.lblFecha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(40, 13);
+            this.lblFecha.Size = new System.Drawing.Size(48, 16);
             this.lblFecha.TabIndex = 0;
             this.lblFecha.Text = "Fecha:";
             // 
             // lblProducto
             // 
             this.lblProducto.AutoSize = true;
-            this.lblProducto.Location = new System.Drawing.Point(45, 104);
+            this.lblProducto.Location = new System.Drawing.Point(60, 128);
+            this.lblProducto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblProducto.Name = "lblProducto";
-            this.lblProducto.Size = new System.Drawing.Size(53, 13);
+            this.lblProducto.Size = new System.Drawing.Size(64, 16);
             this.lblProducto.TabIndex = 1;
             this.lblProducto.Text = "Producto:";
             // 
             // lblLote
             // 
             this.lblLote.AutoSize = true;
-            this.lblLote.Location = new System.Drawing.Point(67, 160);
+            this.lblLote.Location = new System.Drawing.Point(89, 197);
+            this.lblLote.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLote.Name = "lblLote";
-            this.lblLote.Size = new System.Drawing.Size(31, 13);
+            this.lblLote.Size = new System.Drawing.Size(36, 16);
             this.lblLote.TabIndex = 2;
             this.lblLote.Text = "Lote:";
             // 
             // lblCantidad
             // 
             this.lblCantidad.AutoSize = true;
-            this.lblCantidad.Location = new System.Drawing.Point(46, 216);
+            this.lblCantidad.Location = new System.Drawing.Point(61, 266);
+            this.lblCantidad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCantidad.Name = "lblCantidad";
-            this.lblCantidad.Size = new System.Drawing.Size(52, 13);
+            this.lblCantidad.Size = new System.Drawing.Size(64, 16);
             this.lblCantidad.TabIndex = 3;
             this.lblCantidad.Text = "Cantidad:";
             // 
             // lblDestino
             // 
             this.lblDestino.AutoSize = true;
-            this.lblDestino.Location = new System.Drawing.Point(52, 272);
+            this.lblDestino.Location = new System.Drawing.Point(69, 335);
+            this.lblDestino.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDestino.Name = "lblDestino";
-            this.lblDestino.Size = new System.Drawing.Size(46, 13);
+            this.lblDestino.Size = new System.Drawing.Size(56, 16);
             this.lblDestino.TabIndex = 4;
             this.lblDestino.Text = "Destino:";
             // 
             // lblObservaciones
             // 
             this.lblObservaciones.AutoSize = true;
-            this.lblObservaciones.Location = new System.Drawing.Point(17, 328);
+            this.lblObservaciones.Location = new System.Drawing.Point(23, 404);
+            this.lblObservaciones.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblObservaciones.Name = "lblObservaciones";
-            this.lblObservaciones.Size = new System.Drawing.Size(81, 13);
+            this.lblObservaciones.Size = new System.Drawing.Size(102, 16);
             this.lblObservaciones.TabIndex = 5;
             this.lblObservaciones.Text = "Observaciones:";
             // 
             // dtpFechaSalida
             // 
             this.dtpFechaSalida.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaSalida.Location = new System.Drawing.Point(110, 41);
-            this.dtpFechaSalida.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
+            this.dtpFechaSalida.Location = new System.Drawing.Point(147, 50);
+            this.dtpFechaSalida.Margin = new System.Windows.Forms.Padding(4, 7, 4, 4);
             this.dtpFechaSalida.Name = "dtpFechaSalida";
-            this.dtpFechaSalida.Size = new System.Drawing.Size(214, 20);
+            this.dtpFechaSalida.Size = new System.Drawing.Size(284, 22);
             this.dtpFechaSalida.TabIndex = 10;
             // 
             // txbLote
             // 
-            this.txbLote.Location = new System.Drawing.Point(102, 157);
-            this.txbLote.Margin = new System.Windows.Forms.Padding(4);
+            this.txbLote.Location = new System.Drawing.Point(136, 193);
+            this.txbLote.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txbLote.Name = "txbLote";
-            this.txbLote.Size = new System.Drawing.Size(214, 20);
+            this.txbLote.Size = new System.Drawing.Size(284, 22);
             this.txbLote.TabIndex = 30;
             // 
             // txbCantidad
             // 
-            this.txbCantidad.Location = new System.Drawing.Point(102, 213);
-            this.txbCantidad.Margin = new System.Windows.Forms.Padding(4);
+            this.txbCantidad.Location = new System.Drawing.Point(136, 262);
+            this.txbCantidad.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txbCantidad.MaxLength = 10;
             this.txbCantidad.Name = "txbCantidad";
-            this.txbCantidad.Size = new System.Drawing.Size(214, 20);
+            this.txbCantidad.Size = new System.Drawing.Size(284, 22);
             this.txbCantidad.TabIndex = 40;
             // 
             // txbDestino
             // 
-            this.txbDestino.Location = new System.Drawing.Point(102, 269);
-            this.txbDestino.Margin = new System.Windows.Forms.Padding(4);
+            this.txbDestino.Location = new System.Drawing.Point(136, 331);
+            this.txbDestino.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txbDestino.Name = "txbDestino";
-            this.txbDestino.Size = new System.Drawing.Size(214, 20);
+            this.txbDestino.Size = new System.Drawing.Size(284, 22);
             this.txbDestino.TabIndex = 50;
             // 
             // txbObservaciones
             // 
-            this.txbObservaciones.Location = new System.Drawing.Point(102, 328);
-            this.txbObservaciones.Margin = new System.Windows.Forms.Padding(4);
+            this.txbObservaciones.Location = new System.Drawing.Point(136, 404);
+            this.txbObservaciones.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txbObservaciones.Multiline = true;
             this.txbObservaciones.Name = "txbObservaciones";
-            this.txbObservaciones.Size = new System.Drawing.Size(214, 53);
+            this.txbObservaciones.Size = new System.Drawing.Size(284, 64);
             this.txbObservaciones.TabIndex = 60;
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(163, 422);
-            this.btnAceptar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAceptar.Location = new System.Drawing.Point(217, 519);
+            this.btnAceptar.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(75, 35);
+            this.btnAceptar.Size = new System.Drawing.Size(100, 43);
             this.btnAceptar.TabIndex = 80;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
@@ -155,10 +161,10 @@
             // btnCancelar
             // 
             this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancelar.Location = new System.Drawing.Point(246, 422);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCancelar.Location = new System.Drawing.Point(328, 519);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 35);
+            this.btnCancelar.Size = new System.Drawing.Size(100, 43);
             this.btnCancelar.TabIndex = 70;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -167,19 +173,19 @@
             // 
             this.cmbProductos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProductos.FormattingEnabled = true;
-            this.cmbProductos.Location = new System.Drawing.Point(105, 101);
-            this.cmbProductos.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbProductos.Location = new System.Drawing.Point(140, 124);
+            this.cmbProductos.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.cmbProductos.Name = "cmbProductos";
-            this.cmbProductos.Size = new System.Drawing.Size(211, 21);
+            this.cmbProductos.Size = new System.Drawing.Size(280, 24);
             this.cmbProductos.TabIndex = 81;
             // 
             // AñadirSalida
             // 
             this.AcceptButton = this.btnAceptar;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancelar;
-            this.ClientSize = new System.Drawing.Size(379, 476);
+            this.ClientSize = new System.Drawing.Size(505, 586);
             this.Controls.Add(this.cmbProductos);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
@@ -196,10 +202,10 @@
             this.Controls.Add(this.lblFecha);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Location = new System.Drawing.Point(1075, 200);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.MaximizeBox = false;
             this.Name = "AñadirSalida";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Salidas";
             this.ResumeLayout(false);
             this.PerformLayout();
