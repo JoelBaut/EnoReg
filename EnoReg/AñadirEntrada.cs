@@ -23,11 +23,11 @@ namespace EnoReg
             this.Font = Properties.Settings.Default.Font;
             this.BackColor = Properties.Settings.Default.ColorFondo;
             this.ForeColor = Properties.Settings.Default.ColorLetra;
-            this.Location = new Point(this.Location.X, this.Location.Y);
 
             cargarCombo(dr);
             dtpFechaEntrada.MaxDate = DateTime.Today;
             dtpCaducidad.MinDate = DateTime.Today;
+            dtpCaducidad.Value = DateTime.Now.Date;
         }
 
         private void cargarCombo(MySqlDataReader dr)
@@ -52,52 +52,101 @@ namespace EnoReg
         }
 
         private void btnAceptarEntrada_Click(object sender, EventArgs e)
-        {       
+        {     
+            Boolean valor = false;
+            string mensaje = "Tienes que rellenar o seleccionar:";
             if (cmbProductos.SelectedIndex.Equals(-1))
             {
-                MessageBox.Show("Tienes que seleccionar un producto",
-                    "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+                if (mensaje.Length > 34)
+                {
+                    mensaje += ",";
+                }
+                mensaje += " Producto";
                 cmbProductos.Focus();
+                cmbProductos.BackColor = Color.LightCoral;
+                valor = true;
             }
-            else if (string.IsNullOrEmpty(txbLote.Text))
+            else
             {
-                MessageBox.Show("Rellena el campo Lote",
-                "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+                cmbProductos.BackColor = Color.White;
+            }
+            if (string.IsNullOrEmpty(txbLote.Text))
+            {
+                if (mensaje.Length > 34) {
+                    mensaje += ",";
+                }
+                mensaje += " Lote";
                 txbLote.Focus();
                 txbLote.BackColor = Color.LightCoral;
+                valor = true;
             }
-            else if (string.IsNullOrEmpty(txbCantidad.Text))
+            else
             {
-                MessageBox.Show("Rellena el campo Cantidad",
-                "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+                txbLote.BackColor = Color.White;
+            }
+            if (string.IsNullOrEmpty(txbCantidad.Text))
+            {
+                if (mensaje.Length > 34)
+                {
+                    mensaje += ",";
+                }
+                mensaje += " Cantidad";
                 txbCantidad.Focus();
                 txbCantidad.BackColor = Color.LightCoral;
+                valor = true;
             }
-            else if (string.IsNullOrEmpty(txbProveedor.Text))
+            else
             {
-                MessageBox.Show("Rellena el campo Proveedor",
-                "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+                txbCantidad.BackColor = Color.White;
+            }
+            if (dtpCaducidad.Value.Date == DateTime.Now.Date)
+            {
+                if (mensaje.Length > 34)
+                {
+                    mensaje += ",";
+                }
+                mensaje += " Fecha de Caducidad";
+                dtpCaducidad.Focus();
+                valor = true;
+            }  
+            if (string.IsNullOrEmpty(txbProveedor.Text))
+            {
+                if (mensaje.Length > 34)
+                {
+                    mensaje += ",";
+                }
+                mensaje += " Proveedor";
                 txbProveedor.Focus();
                 txbProveedor.BackColor = Color.LightCoral;
+                valor = true;
             }
-            else if (string.IsNullOrEmpty(txbAlbaran.Text))
+            else
             {
-                MessageBox.Show("Rellena el campo Albarán",
-                "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+                txbProveedor.BackColor = Color.White;
+            }
+            if (string.IsNullOrEmpty(txbAlbaran.Text))
+            {
+                if (mensaje.Length > 34)
+                {
+                    mensaje += ",";
+                }
+                mensaje += " Albaran";
                 txbAlbaran.Focus();
                 txbAlbaran.BackColor = Color.LightCoral;
+                valor = true;
             }
-            else {
+            else
+            {
+                txbAlbaran.BackColor = Color.White;
+            }
+            if(valor==false) {
+                mensaje = "Entrada introducida correctamente";
                 productoDAO.InsertarEntrada(cmbProductos.Text, dtpFechaEntrada.Value.ToString("yyyy-MM-dd"), txbLote.Text, txbAlbaran.Text, txbProveedor.Text, dtpCaducidad.Value.ToString("yyyy-MM-dd"), txbCantidad.Text);
                 productoDAO.cerrarConexion();
                 DialogResult = DialogResult.OK;
                 this.Close();
             }
+            MessageBox.Show(mensaje+".","Advertencia",MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

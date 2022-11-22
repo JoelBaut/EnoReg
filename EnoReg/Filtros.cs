@@ -22,7 +22,6 @@ namespace EnoReg
             this.dr = mySqlDataReader;
             this.dtgprincipal = dtgprincipal;
             InitializeComponent();
-            this.Location = new Point(this.Location.X, this.Location.Y);
             this.Font = Properties.Settings.Default.Font;
             this.BackColor = Properties.Settings.Default.ColorFondo;
             this.ForeColor = Properties.Settings.Default.ColorLetra;
@@ -65,8 +64,8 @@ namespace EnoReg
             productoDAO.cerrarConexion();
 
             // añadir unidad a los valores y colores
-            String nombre;
-            String unidad = "";
+            string nombre;
+            string unidad = "";
             MySqlDataReader dr;
             for (int i = 0; i < dtgprincipal.RowCount; i++)
             {
