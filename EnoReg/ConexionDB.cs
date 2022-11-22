@@ -56,6 +56,5 @@ namespace EnoReg
             MySqlCommand cmd = new MySqlCommand(sentenciaSQL, conn);
             cmd.ExecuteNonQuery();
         }
-
     }
 }

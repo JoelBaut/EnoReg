@@ -51,14 +51,11 @@ namespace EnoReg
         private void btn_aceptar_Click(object sender, EventArgs e)
         {
             Boolean valor = false;
-            string mensaje= "Tienes que rellenar o seleccionar:";
-            if (!ruta.Equals(""))
-            {
-                FileStream stream = new FileStream(ruta, FileMode.Open, FileAccess.Read);
-                BinaryReader brs = new BinaryReader(stream);
-                img = brs.ReadBytes((int)stream.Length);
-                imagen = pcb_imagen.Image;
-            }
+            string mensaje = "Tienes que rellenar o seleccionar:";
+            FileStream stream = new FileStream(ruta, FileMode.Open, FileAccess.Read);
+            BinaryReader brs = new BinaryReader(stream);
+            img = brs.ReadBytes((int)stream.Length);
+            imagen = pcb_imagen.Image;
             if (string.IsNullOrEmpty(txb_Nombre.Text))
             {
                 if (mensaje.Length > 34)
@@ -97,27 +94,10 @@ namespace EnoReg
             }
             else
             {
-                cmb_unidad.BackColor = Color.White;
+                productoDAO.InsertarProducto(txb_Nombre.Text, cmb_unidad.Text, img);
+                txb_Nombre.ResetText();
+                cmb_unidad.SelectedIndex = 0;
             }
-            if (valor==false)
-            {
-                mensaje = "Producto introducido correctamente";
-                if (!ruta.Equals(""))
-                {
-
-                    productoDAO.InsertarProducto(txb_Nombre.Text, cmb_unidad.Text, img);
-                    txb_Nombre.ResetText();
-                    cmb_unidad.SelectedIndex = 0;
-                }
-                else
-                {
-                    productoDAO.InsertarProducto(txb_Nombre.Text, cmb_unidad.Text);
-                    txb_Nombre.ResetText();
-                    cmb_unidad.SelectedIndex = 0;
-                }
-                Close();
-            }
-            MessageBox.Show(mensaje+".", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
     }

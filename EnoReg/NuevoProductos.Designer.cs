@@ -44,39 +44,35 @@
             // lbl_nombre
             // 
             this.lbl_nombre.AutoSize = true;
-            this.lbl_nombre.Location = new System.Drawing.Point(93, 37);
-            this.lbl_nombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_nombre.Location = new System.Drawing.Point(70, 30);
             this.lbl_nombre.Name = "lbl_nombre";
-            this.lbl_nombre.Size = new System.Drawing.Size(56, 16);
+            this.lbl_nombre.Size = new System.Drawing.Size(44, 13);
             this.lbl_nombre.TabIndex = 0;
             this.lbl_nombre.Text = "Nombre";
             // 
             // lbl_unidad
             // 
             this.lbl_unidad.AutoSize = true;
-            this.lbl_unidad.Location = new System.Drawing.Point(93, 101);
-            this.lbl_unidad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_unidad.Location = new System.Drawing.Point(70, 82);
             this.lbl_unidad.Name = "lbl_unidad";
-            this.lbl_unidad.Size = new System.Drawing.Size(51, 16);
+            this.lbl_unidad.Size = new System.Drawing.Size(41, 13);
             this.lbl_unidad.TabIndex = 1;
             this.lbl_unidad.Text = "Unidad";
             // 
             // lbl_imagen
             // 
             this.lbl_imagen.AutoSize = true;
-            this.lbl_imagen.Location = new System.Drawing.Point(97, 166);
-            this.lbl_imagen.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_imagen.Location = new System.Drawing.Point(73, 135);
             this.lbl_imagen.Name = "lbl_imagen";
-            this.lbl_imagen.Size = new System.Drawing.Size(52, 16);
+            this.lbl_imagen.Size = new System.Drawing.Size(42, 13);
             this.lbl_imagen.TabIndex = 2;
             this.lbl_imagen.Text = "Imagen";
             // 
             // btn_aceptar
             // 
-            this.btn_aceptar.Location = new System.Drawing.Point(217, 519);
-            this.btn_aceptar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_aceptar.Location = new System.Drawing.Point(163, 422);
             this.btn_aceptar.Name = "btn_aceptar";
-            this.btn_aceptar.Size = new System.Drawing.Size(100, 43);
+            this.btn_aceptar.Size = new System.Drawing.Size(75, 35);
             this.btn_aceptar.TabIndex = 40;
             this.btn_aceptar.Text = "Aceptar";
             this.btn_aceptar.UseVisualStyleBackColor = true;
@@ -85,10 +81,9 @@
             // btn_cancelar
             // 
             this.btn_cancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btn_cancelar.Location = new System.Drawing.Point(328, 519);
-            this.btn_cancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_cancelar.Location = new System.Drawing.Point(246, 422);
             this.btn_cancelar.Name = "btn_cancelar";
-            this.btn_cancelar.Size = new System.Drawing.Size(100, 43);
+            this.btn_cancelar.Size = new System.Drawing.Size(75, 35);
             this.btn_cancelar.TabIndex = 50;
             this.btn_cancelar.Text = "Cancelar";
             this.btn_cancelar.UseVisualStyleBackColor = true;
@@ -96,28 +91,25 @@
             // pcb_imagen
             // 
             this.pcb_imagen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pcb_imagen.Location = new System.Drawing.Point(97, 224);
-            this.pcb_imagen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcb_imagen.Location = new System.Drawing.Point(73, 182);
             this.pcb_imagen.Name = "pcb_imagen";
-            this.pcb_imagen.Size = new System.Drawing.Size(330, 288);
+            this.pcb_imagen.Size = new System.Drawing.Size(248, 234);
             this.pcb_imagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcb_imagen.TabIndex = 5;
             this.pcb_imagen.TabStop = false;
             // 
             // txb_Nombre
             // 
-            this.txb_Nombre.Location = new System.Drawing.Point(161, 37);
-            this.txb_Nombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txb_Nombre.Location = new System.Drawing.Point(121, 30);
             this.txb_Nombre.Name = "txb_Nombre";
-            this.txb_Nombre.Size = new System.Drawing.Size(265, 22);
+            this.txb_Nombre.Size = new System.Drawing.Size(200, 20);
             this.txb_Nombre.TabIndex = 10;
             // 
             // btn_imagen
             // 
-            this.btn_imagen.Location = new System.Drawing.Point(161, 153);
-            this.btn_imagen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_imagen.Location = new System.Drawing.Point(121, 124);
             this.btn_imagen.Name = "btn_imagen";
-            this.btn_imagen.Size = new System.Drawing.Size(100, 43);
+            this.btn_imagen.Size = new System.Drawing.Size(75, 35);
             this.btn_imagen.TabIndex = 30;
             this.btn_imagen.Text = "Buscar";
             this.btn_imagen.UseVisualStyleBackColor = true;
@@ -127,19 +119,19 @@
             // 
             this.cmb_unidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_unidad.FormattingEnabled = true;
-            this.cmb_unidad.Location = new System.Drawing.Point(161, 97);
-            this.cmb_unidad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmb_unidad.Location = new System.Drawing.Point(121, 79);
+            this.cmb_unidad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmb_unidad.Name = "cmb_unidad";
-            this.cmb_unidad.Size = new System.Drawing.Size(265, 24);
-            this.cmb_unidad.TabIndex = 51;
+            this.cmb_unidad.Size = new System.Drawing.Size(200, 21);
+            this.cmb_unidad.TabIndex = 15;
             // 
             // NuevoProductos
             // 
             this.AcceptButton = this.btn_aceptar;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btn_cancelar;
-            this.ClientSize = new System.Drawing.Size(505, 586);
+            this.ClientSize = new System.Drawing.Size(379, 476);
             this.Controls.Add(this.cmb_unidad);
             this.Controls.Add(this.btn_imagen);
             this.Controls.Add(this.txb_Nombre);
@@ -151,7 +143,6 @@
             this.Controls.Add(this.lbl_nombre);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Location = new System.Drawing.Point(1075, 200);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "NuevoProductos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
