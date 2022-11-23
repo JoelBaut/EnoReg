@@ -104,13 +104,13 @@
             this.dtpFechaSalida.Location = new System.Drawing.Point(110, 41);
             this.dtpFechaSalida.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
             this.dtpFechaSalida.Name = "dtpFechaSalida";
-            this.dtpFechaSalida.Size = new System.Drawing.Size(214, 20);
+            this.dtpFechaSalida.Size = new System.Drawing.Size(206, 20);
             this.dtpFechaSalida.TabIndex = 10;
             // 
             // txbLote
             // 
             this.txbLote.Location = new System.Drawing.Point(102, 157);
-            this.txbLote.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbLote.Margin = new System.Windows.Forms.Padding(4);
             this.txbLote.Name = "txbLote";
             this.txbLote.Size = new System.Drawing.Size(214, 20);
             this.txbLote.TabIndex = 30;
@@ -118,7 +118,7 @@
             // txbCantidad
             // 
             this.txbCantidad.Location = new System.Drawing.Point(102, 213);
-            this.txbCantidad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbCantidad.Margin = new System.Windows.Forms.Padding(4);
             this.txbCantidad.MaxLength = 10;
             this.txbCantidad.Name = "txbCantidad";
             this.txbCantidad.Size = new System.Drawing.Size(214, 20);
@@ -127,7 +127,7 @@
             // txbDestino
             // 
             this.txbDestino.Location = new System.Drawing.Point(102, 269);
-            this.txbDestino.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbDestino.Margin = new System.Windows.Forms.Padding(4);
             this.txbDestino.Name = "txbDestino";
             this.txbDestino.Size = new System.Drawing.Size(214, 20);
             this.txbDestino.TabIndex = 50;
@@ -135,7 +135,7 @@
             // txbObservaciones
             // 
             this.txbObservaciones.Location = new System.Drawing.Point(102, 328);
-            this.txbObservaciones.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbObservaciones.Margin = new System.Windows.Forms.Padding(4);
             this.txbObservaciones.Multiline = true;
             this.txbObservaciones.Name = "txbObservaciones";
             this.txbObservaciones.Size = new System.Drawing.Size(214, 53);
@@ -144,7 +144,7 @@
             // btnAceptar
             // 
             this.btnAceptar.Location = new System.Drawing.Point(163, 422);
-            this.btnAceptar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAceptar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 35);
             this.btnAceptar.TabIndex = 70;
@@ -156,7 +156,7 @@
             // 
             this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancelar.Location = new System.Drawing.Point(246, 422);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 35);
             this.btnCancelar.TabIndex = 80;
@@ -168,7 +168,7 @@
             this.cmbProductos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProductos.FormattingEnabled = true;
             this.cmbProductos.Location = new System.Drawing.Point(105, 101);
-            this.cmbProductos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbProductos.Margin = new System.Windows.Forms.Padding(4);
             this.cmbProductos.Name = "cmbProductos";
             this.cmbProductos.Size = new System.Drawing.Size(211, 21);
             this.cmbProductos.TabIndex = 20;
@@ -196,7 +196,7 @@
             this.Controls.Add(this.lblFecha);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Location = new System.Drawing.Point(1075, 200);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "AñadirSalida";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

@@ -123,7 +123,7 @@
             // txbLote
             // 
             this.txbLote.Location = new System.Drawing.Point(121, 129);
-            this.txbLote.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbLote.Margin = new System.Windows.Forms.Padding(2);
             this.txbLote.Name = "txbLote";
             this.txbLote.Size = new System.Drawing.Size(200, 20);
             this.txbLote.TabIndex = 30;
@@ -131,7 +131,7 @@
             // txbCantidad
             // 
             this.txbCantidad.Location = new System.Drawing.Point(121, 174);
-            this.txbCantidad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbCantidad.Margin = new System.Windows.Forms.Padding(2);
             this.txbCantidad.MaxLength = 10;
             this.txbCantidad.Name = "txbCantidad";
             this.txbCantidad.Size = new System.Drawing.Size(200, 20);
@@ -140,7 +140,7 @@
             // txbProveedor
             // 
             this.txbProveedor.Location = new System.Drawing.Point(121, 264);
-            this.txbProveedor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbProveedor.Margin = new System.Windows.Forms.Padding(2);
             this.txbProveedor.Name = "txbProveedor";
             this.txbProveedor.Size = new System.Drawing.Size(200, 20);
             this.txbProveedor.TabIndex = 60;
@@ -148,7 +148,7 @@
             // txbAlbaran
             // 
             this.txbAlbaran.Location = new System.Drawing.Point(121, 309);
-            this.txbAlbaran.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbAlbaran.Margin = new System.Windows.Forms.Padding(2);
             this.txbAlbaran.Name = "txbAlbaran";
             this.txbAlbaran.Size = new System.Drawing.Size(200, 20);
             this.txbAlbaran.TabIndex = 70;
@@ -156,7 +156,7 @@
             // txbObservaciones
             // 
             this.txbObservaciones.Location = new System.Drawing.Point(121, 354);
-            this.txbObservaciones.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbObservaciones.Margin = new System.Windows.Forms.Padding(2);
             this.txbObservaciones.Multiline = true;
             this.txbObservaciones.Name = "txbObservaciones";
             this.txbObservaciones.Size = new System.Drawing.Size(200, 49);
@@ -205,7 +205,7 @@
             this.dtpCaducidad.Cursor = System.Windows.Forms.Cursors.Default;
             this.dtpCaducidad.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpCaducidad.Location = new System.Drawing.Point(121, 216);
-            this.dtpCaducidad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpCaducidad.Margin = new System.Windows.Forms.Padding(2);
             this.dtpCaducidad.Name = "dtpCaducidad";
             this.dtpCaducidad.Size = new System.Drawing.Size(151, 20);
             this.dtpCaducidad.TabIndex = 50;

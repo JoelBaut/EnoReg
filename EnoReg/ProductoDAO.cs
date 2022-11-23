@@ -27,11 +27,11 @@ namespace EnoReg
         }
         public MySqlDataReader CargarTodo()
         {
-            string sql = "select fecha_entrada Fecha, nombre Nombre, proveedor Proveedor, lote Lote, fecha_caducidad Caducidad, albaran Albaran,FORMAT(cantidad,3) Entrada,'-' Salida, FORMAT(stock,3) Stock, '-' Destino, '-' Observaciones" +
+            string sql = "select fecha_entrada Fecha, nombre Nombre, proveedor Proveedor, lote Lote, fecha_caducidad Caducidad, albaran Albaran,REPLACE(FORMAT(cantidad,3),'.',',') Entrada,'-' Salida, REPLACE(FORMAT(cantidad,3),'.',',') Stock, '-' Destino, '-' Observaciones" +
                 " from producto_entrada, producto" +
                 " where producto_entrada.id_producto = producto.id_producto" +
                 " Union" +
-                " select fecha_salida Fecha, nombre Nombre, '-' Proveedor, lote Lote, '-'Caducidad, '-'Albaran,'-'Entrada,FORMAT(cantidad,3) Salida, FORMAT(stock,3) Stock, destino Destino, observaciones Observaciones" +
+                " select fecha_salida Fecha, nombre Nombre, '-' Proveedor, lote Lote, '-'Caducidad, '-'Albaran,'-'Entrada,REPLACE(FORMAT(cantidad,3),'.',',') Salida, REPLACE(FORMAT(cantidad,3),'.',',') Stock, destino Destino, observaciones Observaciones" +
                 " from producto_salida, producto" +
                 " where producto_salida.id_producto = producto.id_producto" +
                 " order by fecha DESC;";
