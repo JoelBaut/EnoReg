@@ -42,6 +42,7 @@
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.cmbProductos = new System.Windows.Forms.ComboBox();
+            this.lblUnidad = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblFecha
@@ -121,7 +122,7 @@
             this.txbCantidad.Margin = new System.Windows.Forms.Padding(4);
             this.txbCantidad.MaxLength = 10;
             this.txbCantidad.Name = "txbCantidad";
-            this.txbCantidad.Size = new System.Drawing.Size(214, 20);
+            this.txbCantidad.Size = new System.Drawing.Size(155, 20);
             this.txbCantidad.TabIndex = 40;
             // 
             // txbDestino
@@ -172,6 +173,16 @@
             this.cmbProductos.Name = "cmbProductos";
             this.cmbProductos.Size = new System.Drawing.Size(211, 21);
             this.cmbProductos.TabIndex = 20;
+            this.cmbProductos.SelectedIndexChanged += new System.EventHandler(this.cmbProductos_SelectedIndexChanged);
+            // 
+            // lblUnidad
+            // 
+            this.lblUnidad.AutoSize = true;
+            this.lblUnidad.Location = new System.Drawing.Point(275, 216);
+            this.lblUnidad.Name = "lblUnidad";
+            this.lblUnidad.Size = new System.Drawing.Size(27, 13);
+            this.lblUnidad.TabIndex = 102;
+            this.lblUnidad.Text = "";
             // 
             // AñadirSalida
             // 
@@ -180,6 +191,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(379, 476);
+            this.Controls.Add(this.lblUnidad);
             this.Controls.Add(this.cmbProductos);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
@@ -222,5 +234,6 @@
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.ComboBox cmbProductos;
+        private System.Windows.Forms.Label lblUnidad;
     }
 }
