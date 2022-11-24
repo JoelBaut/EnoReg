@@ -37,7 +37,7 @@
             this.txb_Nombre = new System.Windows.Forms.TextBox();
             this.btn_imagen = new System.Windows.Forms.Button();
             this.fil_explorar = new System.Windows.Forms.OpenFileDialog();
-            this.cmb_unidad = new System.Windows.Forms.ComboBox();
+            this.txb_unidad = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pcb_imagen)).BeginInit();
             this.SuspendLayout();
             // 
@@ -115,15 +115,12 @@
             this.btn_imagen.UseVisualStyleBackColor = true;
             this.btn_imagen.Click += new System.EventHandler(this.btn_imagen_Click);
             // 
-            // cmb_unidad
+            // txb_unidad
             // 
-            this.cmb_unidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_unidad.FormattingEnabled = true;
-            this.cmb_unidad.Location = new System.Drawing.Point(121, 79);
-            this.cmb_unidad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.cmb_unidad.Name = "cmb_unidad";
-            this.cmb_unidad.Size = new System.Drawing.Size(200, 21);
-            this.cmb_unidad.TabIndex = 15;
+            this.txb_unidad.Location = new System.Drawing.Point(117, 79);
+            this.txb_unidad.Name = "txb_unidad";
+            this.txb_unidad.Size = new System.Drawing.Size(200, 20);
+            this.txb_unidad.TabIndex = 51;
             // 
             // NuevoProductos
             // 
@@ -132,7 +129,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btn_cancelar;
             this.ClientSize = new System.Drawing.Size(379, 476);
-            this.Controls.Add(this.cmb_unidad);
+            this.Controls.Add(this.txb_unidad);
             this.Controls.Add(this.btn_imagen);
             this.Controls.Add(this.txb_Nombre);
             this.Controls.Add(this.pcb_imagen);
@@ -164,7 +161,6 @@
         private System.Windows.Forms.TextBox txb_Nombre;
         private System.Windows.Forms.Button btn_imagen;
         private System.Windows.Forms.OpenFileDialog fil_explorar;
-        private System.Windows.Forms.ComboBox cmb_unidad;
-
+        private System.Windows.Forms.TextBox txb_unidad;
     }
 }

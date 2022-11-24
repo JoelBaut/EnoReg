@@ -29,7 +29,7 @@ namespace EnoReg
             dtpCaducidad.MinDate = DateTime.Today;
             dtpCaducidad.Value = DateTime.Now.Date;
         }
-
+        
         private void cargarCombo(MySqlDataReader dr)
         {
             while (dr.Read()) {
@@ -147,6 +147,16 @@ namespace EnoReg
                 this.Close();
             }
             MessageBox.Show(mensaje+".","Advertencia",MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void cmbProductos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MySqlDataReader dr;
+            dr = productoDAO.ObtenerUnidad(cmbProductos.Text);
+            while (dr.Read())
+            {
+                lblUnidad.Text = dr.GetString(0);
+            }
         }
     }
 }

@@ -116,5 +116,15 @@ namespace EnoReg
             this.BackColor = Properties.Settings.Default.ColorFondo;
             this.ForeColor = Properties.Settings.Default.ColorLetra;
         }
+
+        private void cmbProductos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MySqlDataReader dr;
+            dr = productoDAO.ObtenerUnidad(cmbProductos.Text);
+            while (dr.Read())
+            {
+                lblUnidad.Text = dr.GetString(0);
+            }
+        }
     }
 }

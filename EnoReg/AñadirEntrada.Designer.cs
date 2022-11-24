@@ -46,6 +46,7 @@
             this.btnCancelarEntrada = new System.Windows.Forms.Button();
             this.cmbProductos = new System.Windows.Forms.ComboBox();
             this.dtpCaducidad = new System.Windows.Forms.DateTimePicker();
+            this.lblUnidad = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblFechaEntrada
@@ -130,11 +131,11 @@
             // 
             // txbCantidad
             // 
-            this.txbCantidad.Location = new System.Drawing.Point(121, 174);
+            this.txbCantidad.Location = new System.Drawing.Point(121, 177);
             this.txbCantidad.Margin = new System.Windows.Forms.Padding(2);
             this.txbCantidad.MaxLength = 10;
             this.txbCantidad.Name = "txbCantidad";
-            this.txbCantidad.Size = new System.Drawing.Size(200, 20);
+            this.txbCantidad.Size = new System.Drawing.Size(155, 20);
             this.txbCantidad.TabIndex = 40;
             // 
             // txbProveedor
@@ -199,6 +200,7 @@
             this.cmbProductos.Name = "cmbProductos";
             this.cmbProductos.Size = new System.Drawing.Size(200, 21);
             this.cmbProductos.TabIndex = 20;
+            this.cmbProductos.SelectedIndexChanged += new System.EventHandler(this.cmbProductos_SelectedIndexChanged);
             // 
             // dtpCaducidad
             // 
@@ -207,8 +209,16 @@
             this.dtpCaducidad.Location = new System.Drawing.Point(121, 216);
             this.dtpCaducidad.Margin = new System.Windows.Forms.Padding(2);
             this.dtpCaducidad.Name = "dtpCaducidad";
-            this.dtpCaducidad.Size = new System.Drawing.Size(151, 20);
+            this.dtpCaducidad.Size = new System.Drawing.Size(200, 20);
             this.dtpCaducidad.TabIndex = 50;
+            // 
+            // lblUnidad
+            // 
+            this.lblUnidad.AutoSize = true;
+            this.lblUnidad.Location = new System.Drawing.Point(285, 177);
+            this.lblUnidad.Name = "lblUnidad";
+            this.lblUnidad.Size = new System.Drawing.Size(0, 13);
+            this.lblUnidad.TabIndex = 101;
             // 
             // AñadirEntrada
             // 
@@ -217,6 +227,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancelarEntrada;
             this.ClientSize = new System.Drawing.Size(379, 476);
+            this.Controls.Add(this.lblUnidad);
             this.Controls.Add(this.dtpCaducidad);
             this.Controls.Add(this.cmbProductos);
             this.Controls.Add(this.btnCancelarEntrada);
@@ -266,5 +277,6 @@
         private System.Windows.Forms.Button btnCancelarEntrada;
         private System.Windows.Forms.ComboBox cmbProductos;
         private System.Windows.Forms.DateTimePicker dtpCaducidad;
+        private System.Windows.Forms.Label lblUnidad;
     }
 }

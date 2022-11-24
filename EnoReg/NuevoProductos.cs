@@ -29,8 +29,6 @@ namespace EnoReg
             this.Font = Properties.Settings.Default.Font;
             this.BackColor = Properties.Settings.Default.ColorFondo;
             this.ForeColor = Properties.Settings.Default.ColorLetra;
-            cmb_unidad.Items.Add("Kg");
-            cmb_unidad.Items.Add("L");
         }
 
         private void btn_imagen_Click(object sender, EventArgs e)
@@ -52,10 +50,14 @@ namespace EnoReg
         {
             Boolean valor = false;
             string mensaje = "Tienes que rellenar o seleccionar:";
-            FileStream stream = new FileStream(ruta, FileMode.Open, FileAccess.Read);
-            BinaryReader brs = new BinaryReader(stream);
-            img = brs.ReadBytes((int)stream.Length);
-            imagen = pcb_imagen.Image;
+            if (!ruta.Equals(""))
+            {
+                FileStream stream = new FileStream(ruta, FileMode.Open, FileAccess.Read);
+                BinaryReader brs = new BinaryReader(stream);
+                img = brs.ReadBytes((int)stream.Length);
+                imagen = pcb_imagen.Image;
+            }
+
             if (string.IsNullOrEmpty(txb_Nombre.Text))
             {
                 if (mensaje.Length > 34)
@@ -81,22 +83,28 @@ namespace EnoReg
                 }
                 txb_Nombre.BackColor = Color.White;
             }
-            if (cmb_unidad.SelectedIndex != 0)
+            if (txb_unidad.Text.Equals(""))
             {
                 if (mensaje.Length > 34)
                 {
                     mensaje += ",";
                 }
                 mensaje += " Unidad";
-                cmb_unidad.Focus();
-                cmb_unidad.BackColor = Color.LightCoral;
+                txb_unidad.Focus();
+                txb_unidad.BackColor = Color.LightCoral;
                 valor = true;
             }
             else
             {
-                productoDAO.InsertarProducto(txb_Nombre.Text, cmb_unidad.Text, img);
+                if (!ruta.Equals(""))
+                {
+                    productoDAO.InsertarProducto(txb_Nombre.Text, txb_unidad.Text, img);
+                }
+                else {
+                    productoDAO.InsertarProducto(txb_Nombre.Text, txb_unidad.Text);
+                }
                 txb_Nombre.ResetText();
-                cmb_unidad.SelectedIndex = 0;
+                txb_unidad.ResetText();
             }
 
         }
