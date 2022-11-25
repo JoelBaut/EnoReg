@@ -25,6 +25,7 @@ namespace EnoReg
 
         private void VentanaPrinipal_Load(object sender, EventArgs e)
         {
+
             this.Font = Properties.Settings.Default.Font;
             this.BackColor = Properties.Settings.Default.ColorFondo;
             this.ForeColor = Properties.Settings.Default.ColorLetra;
@@ -128,6 +129,15 @@ namespace EnoReg
                 {
                     picImagenProducto.Image = null;
                 }
+            }
+
+            if (!dtgprincipal.Rows[fila].Cells[7].Value.Equals("-"))
+            {
+                txbObservacioens.Text = dtgprincipal.Rows[fila].Cells[10].Value.ToString();
+
+            }
+            else {
+                txbObservacioens.Text = "Observaciones:";
             }
         }
 

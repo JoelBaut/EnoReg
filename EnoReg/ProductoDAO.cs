@@ -27,11 +27,11 @@ namespace EnoReg
         }
         public MySqlDataReader CargarTodo()
         {
-            string sql = "select fecha_entrada Fecha, nombre Nombre, proveedor Proveedor, lote Lote, fecha_caducidad Caducidad, albaran Albaran,FORMAT(cantidad,3) Entrada,'-' Salida, FORMAT(stock,3) Stock, '-' Destino, '-' Observaciones" +
+            string sql = "select fecha_entrada Fecha, nombre Nombre, proveedor Proveedor, lote Lote, fecha_caducidad Caducidad, albaran Albaran,REPLACE(FORMAT(cantidad,3),'.',',') Entrada,'-' Salida, REPLACE(FORMAT(stock,3),'.',',') Stock, '-' Destino, '-' Observaciones" +
                 " from producto_entrada, producto" +
                 " where producto_entrada.id_producto = producto.id_producto" +
                 " Union" +
-                " select fecha_salida Fecha, nombre Nombre, '-' Proveedor, lote Lote, '-'Caducidad, '-'Albaran,'-'Entrada,FORMAT(cantidad,3) Salida, FORMAT(stock,3) Stock, destino Destino, observaciones Observaciones" +
+                " select fecha_salida Fecha, nombre Nombre, '-' Proveedor, lote Lote, '-'Caducidad, '-'Albaran,'-'Entrada,REPLACE(FORMAT(cantidad,3),'.',',') Salida, REPLACE(FORMAT(stock,3),'.',',') Stock, destino Destino, observaciones Observaciones" +
                 " from producto_salida, producto" +
                 " where producto_salida.id_producto = producto.id_producto" +
                 " order by fecha DESC;";
@@ -42,13 +42,13 @@ namespace EnoReg
             string sql = "select unidad from producto where nombre='" + nombreProducto + "'";
             return conexionDB.Select(sql);
         }
-       public double ObtenerStock(String nombreProducto)
+       public Decimal ObtenerStock(String nombreProducto)
         {
-            double stock =-1;
+            Decimal stock =-1;
             string sql = "select stock from producto where nombre='" + nombreProducto + "';";
             MySqlDataReader rd = conexionDB.Select(sql);
             while (rd.Read()) {
-                stock = rd.GetDouble(0);
+                stock = rd.GetDecimal(0);
             }
             return stock;
         } 
@@ -60,7 +60,7 @@ namespace EnoReg
             
             conexionDB.InsertarProducto(sql,image);
         }
-        public void InsertarEntrada(String nombre,string fecha,String lote, string Albaran, string proveedor, string fcadudidad,String cantidad ) {
+        public void InsertarEntrada(String nombre,string fecha,String lote, string Albaran, string proveedor, string fcadudidad, string cantidad ) {
 
             string sql = "INSERT INTO `producto_entrada`(`id_producto`, `fecha_entrada`, `lote`, `albaran`, `proveedor`, `fecha_caducidad`, `cantidad`) VALUES ((SELECT id_producto from producto WHERE nombre='"+ nombre + "'),'"+ fecha+"','"+lote+ "','"+ Albaran + "','"+ proveedor + "','"+ fcadudidad + "','"+ cantidad + "');";
             conexionDB.Insertar(sql);
@@ -91,13 +91,14 @@ namespace EnoReg
             return conexionDB.Select(sql);
         }
 
-        internal IDataReader CargarFiltro(string registro, string fechaInicial, string FechaFinal, string Producto, string Destino)
+        internal IDataReader CargarFiltro(string registro, string fechaInicial, string FechaFinal, string Producto, string Destino,string Lote)
         {
             string sql;
             string consultaStringProducto;
             string consultaStringDestino;
             string consultaStringFechaSalida;
             string consultaStringFechaEntrada;
+            string consultaStringLote;
             if (Producto.Equals("<Cualquiera>"))
             {
                 consultaStringProducto = "";
@@ -114,6 +115,14 @@ namespace EnoReg
             {
                 consultaStringDestino = "and `destino` =  '" + Destino + "' ";
             }
+            if (Lote.Equals(""))
+            {
+                consultaStringLote = "";
+            }
+            else
+            {
+                consultaStringLote = "and `lote` =  '" + Lote + "' ";
+            }
 
             consultaStringFechaEntrada = "and `fecha_entrada` between '" + fechaInicial + "' and '" + FechaFinal + "' ";
             consultaStringFechaSalida = "and `fecha_salida` between '" + fechaInicial + "' and '" + FechaFinal + "' ";
@@ -123,23 +132,23 @@ namespace EnoReg
             {
                 sql = "select fecha_entrada Fecha, nombre Nombre, proveedor Proveedor, lote Lote, fecha_caducidad Caducidad, albaran Albaran,FORMAT(cantidad,3) Entrada,'-' Salida, FORMAT(stock,3) Stock, '-' Destino, '-' Observaciones" +
                    " from producto_entrada, producto" +
-                   " where producto_entrada.id_producto = producto.id_producto " + consultaStringProducto + consultaStringFechaEntrada +
+                   " where producto_entrada.id_producto = producto.id_producto " + consultaStringProducto + consultaStringFechaEntrada + consultaStringLote +
                    " Union" +
                    " select fecha_salida Fecha, nombre Nombre, '-' Proveedor, lote Lote, '-'Caducidad, '-'Albaran,'-'Entrada,FORMAT(cantidad,3) Salida, FORMAT(stock,3) Stock, destino Destino, observaciones Observaciones" +
                    " from producto_salida, producto" +
-                   " where producto_salida.id_producto = producto.id_producto " + consultaStringProducto + consultaStringFechaSalida +
+                   " where producto_salida.id_producto = producto.id_producto " + consultaStringProducto + consultaStringFechaSalida + consultaStringLote+
                    " order by fecha DESC;";
 
             } else if (registro.Equals("Entradas")) {
                 sql = "select fecha_entrada Fecha, nombre Nombre, proveedor Proveedor, lote Lote, fecha_caducidad Caducidad, albaran Albaran,FORMAT(cantidad,3) Entrada,'-' Salida, FORMAT(stock,3) Stock, '-' Destino, '-' Observaciones" +
                    " from producto_entrada, producto" +
-                   " where producto_entrada.id_producto = producto.id_producto " + consultaStringProducto + consultaStringFechaEntrada +
+                   " where producto_entrada.id_producto = producto.id_producto " + consultaStringProducto + consultaStringFechaEntrada + consultaStringLote +
                    " order by fecha DESC;";
             }
             else {
                 sql = " select fecha_salida Fecha, nombre Nombre, '-' Proveedor, lote Lote, '-'Caducidad, '-'Albaran,'-'Entrada,FORMAT(cantidad,3) Salida, FORMAT(stock,3) Stock, destino Destino, observaciones Observaciones" +
                    " from producto_salida, producto" +
-                   " where producto_salida.id_producto = producto.id_producto " + consultaStringProducto + consultaStringFechaSalida + consultaStringDestino +
+                   " where producto_salida.id_producto = producto.id_producto " + consultaStringProducto + consultaStringFechaSalida + consultaStringDestino + consultaStringLote +
                    " order by fecha DESC;";
             }
 
@@ -152,6 +161,12 @@ namespace EnoReg
             string sql = "INSERT INTO `producto`(`nombre`, `unidad`) VALUES ('" + nombre + "', '" + unidad + "');";
 
             conexionDB.InsertarProducto(sql);
+        }
+
+        internal MySqlDataReader CargarObservaciones(string nombre)
+        {
+            string sql = "Select observaciones from producto_salida where id_producto = (SELECT id_producto from producto WHERE nombre = '" + nombre + "') ";
+            return conexionDB.Select(sql);
         }
     }
 }

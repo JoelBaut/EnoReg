@@ -59,7 +59,7 @@ namespace EnoReg
         private void btn_filtrar_Click(object sender, EventArgs e)
         {      
             DataTable dt = new DataTable();
-            dt.Load(productoDAO.CargarFiltro(cbx_registro.Text,dtp_dateFirst.Value.ToString("yyyy-MM-dd"), dtp_dateLast.Value.ToString("yyyy-MM-dd"), cbx_producto.Text,txb_destino.Text));
+            dt.Load(productoDAO.CargarFiltro(cbx_registro.Text,dtp_dateFirst.Value.ToString("yyyy-MM-dd"), dtp_dateLast.Value.ToString("yyyy-MM-dd"), cbx_producto.Text,txb_destino.Text,txb_lote.Text));
             dtgprincipal.DataSource = dt;
             productoDAO.cerrarConexion();
 

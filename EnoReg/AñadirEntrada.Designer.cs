@@ -46,146 +46,137 @@
             this.btnCancelarEntrada = new System.Windows.Forms.Button();
             this.cmbProductos = new System.Windows.Forms.ComboBox();
             this.dtpCaducidad = new System.Windows.Forms.DateTimePicker();
+            this.lblUnidad = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblFechaEntrada
             // 
             this.lblFechaEntrada.AutoSize = true;
-            this.lblFechaEntrada.Location = new System.Drawing.Point(69, 52);
-            this.lblFechaEntrada.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFechaEntrada.Location = new System.Drawing.Point(52, 42);
             this.lblFechaEntrada.Name = "lblFechaEntrada";
-            this.lblFechaEntrada.Size = new System.Drawing.Size(48, 16);
+            this.lblFechaEntrada.Size = new System.Drawing.Size(40, 13);
             this.lblFechaEntrada.TabIndex = 11;
             this.lblFechaEntrada.Text = "Fecha:";
             // 
             // lblProductoEntrada
             // 
             this.lblProductoEntrada.AutoSize = true;
-            this.lblProductoEntrada.Location = new System.Drawing.Point(52, 107);
-            this.lblProductoEntrada.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblProductoEntrada.Location = new System.Drawing.Point(39, 87);
             this.lblProductoEntrada.Name = "lblProductoEntrada";
-            this.lblProductoEntrada.Size = new System.Drawing.Size(64, 16);
+            this.lblProductoEntrada.Size = new System.Drawing.Size(53, 13);
             this.lblProductoEntrada.TabIndex = 21;
             this.lblProductoEntrada.Text = "Producto:";
             // 
             // lblLoteEntrada
             // 
             this.lblLoteEntrada.AutoSize = true;
-            this.lblLoteEntrada.Location = new System.Drawing.Point(81, 162);
-            this.lblLoteEntrada.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblLoteEntrada.Location = new System.Drawing.Point(61, 132);
             this.lblLoteEntrada.Name = "lblLoteEntrada";
-            this.lblLoteEntrada.Size = new System.Drawing.Size(36, 16);
+            this.lblLoteEntrada.Size = new System.Drawing.Size(31, 13);
             this.lblLoteEntrada.TabIndex = 31;
             this.lblLoteEntrada.Text = "Lote:";
             // 
             // lblCantidadEntrada
             // 
             this.lblCantidadEntrada.AutoSize = true;
-            this.lblCantidadEntrada.Location = new System.Drawing.Point(53, 218);
-            this.lblCantidadEntrada.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCantidadEntrada.Location = new System.Drawing.Point(40, 177);
             this.lblCantidadEntrada.Name = "lblCantidadEntrada";
-            this.lblCantidadEntrada.Size = new System.Drawing.Size(64, 16);
+            this.lblCantidadEntrada.Size = new System.Drawing.Size(52, 13);
             this.lblCantidadEntrada.TabIndex = 41;
             this.lblCantidadEntrada.Text = "Cantidad:";
             // 
             // lblCaducidadEntrada
             // 
             this.lblCaducidadEntrada.AutoSize = true;
-            this.lblCaducidadEntrada.Location = new System.Drawing.Point(41, 273);
-            this.lblCaducidadEntrada.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCaducidadEntrada.Location = new System.Drawing.Point(31, 222);
             this.lblCaducidadEntrada.Name = "lblCaducidadEntrada";
-            this.lblCaducidadEntrada.Size = new System.Drawing.Size(76, 16);
+            this.lblCaducidadEntrada.Size = new System.Drawing.Size(61, 13);
             this.lblCaducidadEntrada.TabIndex = 51;
             this.lblCaducidadEntrada.Text = "Caducidad:";
             // 
             // lblProveedorEntrada
             // 
             this.lblProveedorEntrada.AutoSize = true;
-            this.lblProveedorEntrada.Location = new System.Drawing.Point(44, 329);
-            this.lblProveedorEntrada.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblProveedorEntrada.Location = new System.Drawing.Point(33, 267);
             this.lblProveedorEntrada.Name = "lblProveedorEntrada";
-            this.lblProveedorEntrada.Size = new System.Drawing.Size(74, 16);
+            this.lblProveedorEntrada.Size = new System.Drawing.Size(59, 13);
             this.lblProveedorEntrada.TabIndex = 61;
             this.lblProveedorEntrada.Text = "Proveedor:";
             // 
             // lblAlbaranEntrada
             // 
             this.lblAlbaranEntrada.AutoSize = true;
-            this.lblAlbaranEntrada.Location = new System.Drawing.Point(61, 384);
-            this.lblAlbaranEntrada.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAlbaranEntrada.Location = new System.Drawing.Point(46, 312);
             this.lblAlbaranEntrada.Name = "lblAlbaranEntrada";
-            this.lblAlbaranEntrada.Size = new System.Drawing.Size(57, 16);
+            this.lblAlbaranEntrada.Size = new System.Drawing.Size(46, 13);
             this.lblAlbaranEntrada.TabIndex = 71;
             this.lblAlbaranEntrada.Text = "Albarán:";
             // 
             // lblObservacionesEntrada
             // 
             this.lblObservacionesEntrada.AutoSize = true;
-            this.lblObservacionesEntrada.Location = new System.Drawing.Point(15, 439);
-            this.lblObservacionesEntrada.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblObservacionesEntrada.Location = new System.Drawing.Point(11, 357);
             this.lblObservacionesEntrada.Name = "lblObservacionesEntrada";
-            this.lblObservacionesEntrada.Size = new System.Drawing.Size(102, 16);
+            this.lblObservacionesEntrada.Size = new System.Drawing.Size(81, 13);
             this.lblObservacionesEntrada.TabIndex = 81;
             this.lblObservacionesEntrada.Text = "Observaciones:";
             // 
             // txbLote
             // 
-            this.txbLote.Location = new System.Drawing.Point(161, 159);
-            this.txbLote.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txbLote.Location = new System.Drawing.Point(121, 129);
+            this.txbLote.Margin = new System.Windows.Forms.Padding(2);
             this.txbLote.Name = "txbLote";
-            this.txbLote.Size = new System.Drawing.Size(265, 22);
+            this.txbLote.Size = new System.Drawing.Size(200, 20);
             this.txbLote.TabIndex = 30;
             // 
             // txbCantidad
             // 
-            this.txbCantidad.Location = new System.Drawing.Point(161, 214);
-            this.txbCantidad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txbCantidad.Location = new System.Drawing.Point(121, 177);
+            this.txbCantidad.Margin = new System.Windows.Forms.Padding(2);
             this.txbCantidad.MaxLength = 10;
             this.txbCantidad.Name = "txbCantidad";
-            this.txbCantidad.Size = new System.Drawing.Size(265, 22);
+            this.txbCantidad.Size = new System.Drawing.Size(155, 20);
             this.txbCantidad.TabIndex = 40;
             // 
             // txbProveedor
             // 
-            this.txbProveedor.Location = new System.Drawing.Point(161, 325);
-            this.txbProveedor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txbProveedor.Location = new System.Drawing.Point(121, 264);
+            this.txbProveedor.Margin = new System.Windows.Forms.Padding(2);
             this.txbProveedor.Name = "txbProveedor";
-            this.txbProveedor.Size = new System.Drawing.Size(265, 22);
+            this.txbProveedor.Size = new System.Drawing.Size(200, 20);
             this.txbProveedor.TabIndex = 60;
             // 
             // txbAlbaran
             // 
-            this.txbAlbaran.Location = new System.Drawing.Point(161, 380);
-            this.txbAlbaran.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txbAlbaran.Location = new System.Drawing.Point(121, 309);
+            this.txbAlbaran.Margin = new System.Windows.Forms.Padding(2);
             this.txbAlbaran.Name = "txbAlbaran";
-            this.txbAlbaran.Size = new System.Drawing.Size(265, 22);
+            this.txbAlbaran.Size = new System.Drawing.Size(200, 20);
             this.txbAlbaran.TabIndex = 70;
             // 
             // txbObservaciones
             // 
-            this.txbObservaciones.Location = new System.Drawing.Point(161, 436);
-            this.txbObservaciones.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txbObservaciones.Location = new System.Drawing.Point(121, 354);
+            this.txbObservaciones.Margin = new System.Windows.Forms.Padding(2);
             this.txbObservaciones.Multiline = true;
             this.txbObservaciones.Name = "txbObservaciones";
-            this.txbObservaciones.Size = new System.Drawing.Size(265, 59);
+            this.txbObservaciones.Size = new System.Drawing.Size(200, 49);
             this.txbObservaciones.TabIndex = 80;
             // 
             // dtpFechaEntrada
             // 
             this.dtpFechaEntrada.Cursor = System.Windows.Forms.Cursors.Default;
             this.dtpFechaEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaEntrada.Location = new System.Drawing.Point(161, 43);
-            this.dtpFechaEntrada.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpFechaEntrada.Location = new System.Drawing.Point(121, 35);
             this.dtpFechaEntrada.Name = "dtpFechaEntrada";
-            this.dtpFechaEntrada.Size = new System.Drawing.Size(265, 22);
+            this.dtpFechaEntrada.Size = new System.Drawing.Size(200, 20);
             this.dtpFechaEntrada.TabIndex = 10;
             // 
             // btnAceptarEntrada
             // 
-            this.btnAceptarEntrada.Location = new System.Drawing.Point(217, 519);
-            this.btnAceptarEntrada.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAceptarEntrada.Location = new System.Drawing.Point(163, 422);
             this.btnAceptarEntrada.Name = "btnAceptarEntrada";
-            this.btnAceptarEntrada.Size = new System.Drawing.Size(100, 43);
+            this.btnAceptarEntrada.Size = new System.Drawing.Size(75, 35);
             this.btnAceptarEntrada.TabIndex = 90;
             this.btnAceptarEntrada.Text = "Aceptar";
             this.btnAceptarEntrada.UseVisualStyleBackColor = true;
@@ -194,10 +185,9 @@
             // btnCancelarEntrada
             // 
             this.btnCancelarEntrada.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancelarEntrada.Location = new System.Drawing.Point(328, 519);
-            this.btnCancelarEntrada.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelarEntrada.Location = new System.Drawing.Point(246, 422);
             this.btnCancelarEntrada.Name = "btnCancelarEntrada";
-            this.btnCancelarEntrada.Size = new System.Drawing.Size(100, 43);
+            this.btnCancelarEntrada.Size = new System.Drawing.Size(75, 35);
             this.btnCancelarEntrada.TabIndex = 100;
             this.btnCancelarEntrada.Text = "Cancelar";
             this.btnCancelarEntrada.UseVisualStyleBackColor = true;
@@ -206,29 +196,38 @@
             // 
             this.cmbProductos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProductos.FormattingEnabled = true;
-            this.cmbProductos.Location = new System.Drawing.Point(161, 103);
-            this.cmbProductos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbProductos.Location = new System.Drawing.Point(121, 84);
             this.cmbProductos.Name = "cmbProductos";
-            this.cmbProductos.Size = new System.Drawing.Size(265, 24);
-            this.cmbProductos.TabIndex = 101;
+            this.cmbProductos.Size = new System.Drawing.Size(200, 21);
+            this.cmbProductos.TabIndex = 20;
+            this.cmbProductos.SelectedIndexChanged += new System.EventHandler(this.cmbProductos_SelectedIndexChanged);
             // 
             // dtpCaducidad
             // 
             this.dtpCaducidad.Cursor = System.Windows.Forms.Cursors.Default;
             this.dtpCaducidad.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpCaducidad.Location = new System.Drawing.Point(161, 266);
-            this.dtpCaducidad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtpCaducidad.Location = new System.Drawing.Point(121, 216);
+            this.dtpCaducidad.Margin = new System.Windows.Forms.Padding(2);
             this.dtpCaducidad.Name = "dtpCaducidad";
-            this.dtpCaducidad.Size = new System.Drawing.Size(200, 22);
-            this.dtpCaducidad.TabIndex = 102;
+            this.dtpCaducidad.Size = new System.Drawing.Size(200, 20);
+            this.dtpCaducidad.TabIndex = 50;
+            // 
+            // lblUnidad
+            // 
+            this.lblUnidad.AutoSize = true;
+            this.lblUnidad.Location = new System.Drawing.Point(285, 177);
+            this.lblUnidad.Name = "lblUnidad";
+            this.lblUnidad.Size = new System.Drawing.Size(0, 13);
+            this.lblUnidad.TabIndex = 101;
             // 
             // AñadirEntrada
             // 
             this.AcceptButton = this.btnAceptarEntrada;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancelarEntrada;
-            this.ClientSize = new System.Drawing.Size(505, 586);
+            this.ClientSize = new System.Drawing.Size(379, 476);
+            this.Controls.Add(this.lblUnidad);
             this.Controls.Add(this.dtpCaducidad);
             this.Controls.Add(this.cmbProductos);
             this.Controls.Add(this.btnCancelarEntrada);
@@ -249,7 +248,6 @@
             this.Controls.Add(this.lblFechaEntrada);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Location = new System.Drawing.Point(1075, 200);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "AñadirEntrada";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -279,5 +277,6 @@
         private System.Windows.Forms.Button btnCancelarEntrada;
         private System.Windows.Forms.ComboBox cmbProductos;
         private System.Windows.Forms.DateTimePicker dtpCaducidad;
+        private System.Windows.Forms.Label lblUnidad;
     }
 }
