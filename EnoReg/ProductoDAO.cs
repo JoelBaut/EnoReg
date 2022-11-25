@@ -27,11 +27,11 @@ namespace EnoReg
         }
         public MySqlDataReader CargarTodo()
         {
-            string sql = "select fecha_entrada Fecha, nombre Nombre, proveedor Proveedor, lote Lote, fecha_caducidad Caducidad, albaran Albaran,REPLACE(FORMAT(cantidad,3),'.',',') Entrada,'-' Salida, REPLACE(FORMAT(cantidad,3),'.',',') Stock, '-' Destino, '-' Observaciones" +
+            string sql = "select fecha_entrada Fecha, nombre Nombre, proveedor Proveedor, lote Lote, fecha_caducidad Caducidad, albaran Albaran,REPLACE(FORMAT(cantidad,3),'.',',') Entrada,'-' Salida, REPLACE(FORMAT(stock,3),'.',',') Stock, '-' Destino, '-' Observaciones" +
                 " from producto_entrada, producto" +
                 " where producto_entrada.id_producto = producto.id_producto" +
                 " Union" +
-                " select fecha_salida Fecha, nombre Nombre, '-' Proveedor, lote Lote, '-'Caducidad, '-'Albaran,'-'Entrada,REPLACE(FORMAT(cantidad,3),'.',',') Salida, REPLACE(FORMAT(cantidad,3),'.',',') Stock, destino Destino, observaciones Observaciones" +
+                " select fecha_salida Fecha, nombre Nombre, '-' Proveedor, lote Lote, '-'Caducidad, '-'Albaran,'-'Entrada,REPLACE(FORMAT(cantidad,3),'.',',') Salida, REPLACE(FORMAT(stock,3),'.',',') Stock, destino Destino, observaciones Observaciones" +
                 " from producto_salida, producto" +
                 " where producto_salida.id_producto = producto.id_producto" +
                 " order by fecha DESC;";
@@ -42,13 +42,13 @@ namespace EnoReg
             string sql = "select unidad from producto where nombre='" + nombreProducto + "'";
             return conexionDB.Select(sql);
         }
-       public double ObtenerStock(String nombreProducto)
+       public Decimal ObtenerStock(String nombreProducto)
         {
-            double stock =-1;
+            Decimal stock =-1;
             string sql = "select stock from producto where nombre='" + nombreProducto + "';";
             MySqlDataReader rd = conexionDB.Select(sql);
             while (rd.Read()) {
-                stock = rd.GetDouble(0);
+                stock = rd.GetDecimal(0);
             }
             return stock;
         } 
@@ -60,7 +60,7 @@ namespace EnoReg
             
             conexionDB.InsertarProducto(sql,image);
         }
-        public void InsertarEntrada(String nombre,string fecha,String lote, string Albaran, string proveedor, string fcadudidad,String cantidad ) {
+        public void InsertarEntrada(String nombre,string fecha,String lote, string Albaran, string proveedor, string fcadudidad, string cantidad ) {
 
             string sql = "INSERT INTO `producto_entrada`(`id_producto`, `fecha_entrada`, `lote`, `albaran`, `proveedor`, `fecha_caducidad`, `cantidad`) VALUES ((SELECT id_producto from producto WHERE nombre='"+ nombre + "'),'"+ fecha+"','"+lote+ "','"+ Albaran + "','"+ proveedor + "','"+ fcadudidad + "','"+ cantidad + "');";
             conexionDB.Insertar(sql);

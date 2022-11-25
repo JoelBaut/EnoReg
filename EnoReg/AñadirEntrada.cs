@@ -54,6 +54,8 @@ namespace EnoReg
         private void btnAceptarEntrada_Click(object sender, EventArgs e)
         {     
             Boolean valor = false;
+            string cantidad="";
+            double cantidaNumerico = 0;
             string mensaje = "Tienes que rellenar o seleccionar:";
             if (cmbProductos.SelectedIndex.Equals(-1))
             {
@@ -97,7 +99,17 @@ namespace EnoReg
             }
             else
             {
-                txbCantidad.BackColor = Color.White;
+                cantidad = txbCantidad.Text;
+                cantidad = cantidad.Replace(",", ".");
+                if (!double.TryParse(cantidad, out cantidaNumerico))
+                {
+                    mensaje += "Canidad [ Recuerde introducir solo numeros ]";
+                    valor = true;
+                }
+                else
+                {
+                    txbCantidad.BackColor = Color.White;
+                }
             }
             if (dtpCaducidad.Value.Date == DateTime.Now.Date)
             {
@@ -141,7 +153,7 @@ namespace EnoReg
             }
             if(valor==false) {
                 mensaje = "Entrada introducida correctamente";
-                productoDAO.InsertarEntrada(cmbProductos.Text, dtpFechaEntrada.Value.ToString("yyyy-MM-dd"), txbLote.Text, txbAlbaran.Text, txbProveedor.Text, dtpCaducidad.Value.ToString("yyyy-MM-dd"), txbCantidad.Text);
+                productoDAO.InsertarEntrada(cmbProductos.Text, dtpFechaEntrada.Value.ToString("yyyy-MM-dd"), txbLote.Text, txbAlbaran.Text, txbProveedor.Text, dtpCaducidad.Value.ToString("yyyy-MM-dd"), cantidad);
                 productoDAO.cerrarConexion();
                 DialogResult = DialogResult.OK;
                 this.Close();
