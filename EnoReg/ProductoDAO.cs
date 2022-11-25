@@ -52,7 +52,6 @@ namespace EnoReg
             }
             return stock;
         } 
-
         public void InsertarProducto(String nombre, string unidad, byte[] image)
         {
 
