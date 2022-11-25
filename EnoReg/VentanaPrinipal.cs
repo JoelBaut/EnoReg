@@ -25,6 +25,7 @@ namespace EnoReg
 
         private void VentanaPrinipal_Load(object sender, EventArgs e)
         {
+
             this.Font = Properties.Settings.Default.Font;
             this.BackColor = Properties.Settings.Default.ColorFondo;
             this.ForeColor = Properties.Settings.Default.ColorLetra;

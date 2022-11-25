@@ -36,13 +36,13 @@
             this.lblObservaciones = new System.Windows.Forms.Label();
             this.dtpFechaSalida = new System.Windows.Forms.DateTimePicker();
             this.txbLote = new System.Windows.Forms.TextBox();
-            this.txbCantidad = new System.Windows.Forms.TextBox();
             this.txbDestino = new System.Windows.Forms.TextBox();
             this.txbObservaciones = new System.Windows.Forms.TextBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.cmbProductos = new System.Windows.Forms.ComboBox();
             this.lblUnidad = new System.Windows.Forms.Label();
+            this.txbCantidad = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblFecha
@@ -116,15 +116,6 @@
             this.txbLote.Size = new System.Drawing.Size(214, 20);
             this.txbLote.TabIndex = 30;
             // 
-            // txbCantidad
-            // 
-            this.txbCantidad.Location = new System.Drawing.Point(102, 213);
-            this.txbCantidad.Margin = new System.Windows.Forms.Padding(4);
-            this.txbCantidad.MaxLength = 10;
-            this.txbCantidad.Name = "txbCantidad";
-            this.txbCantidad.Size = new System.Drawing.Size(155, 20);
-            this.txbCantidad.TabIndex = 40;
-            // 
             // txbDestino
             // 
             this.txbDestino.Location = new System.Drawing.Point(102, 269);
@@ -180,9 +171,15 @@
             this.lblUnidad.AutoSize = true;
             this.lblUnidad.Location = new System.Drawing.Point(275, 216);
             this.lblUnidad.Name = "lblUnidad";
-            this.lblUnidad.Size = new System.Drawing.Size(27, 13);
+            this.lblUnidad.Size = new System.Drawing.Size(0, 13);
             this.lblUnidad.TabIndex = 102;
-            this.lblUnidad.Text = "";
+            // 
+            // txbCantidad
+            // 
+            this.txbCantidad.Location = new System.Drawing.Point(102, 213);
+            this.txbCantidad.Name = "txbCantidad";
+            this.txbCantidad.Size = new System.Drawing.Size(155, 20);
+            this.txbCantidad.TabIndex = 103;
             // 
             // AñadirSalida
             // 
@@ -191,13 +188,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(379, 476);
+            this.Controls.Add(this.txbCantidad);
             this.Controls.Add(this.lblUnidad);
             this.Controls.Add(this.cmbProductos);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.txbObservaciones);
             this.Controls.Add(this.txbDestino);
-            this.Controls.Add(this.txbCantidad);
             this.Controls.Add(this.txbLote);
             this.Controls.Add(this.dtpFechaSalida);
             this.Controls.Add(this.lblObservaciones);
@@ -228,12 +225,12 @@
         private System.Windows.Forms.Label lblObservaciones;
         private System.Windows.Forms.DateTimePicker dtpFechaSalida;
         private System.Windows.Forms.TextBox txbLote;
-        private System.Windows.Forms.TextBox txbCantidad;
         private System.Windows.Forms.TextBox txbDestino;
         private System.Windows.Forms.TextBox txbObservaciones;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.ComboBox cmbProductos;
         private System.Windows.Forms.Label lblUnidad;
+        private System.Windows.Forms.TextBox txbCantidad;
     }
 }

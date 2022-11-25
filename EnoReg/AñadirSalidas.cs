@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -44,7 +45,9 @@ namespace EnoReg
         {
             string mensaje = "Tienes que rellenar o seleccionar:";
             Boolean valor = false;
-            
+            double cantidaNumerico =0;
+            string cantidad ="";
+
             if (cmbProductos.SelectedIndex.Equals(-1))
             {
                 if (mensaje.Length > 34)
@@ -88,16 +91,26 @@ namespace EnoReg
             }
             else
             {
-                txbCantidad.BackColor = Color.White;
+                cantidad = txbCantidad.Text;
+                cantidad = cantidad.Replace(",",".");
+                MessageBox.Show(cantidad);
+                if (!double.TryParse(cantidad, out cantidaNumerico)) {
+                    mensaje += "Canidad [ Recuerde introducir solo numeros ]";
+                    valor = true;
+                }
+                else
+                {
+                    txbCantidad.BackColor = Color.White;
+                }
             }
-            if (valor == false &&(productoDAO.ObtenerStock(cmbProductos.Text) - int.Parse(txbCantidad.Text)) <= 0 )
+            if (valor == false &&(productoDAO.ObtenerStock(cmbProductos.Text) - Convert.ToDecimal(cantidad,CultureInfo.InvariantCulture)) <= 0 )
             {
                 MessageBox.Show("Se pretende sacar mas productos de los disponibles.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 valor = true;
             }
             if (valor==false) {
                 mensaje = "Salida introducida correctamente";
-                productoDAO.InsertarSalida(cmbProductos.Text, dtpFechaSalida.Value.ToString("yyyy-MM-dd"), txbLote.Text, txbCantidad.Text, txbDestino.Text, txbObservaciones.Text);
+                productoDAO.InsertarSalida(cmbProductos.Text, dtpFechaSalida.Value.ToString("yyyy-MM-dd"), txbLote.Text, cantidad, txbDestino.Text, txbObservaciones.Text);
                 productoDAO.cerrarConexion();
                 DialogResult = DialogResult.OK;
                 this.Close();
