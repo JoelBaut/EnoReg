@@ -93,7 +93,6 @@ namespace EnoReg
             {
                 cantidad = txbCantidad.Text;
                 cantidad = cantidad.Replace(",",".");
-                MessageBox.Show(cantidad);
                 if (!double.TryParse(cantidad, out cantidaNumerico)) {
                     mensaje += "Canidad [ Recuerde introducir solo numeros ]";
                     valor = true;
